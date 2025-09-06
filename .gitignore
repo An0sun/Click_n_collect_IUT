@@ -1,0 +1,14 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/package-lock.json
+frontend/app/.angular/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+backend/.env
+
+# OS
+.DS_Store
