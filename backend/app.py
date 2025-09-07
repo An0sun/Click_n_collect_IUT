@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from shared.db_connection import db
 from controllers.product_controllers import product_bp
@@ -14,6 +14,12 @@ with app.app_context():
     db.create_all()
 
 app.register_blueprint(product_bp)
+
+@app.route("/")
+def home():
+    return jsonify({"message": "Bienvenue sur l’API Click & Collect 🚀"})
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

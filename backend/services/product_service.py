@@ -16,7 +16,7 @@ class ProductService:
         product = Product(
             name = data["name"],
             description = data["description"],
-            categorie = data["categorie"],
+            category = data["category"],
             price = data["price"],
             quantity = data["quantity"]
         )
