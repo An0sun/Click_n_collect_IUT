@@ -12,3 +12,6 @@ backend/.env
 
 # OS
 .DS_Store
+
+# Tailwind build
+output.css
