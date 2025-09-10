@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CarteClientComponent } from './features/products/carte-client/carte-client/carte-client.component';
+import { CustomerCardComponent } from './features/products/pages/customer-card/customer-card.component';
 
 export const routes: Routes = [
-    {path: '', component: CarteClientComponent}
+    {path: '', component: CustomerCardComponent}
 ];

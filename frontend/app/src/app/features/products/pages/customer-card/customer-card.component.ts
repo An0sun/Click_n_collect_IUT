@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { Product } from '../../../../core/models/product.model';
-import { ProductService } from '../../../../core/services/product.service';
+import { Product } from '../../models/product.model';
+import { ProductService } from '../../services/product.service';
 
 @Component({
-  selector: 'app-carte-client',
+  selector: 'app-customer-card',
   standalone: true,
   imports: [],
-  templateUrl: './carte-client.component.html',
-  styleUrl: './carte-client.component.scss'
+  templateUrl: './customer-card.component.html',
+  styleUrl: './customer-card.component.scss'
 })
 
-export class CarteClientComponent {
+export class CustomerCardComponent {
   products: Product[] = [];   
   loading: boolean = true;    
   error: string | null = null; 
