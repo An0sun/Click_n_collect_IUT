@@ -1,18 +1,27 @@
 from models.product_model import Product
-from shared.db_connection import db
+from shared.extensions import db
 
 class ProductRepository:
+    @staticmethod
+    def list_all():
+        return Product.query.all()
 
     @staticmethod
-    def get_all():
-        return Product.query.all()
-    
+    def get_by_id(pid: int):
+        return db.session.get(Product, pid)
+
     @staticmethod
-    def get_by_id(id_product):
-        return Product.query.get(id_product)
-    
-    @staticmethod
-    def create(product):
+    def create(product: Product):
         db.session.add(product)
         db.session.commit()
         return product
+
+    @staticmethod
+    def update(product: Product):
+        db.session.commit()
+        return product
+
+    @staticmethod
+    def delete(product: Product):
+        db.session.delete(product)
+        db.session.commit()

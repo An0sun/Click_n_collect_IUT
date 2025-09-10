@@ -1,22 +1,32 @@
-from flask import Blueprint, jsonify, request
-from services.product_service import ProductService
+from flask import Blueprint, request, jsonify
+from repositories.product_repository import ProductRepository
+from models.product_model import Product
 
-product_bp = Blueprint("products", __name__)
+bp = Blueprint("products", __name__, url_prefix="/api/products")
 
-@product_bp.route("/products", methods=["GET"])
-def get_products():
-    products = ProductService.list_products()
-    return jsonify([p.to_dict() for p in products])
+@bp.get("/")
+def list_products():
+    products = ProductRepository.list_all()
+    return jsonify([
+        {
+            "id": p.id,
+            "name": p.name,
+            "description": p.description,
+            "category": p.category,
+            "price": p.price,
+            "stock": p.stock,
+        } for p in products
+    ])
 
-@product_bp.route("/products/<int:product_id>", methods=["GET"])
-def get_product(product_id):
-    product = ProductService.get_product(product_id)
-    if not product:
-        return jsonify({"error": "Produit non trouvé"}), 404
-    return jsonify(product.to_dict())
-
-@product_bp.route("/products", methods=["POST"])
+@bp.post("/")
 def create_product():
-    data = request.json
-    product = ProductService.add_product(data)
-    return jsonify(product.to_dict()), 201
+    data = request.get_json()
+    product = Product(
+        name=data["name"],
+        description=data["description"],
+        category=data["category"],
+        price=data["price"],
+        stock=data["stock"]
+    )
+    ProductRepository.create(product)
+    return jsonify({"message": "Produit créé", "id": product.id}), 201
