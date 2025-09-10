@@ -1,13 +1,8 @@
-@if (loading) {
-    <div>Chargement des produits...</div>
-  }
-  
-  @if (error) {
-    <div>{{ error }}</div>
-  }
-  
-  @if (!loading && !error) {
-    <div class="grid grid-cols-4 gap-6">
+@if (!loading && !error) {
+  <div class="grid grid-cols-4 gap-6 min-h-[200px] items-center justify-center border rounded-lg p-4 bg-gray-50">
+    @if (products.length === 0) {
+      <p class="col-span-4 text-center text-gray-500">Aucun produit disponible</p>
+    } @else {
       @for (product of products; track product.id) {
         <div class="border rounded-lg shadow p-4 bg-white">
           <h2 class="font-bold text-lg">{{ product.name }}</h2>
@@ -16,6 +11,6 @@
           <p class="text-sm text-gray-500">Stock : {{ product.quantity }}</p>
         </div>
       }
-    </div>
-  }
-  
+    }
+  </div>
+}
