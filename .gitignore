@@ -15,3 +15,5 @@ backend/.env
 
 # Tailwind build
 output.css
+
+instance/database.db
