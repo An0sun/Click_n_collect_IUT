@@ -1,8 +1,11 @@
 from flask import Blueprint, request, jsonify
+
 from dtos.product_dto import ProductInDTO, ProductOutDTO, ProductUpdateDTO
 from services.product_service import ProductService
 
+
 bp = Blueprint("products", __name__, url_prefix="/api/products")
+
 
 @bp.get("/")
 def list_products():
@@ -10,7 +13,6 @@ def list_products():
     category = (request.args.get("category") or "").strip() or None
     sort = (request.args.get("sort") or "").strip() or None
 
-    # pagination: 20/pg par défaut
     try:
         page = max(int(request.args.get("page", 1)), 1)
         per_page = min(max(int(request.args.get("per_page", 20)), 1), 100)
@@ -18,18 +20,33 @@ def list_products():
         return jsonify({"message": "page/per_page must be integers"}), 400
 
     pagination = ProductService.list(q, category, sort, page, per_page)
-    items = [ProductOutDTO.model_validate({
-        "id": p.id, "name": p.name, "description": p.description,
-        "category": p.category, "price": p.price, "stock": p.stock
-    }).model_dump() for p in pagination.items]
+    items = [
+        ProductOutDTO.model_validate(
+            {
+                "id": p.id,
+                "name": p.name,
+                "description": p.description,
+                "category": p.category,
+                "price": p.price,
+                "stock": p.stock,
+            }
+        ).model_dump()
+        for p in pagination.items
+    ]
 
-    return jsonify({
-        "items": items,
-        "page": page,
-        "per_page": per_page,
-        "total": pagination.total,
-        "pages": pagination.pages
-    }), 200
+    return (
+        jsonify(
+            {
+                "items": items,
+                "page": page,
+                "per_page": per_page,
+                "total": pagination.total,
+                "pages": pagination.pages,
+            }
+        ),
+        200,
+    )
+
 
 @bp.post("/")
 def create_product():
@@ -42,12 +59,15 @@ def create_product():
     p = ProductService.create(payload)
     return jsonify({"message": "Produit créé", "id": p.id}), 201
 
+
 @bp.patch("/<int:pid>")
 @bp.put("/<int:pid>")
 def update_product(pid: int):
     data = request.get_json(silent=True) or {}
     try:
-        payload = ProductUpdateDTO.model_validate(data).model_dump(exclude_none=True)
+        payload = ProductUpdateDTO.model_validate(data).model_dump(
+            exclude_none=True
+        )
         if not payload:
             return jsonify({"message": "no fields to update"}), 400
     except Exception as e:
@@ -57,10 +77,22 @@ def update_product(pid: int):
     if not p:
         return jsonify({"message": "product not found"}), 404
 
-    return jsonify(ProductOutDTO.model_validate({
-        "id": p.id, "name": p.name, "description": p.description,
-        "category": p.category, "price": p.price, "stock": p.stock
-    }).model_dump()), 200
+    return (
+        jsonify(
+            ProductOutDTO.model_validate(
+                {
+                    "id": p.id,
+                    "name": p.name,
+                    "description": p.description,
+                    "category": p.category,
+                    "price": p.price,
+                    "stock": p.stock,
+                }
+            ).model_dump()
+        ),
+        200,
+    )
+
 
 @bp.delete("/<int:pid>")
 def delete_product(pid: int):

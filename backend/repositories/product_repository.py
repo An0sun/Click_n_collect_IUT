@@ -16,7 +16,6 @@ class ProductRepository:
         if category:
             stmt = stmt.where(Product.category == category)
 
-        # filtres sort: name_asc|name_desc|price_asc|price_desc|stock_desc (par défaut: id desc)
         order = {
             "name_asc":  asc(Product.name),
             "name_desc": desc(Product.name),
@@ -28,7 +27,6 @@ class ProductRepository:
 
     @staticmethod
     def paginate(stmt, page: int, per_page: int):
-        # Flask-SQLAlchemy 3.x fournit db.paginate
         return db.paginate(stmt, page=page, per_page=per_page, error_out=False)
 
     @staticmethod
