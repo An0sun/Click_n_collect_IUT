@@ -5,7 +5,7 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), nullable=False)
     description = db.Column(db.String(255), nullable=False)
-    category = db.Column(db.String(16), nullable=False)  # 'Food' | 'Beverage'
+    category = db.Column(db.String(16), nullable=False)  
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False, default=0)
 

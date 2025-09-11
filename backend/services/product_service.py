@@ -11,7 +11,6 @@ class ProductService:
 
     @staticmethod
     def create(data: Dict[str, Any]) -> Product:
-        # Règles métier supplémentaires si besoin
         p = Product(**data)
         return ProductRepository.create(p)
 
