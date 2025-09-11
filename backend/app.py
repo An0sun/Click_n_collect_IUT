@@ -1,25 +1,44 @@
+import os
 from flask import Flask, jsonify
 from flask_cors import CORS
-from shared.db_connection import db
-from controllers.product_controllers import product_bp
+from dotenv import load_dotenv
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+from shared.extensions import db, bcrypt, jwt
+from shared.errors import register_error_handlers
+from controllers import register_blueprints
 
-db.init_app(app)
-CORS(app)
+def create_app():
+    load_dotenv()
+    app = Flask(__name__, instance_relative_config=True)
 
-with app.app_context():
-    db.create_all()
+    # Config
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(app.instance_path, "app.db")
+    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "dev-secret")
 
-app.register_blueprint(product_bp)
+    os.makedirs(app.instance_path, exist_ok=True)
 
-@app.route("/")
-def home():
-    return jsonify({"message": "Bienvenue sur l’API Click & Collect 🚀"})
+    # Extensions
+    db.init_app(app)
+    bcrypt.init_app(app)
+    jwt.init_app(app)
+    CORS(app, origins="http://localhost:4200", supports_credentials=True)
 
+    # DB init
+    with app.app_context():
+        from models import product_model, user_model, order_model
+        db.create_all()
 
+    # Blueprints + erreurs
+    register_blueprints(app)
+    register_error_handlers(app)
+
+    @app.route("/")
+    def home():
+        return jsonify({"message": "Bienvenue sur l’API Click & Collect 🚀"})
+
+    return app
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app = create_app()
+    app.run(debug=True, port=5000)

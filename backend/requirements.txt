@@ -1,6 +1,7 @@
-flask
-flask_cors
-pydantic
-flask-jwt-extended
-sqlalchemy
-sqlite3
+flask==3.1.2
+flask_cors==6.0.1
+pydantic==2.11.7
+flask-jwt-extended==4.7.1
+flask-bcrypt==1.0.1
+flask-sqlalchemy==3.1.1
+python-dotenv==1.0.1

@@ -1,5 +1,4 @@
 from typing import Optional, Dict, Any
-
 from models.product_model import Product
 from repositories.product_repository import ProductRepository
 
