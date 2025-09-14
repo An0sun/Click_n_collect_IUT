@@ -65,8 +65,8 @@ def create_product():
     return jsonify({"message": "Produit créé", "id": p.id}), 201
 
 
-@bp.patch("/<string:pid>")
-@bp.put("/<string:pid>")
+@bp.patch("/<int:pid>")
+@bp.put("/<int:pid>")
 def update_product(pid: int):
     data = request.get_json(silent=True) or {}
     try:
@@ -101,7 +101,7 @@ def update_product(pid: int):
     )
 
 
-@bp.delete("/<string:pid>")
+@bp.delete("/<int:pid>")
 def delete_product(pid: int):
     ok = ProductService.delete(pid)
     if not ok:
