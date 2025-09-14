@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 from typing import Literal, Optional
 
 Category = Literal["Food", "Beverage"]
@@ -23,6 +23,7 @@ class ProductInDTO(BaseModel):
         return v
 
 class ProductUpdateDTO(BaseModel):
+    model_config = ConfigDict(extra="ignore")
     name: Optional[str] = Field(default=None, min_length=1, max_length=120)
     description: Optional[str] = Field(default=None, min_length=1, max_length=255)
     category: Optional[Category] = None

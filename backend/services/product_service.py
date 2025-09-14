@@ -11,6 +11,7 @@ class ProductService:
 
     @staticmethod
     def create(data: Dict[str, Any]) -> Product:
+        data.pop('id', None)
         p = Product(**data)
         return ProductRepository.create(p)
 

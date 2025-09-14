@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 
 from dtos.product_dto import ProductInDTO, ProductOutDTO, ProductUpdateDTO
 from services.product_service import ProductService
+from pydantic import ValidationError
 
 
 bp = Blueprint("products", __name__, url_prefix="/api/products")
@@ -30,7 +31,7 @@ def list_products():
                 "price": p.price,
                 "stock": p.stock,
             }
-        ).model_dump()
+        ).model_dump(mode="json")
         for p in pagination.items
     ]
 
@@ -53,6 +54,10 @@ def create_product():
     data = request.get_json(silent=True) or {}
     try:
         payload = ProductInDTO.model_validate(data).model_dump()
+    except ValidationError as e:
+        # logs utiles
+        print("VALIDATION ERROR:", e.errors())
+        return jsonify({"message": "invalid body", "errors": e.errors()}), 400
     except Exception as e:
         return jsonify({"message": "invalid body", "detail": str(e)}), 400
 
@@ -60,8 +65,8 @@ def create_product():
     return jsonify({"message": "Produit créé", "id": p.id}), 201
 
 
-@bp.patch("/<int:pid>")
-@bp.put("/<int:pid>")
+@bp.patch("/<string:pid>")
+@bp.put("/<string:pid>")
 def update_product(pid: int):
     data = request.get_json(silent=True) or {}
     try:
@@ -72,10 +77,12 @@ def update_product(pid: int):
             return jsonify({"message": "no fields to update"}), 400
     except Exception as e:
         return jsonify({"message": "invalid body", "detail": str(e)}), 400
+    print("ok1")
 
     p = ProductService.update(pid, payload)
     if not p:
         return jsonify({"message": "product not found"}), 404
+    print("ok2")
 
     return (
         jsonify(
@@ -94,7 +101,7 @@ def update_product(pid: int):
     )
 
 
-@bp.delete("/<int:pid>")
+@bp.delete("/<string:pid>")
 def delete_product(pid: int):
     ok = ProductService.delete(pid)
     if not ok:

@@ -30,9 +30,8 @@ class ProductRepository:
         return db.paginate(stmt, page=page, per_page=per_page, error_out=False)
 
     @staticmethod
-    def get_by_id(pid: int) -> Optional[Product]:
+    def get_by_id(pid : str) -> Optional[Product]:
         return db.session.get(Product, pid)
-
     @staticmethod
     def create(p: Product) -> Product:
         db.session.add(p)
