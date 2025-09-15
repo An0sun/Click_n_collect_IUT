@@ -17,3 +17,6 @@ backend/.env
 output.css
 
 instance/database.db
+
+# Ignorer tous les dossiers __pycache__ partout
+__pycache__/
