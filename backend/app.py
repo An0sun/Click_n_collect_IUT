@@ -15,6 +15,10 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(app.instance_path, "app.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "dev-secret")
+    # (optionnel) JWT config
+    app.config["JWT_TOKEN_LOCATION"] = ["headers"]
+    app.config["JWT_HEADER_NAME"] = "Authorization"
+    app.config["JWT_HEADER_TYPE"] = "Bearer"
 
     os.makedirs(app.instance_path, exist_ok=True)
 
@@ -26,7 +30,7 @@ def create_app():
 
     # DB init
     with app.app_context():
-        from models import product_model, user_model, order_model
+        from models import product_model, user_model, order_model  # noqa
         db.create_all()
 
     # Blueprints + erreurs

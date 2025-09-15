@@ -16,3 +16,4 @@ def seed_products_if_empty():
             return
         s.add_all(SEED)
         s.commit()
+
