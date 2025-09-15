@@ -9,12 +9,11 @@ _engine = None
 _Session = None
 
 def init_db(app):
-    """Configure l'engine + session sur un SQLite local dans le dossier instance/."""
     global _engine, _Session
 
     url = app.config.get("DATABASE_URL")
     if not url:
-        os.makedirs(app.instance_path, exist_ok=True)               # .../backend/instance
+        os.makedirs(app.instance_path, exist_ok=True)
         url = "sqlite:///" + os.path.join(app.instance_path, "app.db")
         app.config["DATABASE_URL"] = url
 
