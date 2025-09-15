@@ -14,5 +14,13 @@
         <app-customer-card [product]="p"></app-customer-card>
       }
     </div>
+
+    <app-pagination
+    [totalPages]="totalPages"
+    [page]="page"
+    (pageChange)="loadPage($event)">
+  </app-pagination>
+  
   </div>
 }
+
