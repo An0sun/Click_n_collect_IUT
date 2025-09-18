@@ -13,12 +13,24 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  getProduits(): Observable<Product[]> {
+  getProducts(): Observable<Product[]> {
     return this.http.get<{ items: Product[] }>(this.apiUrl).pipe(
       map((response: { items: Product[] }) => response.items)
     );
   }
 
+  getProductsPagines(page: number = 1) {
+    return this.http.get<{
+      items: Product[];
+      page: number;
+      per_page: number;
+      total: number;
+      pages: number;
+    }>(
+      `${this.apiUrl}?page=${page}`
+    );
+  }
+  
   createProduct(product: Omit<Product, 'id'>): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
   }
@@ -26,4 +38,5 @@ export class ProductService {
   deleteProduct(id: number) {
   return this.http.delete<{ message: string }>(`${this.baseUrl}/api/products/${id}`);
 }
+
 }

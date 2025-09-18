@@ -7,7 +7,6 @@ from pydantic import ValidationError
 
 bp = Blueprint("products", __name__, url_prefix="/api/products")
 
-
 @bp.get("/")
 def list_products():
     q = (request.args.get("q") or "").strip() or None
@@ -16,7 +15,7 @@ def list_products():
 
     try:
         page = max(int(request.args.get("page", 1)), 1)
-        per_page = min(max(int(request.args.get("per_page", 20)), 1), 100)
+        per_page = min(max(int(request.args.get("per_page", 2)), 1), 100)
     except ValueError:
         return jsonify({"message": "page/per_page must be integers"}), 400
 
