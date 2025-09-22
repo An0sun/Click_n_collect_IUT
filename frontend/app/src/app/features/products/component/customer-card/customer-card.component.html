@@ -29,7 +29,7 @@
       <p class="mt-1 text-xs text-gray-500">Stock : {{ product.stock }}</p>
 
       <div class="mt-4 flex flex-col sm:flex-row gap-3">
-        <button class="w-full rounded-md bg-amber-800 px-3 py-2 text-sm font-medium text-white transition hover:bg-amber-900 hover:scale-105">
+        <button (click)="addToCart(product)" class="w-full rounded-md bg-amber-800 px-3 py-2 text-sm font-medium text-white transition hover:bg-amber-900 hover:scale-105">
           Add to cart
         </button>
         <button class="w-full rounded-md border border-amber-800 px-3 py-2 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white hover:scale-105">

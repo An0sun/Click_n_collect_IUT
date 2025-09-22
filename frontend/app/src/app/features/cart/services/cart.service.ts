@@ -1,0 +1,60 @@
+import { Injectable } from '@angular/core';
+import { Product } from '../../products/models/product.model';
+import { CartItem } from '../models/cart-item/cart-item.module';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CartService {
+  private storageKey = 'cart';
+
+  /** Vérifie si on est bien dans un navigateur (et pas côté serveur) */
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined' && !!window.localStorage;
+  }
+
+  getCart(): CartItem[] {
+    if (!this.isBrowser()) return [];
+    const data = localStorage.getItem(this.storageKey);
+    return data ? JSON.parse(data) : [];
+  }
+
+  saveCart(cart: CartItem[]): void {
+    if (!this.isBrowser()) return;
+    localStorage.setItem(this.storageKey, JSON.stringify(cart));
+  }
+
+  addToCart(product: Product): void {
+    let cart = this.getCart();
+    const existing = cart.find(item => item.product.id === product.id);
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ product, quantity: 1 });
+    }
+    this.saveCart(cart);
+  }
+
+  removeFromCart(productId: number): void {
+    let cart = this.getCart().filter(item => item.product.id !== productId);
+    this.saveCart(cart);
+  }
+
+  updateQuantity(productId: number, change: number): void {
+    let cart = this.getCart();
+    const item = cart.find(i => i.product.id === productId);
+    if (item) {
+      item.quantity += change;
+      if (item.quantity <= 0) {
+        this.removeFromCart(productId);
+      } else {
+        this.saveCart(cart);
+      }
+    }
+  }
+
+  clearCart(): void {
+    if (!this.isBrowser()) return;
+    localStorage.removeItem(this.storageKey);
+  }
+}
