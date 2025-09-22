@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { Product } from '../../models/product.model';
-
+import { CartService } from '../../../cart/services/cart.service'; 
 @Component({
   selector: 'app-customer-card',
   standalone: true,
@@ -11,4 +11,9 @@ import { Product } from '../../models/product.model';
 
 export class CustomerCardComponent {
   @Input() product!: Product;
+  constructor(private cartService: CartService){}
+
+  addToCart(product: Product){
+    this.cartService.addToCart(product);
+  }
 }
