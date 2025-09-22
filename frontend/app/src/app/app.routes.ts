@@ -14,4 +14,4 @@ export const routes: Routes = [
     {
         path: 'create-product', component: CreateProductPageComponent
     }
-];
+]

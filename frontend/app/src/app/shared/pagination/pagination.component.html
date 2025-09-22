@@ -1,10 +1,10 @@
-<ul class="flex justify-center gap-1 text-gray-900 mt-8">
+<ul class="flex flex-wrap justify-center gap-2 text-gray-900 mt-8">
   <li>
     <button
       (click)="loadPage(page - 1)"
       [disabled]="page === 1"
-      class="grid size-9 place-content-center rounded-md border transition-colors
-             bg-teal-600 text-white hover:bg-teal-700 disabled:opacity-50"
+      class="grid w-10 h-10 place-content-center rounded-md border transition-colors
+             bg-amber-800 text-white hover:bg-amber-900 disabled:opacity-50 text-sm sm:text-base"
     >
       «
     </button>
@@ -14,9 +14,9 @@
     <li>
       <button
         (click)="loadPage(p)"
-        class="block size-8 rounded border text-center text-sm font-medium transition-colors"
+        class="w-9 h-9 sm:w-10 sm:h-10 rounded border text-center text-sm font-medium transition-colors"
         [ngClass]="{
-          'bg-teal-600 text-white border-teal-600 hover:bg-teal-700': page === p,
+          'bg-amber-800 text-white border-amber-800 hover:bg-amber-900': page === p,
           'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': page !== p
         }"
       >
@@ -29,8 +29,8 @@
     <button
       (click)="loadPage(page + 1)"
       [disabled]="page === totalPages"
-      class="grid size-9 place-content-center rounded-md border transition-colors
-             bg-teal-600 text-white hover:bg-teal-700 disabled:opacity-50"
+      class="grid w-10 h-10 place-content-center rounded-md border transition-colors
+             bg-amber-800 text-white hover:bg-amber-900 disabled:opacity-50 text-sm sm:text-base"
     >
       »
     </button>

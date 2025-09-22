@@ -19,7 +19,7 @@ export class CreateProductPageComponent {
 
   createProductForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    category: new FormControl<'Food'|'Beverage'|''>('', [Validators.required]), // Changez ici (ameliorer la partie category)
+    category: new FormControl<'Food'|'Beverage'|''>('', [Validators.required]), 
     description: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
     price: new FormControl<number | null>(null, [Validators.required]),
     stock: new FormControl<number | null>(null, [Validators.required]),
@@ -32,7 +32,7 @@ export class CreateProductPageComponent {
     });
   }
   
-
+  
   get name() { return this.createProductForm.get('name'); }
   get category() { return this.createProductForm.get('category'); }
   get description() { return this.createProductForm.get('description'); }
