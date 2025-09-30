@@ -20,3 +20,4 @@ instance/database.db
 
 # Ignorer tous les dossiers __pycache__ partout
 __pycache__/
+__init__.py
