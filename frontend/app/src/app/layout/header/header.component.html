@@ -1,37 +1,42 @@
 <header class="bg-white shadow fixed top-0 left-0 right-0 z-50">
   <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    
-    <a routerLink="/" class="block text-amber-800 font-bold text-lg">
-      Café IUT
-    </a>
+
+    <a routerLink="/" class="block text-amber-800 font-bold text-lg">Café IUT</a>
 
     <nav aria-label="Global" class="hidden md:block">
       <ul class="flex items-center gap-8 text-sm font-medium">
         <li><a routerLink="/product-list" class="text-gray-700 transition hover:text-amber-800">Our products</a></li>
         <li><a routerLink="/cart" class="text-gray-700 transition hover:text-amber-800">Cart</a></li>
         <li><a routerLink="/create-product" class="text-gray-700 transition hover:text-amber-800">Create Product</a></li>
-        <li><a routerLink="/create-product" class="text-gray-700 transition hover:text-amber-800">Order</a></li>
-
+        <li><a routerLink="/order" class="text-gray-700 transition hover:text-amber-800">Order</a></li>
       </ul>
     </nav>
 
     <div class="flex items-center gap-4">
       <div class="hidden sm:flex sm:gap-4">
-        <a class="block rounded-md bg-amber-800 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-amber-900" href="#">
-          Login
-        </a>
-        <a class="rounded-md border border-amber-800 px-5 py-2.5 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white" href="#">
-          Register
-        </a>
+        @if (tokens.isLoggedIn()) {
+          <app-logout></app-logout>
+        } @else {
+          <a
+            routerLink="/auth/login"
+            class="block rounded-md bg-amber-800 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-amber-900">
+            Login
+          </a>
+          <a
+            routerLink="/auth/register"
+            class="rounded-md border border-amber-800 px-5 py-2.5 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">
+            Register
+          </a>
+        }
       </div>
 
       <button
+        type="button"
         (click)="isMenuOpen = !isMenuOpen"
-        class="block rounded-sm bg-gray-100 p-2.5 text-gray-700 transition hover:text-amber-800 md:hidden"
-      >
+        class="block rounded-sm bg-gray-100 p-2.5 text-gray-700 transition hover:text-amber-800 md:hidden">
         <span class="sr-only">Toggle menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
       </button>
     </div>
@@ -43,12 +48,25 @@
         <a routerLink="/product-list" class="block text-gray-700 font-medium hover:text-amber-800">Our products</a>
         <a routerLink="/cart" class="block text-gray-700 font-medium hover:text-amber-800">Cart</a>
         <a routerLink="/create-product" class="block text-gray-700 font-medium hover:text-amber-800">Create Product</a>
-        <a href="#" class="block rounded-md bg-amber-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-amber-900">Login</a>
-        <a href="#" class="block rounded-md border border-amber-800 px-4 py-2 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">Register</a>
+        <a routerLink="/order" class="block text-gray-700 font-medium hover:text-amber-800">Order</a>
+
+        @if (tokens.isLoggedIn()) {
+          <app-logout></app-logout>
+        } @else {
+          <a
+            routerLink="/auth/login"
+            class="block rounded-md bg-amber-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-amber-900">
+            Login
+          </a>
+          <a
+            routerLink="/auth/register"
+            class="block rounded-md border border-amber-800 px-4 py-2 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">
+            Register
+          </a>
+        }
       </nav>
     </div>
   }
 </header>
 
-<main class="pt-24">
-</main>
+<main class="pt-24"></main>

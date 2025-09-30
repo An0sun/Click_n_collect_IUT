@@ -1,0 +1,23 @@
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/package-lock.json
+frontend/app/.angular/
+
+# Python
+backend/__pycache__/
+backend/*.pyc
+backend/venv/
+backend/.env
+
+# OS
+.DS_Store
+
+# Tailwind build
+output.css
+
+instance/database.db
+
+# Ignorer tous les dossiers __pycache__ partout
+__pycache__/
+__init__.py
