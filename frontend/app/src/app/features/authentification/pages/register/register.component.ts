@@ -22,11 +22,23 @@ export class RegisterComponent {
   ngOnInit() {
     this.tokens.clear();
   }
-  onSubmit(dto: { name: string; first_name: string; email: string; password: string }) {
-    this.loading = true; this.error = '';
-    this.auth.register(dto).subscribe({
-      next: () => this.router.navigateByUrl('/auth/login'),
-      error: e => { this.error = e.message || 'Register failde'; this.loading = false; }
-    });
-  }
+onSubmit(dto: { name?: string; first_name?: string; firstName?: string; email?: string; password?: string }) {
+  this.loading = true;
+  this.error = '';
+
+  const payload = {
+    name: (dto.name ?? '').trim(),
+    first_name: (dto.first_name ?? dto.firstName ?? '').trim(),
+    email: (dto.email ?? '').trim(),
+    password: dto.password ?? ''
+  };
+
+
+
+  this.auth.register(payload as any).subscribe({
+    next: () => this.router.navigateByUrl('/auth/login'),
+    error: e => { this.error = e.message || 'Registration faild'; this.loading = false; }
+  });
+}
+
 }
