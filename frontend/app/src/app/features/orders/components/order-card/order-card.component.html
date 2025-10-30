@@ -1,0 +1,16 @@
+<div>
+  <h2 class="text-base font-semibold">{{ orderItem.productName }}</h2>
+
+  <p class="text-sm text-gray-700">
+    Qté : {{ orderItem.quantity }}
+  </p>
+
+  <p class="text-sm">
+    Prix : {{ orderItem.price | currency:'EUR' }}
+  </p>
+
+  <p class="text-sm font-medium">
+    Sous-total :
+    {{ (orderItem.quantity * orderItem.price) | currency:'EUR' }}
+  </p>
+</div>

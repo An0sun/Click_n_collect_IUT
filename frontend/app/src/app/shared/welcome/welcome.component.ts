@@ -18,7 +18,8 @@ export class WelcomeComponent {
     { label: 'Shop', description: 'Shop of products', link: '/app/product-list', icon: '', roles: ['CLIENT'] },
 
     { label: 'Products', description: 'Catalogs & stocks', link: '/admin/products', icon: '', roles: ['ADMIN'] },
-    { label: 'Create product', description: 'Create product', link: '/admin/create-product', icon: '', roles: ['ADMIN'] }
+    { label: 'Create product', description: 'Create product', link: '/admin/create-product', icon: '', roles: ['ADMIN'] },
+    { label: 'Orders', description: 'Orders', link: '/orders', icon: '', roles: ['ADMIN', "CLIENT"] }
 
   ];
 }

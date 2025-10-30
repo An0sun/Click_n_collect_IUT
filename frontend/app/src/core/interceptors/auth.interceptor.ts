@@ -1,27 +1,28 @@
-// src/app/core/interceptors/auth.interceptor.ts
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { HttpInterceptorFn, HttpResponse } from '@angular/common/http';
+import { inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { TokenService } from '../services/token.service';
-import { catchError } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { of } from 'rxjs';
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const platformId = inject(PLATFORM_ID);
+  const isBrowser = isPlatformBrowser(platformId);
+  const isApi = req.url.startsWith('http://localhost:5000/');
 
-  constructor(private tokens:TokenService, private router:Router){}
+  if (!isBrowser && isApi) {
 
-  intercept(req:HttpRequest<any>, next:HttpHandler):Observable<HttpEvent<any>> {
-    const token=this.tokens.get();
-    const cloned = token? req.clone({ setHeaders:{ Authorization:`Bearer ${token}` }}) : req;
-    return next.handle(cloned).pipe(
-      catchError(err=>{
-        if(err.status===401){ this.tokens.clear(); this.router.navigate(['/auth/login']); }
-        return throwError(()=>err);
-      })
-    );
+    if (req.method === 'GET') {
+      return of(new HttpResponse({ status: 200, url : req.url, body: [] }));
+    }
+    return of(new HttpResponse({ status: 204, url: req.url, body: null }));
   }
-}
-export const authInterceptorProvider = {
-  provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+
+  if (isApi) {
+    const token = inject(TokenService).get();
+    if (token) {
+      req = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+    }
+  }
+
+  return next(req);
 };

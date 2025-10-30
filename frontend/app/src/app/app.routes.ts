@@ -3,13 +3,12 @@ import { RoleGuard } from '../core/guards/role.guard';
 import { HomeComponent } from './shared/home/home.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { ProductListComponent } from './features/products/pages/product-list/product-list.component';
-import path from 'path';
 import { CreateProductPageComponent } from './features/products/pages/create-product-page/create-product-page.component';
-import { CartPageComponent } from './features/cart/pages/cart-page/cart-page.component';
 
 import { LoginComponent } from './features/authentification/pages/login/login.component';
 import { RegisterComponent } from './features/authentification/pages/register/register.component';
 import { LogoutComponent } from './features/authentification/components/logout/logout.component';
+import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-page.component';
 export const routes: Routes = [
   {
     path: '',
@@ -28,6 +27,10 @@ export const routes: Routes = [
     component : LogoutComponent,
   },
 
+  {
+    path : 'orders',
+    component : OrdersPageComponent
+  },
 
   {
     path: 'welcome',

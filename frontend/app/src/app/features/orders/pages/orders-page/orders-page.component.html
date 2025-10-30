@@ -1,0 +1,25 @@
+<section class="space-y-4">
+  <h1 class="text-xl font-semibold">Commandes</h1>
+
+  @if (orders.length === 0) {
+    <p class="text-sm text-gray-600">Aucune commande pour le moment.</p>
+  } @else {
+    <div class="space-y-6">
+      @for (order of orders; track $index) {
+        <article class="rounded border p-3">
+          <h2 class="font-semibold">Commande #{{ order.id }}</h2>
+
+          <div class="grid gap-3">
+            @for (it of order.items; track $index) {
+              <app-order-card [orderItem]="it"></app-order-card>
+            }
+          </div>
+
+          <div class="mt-2 text-right font-medium">
+            Total: {{ order.total | currency:'EUR' }}
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

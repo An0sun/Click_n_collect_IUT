@@ -1,4 +1,3 @@
-// src/app/core/guards/role.guard.ts
 import { Injectable } from '@angular/core';
 import { CanMatch, Route, Router } from '@angular/router';
 import { TokenService } from '../services/token.service';
