@@ -12,31 +12,31 @@ import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-
 export const routes: Routes = [
   {
     path: '',
-    component : HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'auth/login',
-    component : LoginComponent,
+    component: LoginComponent,
   },
   {
     path: 'auth/register',
-    component : RegisterComponent,
+    component: RegisterComponent,
   },
-  { 
-    path: 'auth/logout', 
-    component : LogoutComponent,
+  {
+    path: 'auth/logout',
+    component: LogoutComponent,
   },
 
   {
-    path : 'orders',
-    component : OrdersPageComponent
+    path: 'orders',
+    component: OrdersPageComponent,
   },
 
   {
     path: 'welcome',
     canMatch: [RoleGuard],
     data: { roles: ['CLIENT', 'ADMIN'] },
-    component : WelcomeComponent
+    component: WelcomeComponent,
   },
 
   {
@@ -47,12 +47,12 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component : WelcomeComponent
+        component: WelcomeComponent,
       },
       {
         path: 'product-list',
-        component : ProductListComponent
-      }
+        component: ProductListComponent,
+      },
     ],
   },
 
@@ -64,15 +64,24 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component : WelcomeComponent
+        component: WelcomeComponent,
       },
       {
-        path:'create-product',
-        component : CreateProductPageComponent
-      }
+        path: 'create-product',
+        component: CreateProductPageComponent,
+      },
     ],
   },
 
+  {
+    path: 'admin/products',
+    canMatch: [RoleGuard],
+    data: { roles: ['ADMIN'] },
+    loadComponent: () =>
+      import('./features/admin-products/pages/products-admin.page').then(
+        (m) => m.ProductsAdminPage
+      ),
+  },
 
   { path: '**', redirectTo: '' },
 ];
