@@ -13,21 +13,6 @@ import { ProductTableComponent } from '../components/product-table.component';
   template: `
     <section class="container" role="region" aria-label="Product management">
       <h1 class="sr-only">Products</h1>
-
-      <header class="toolbar" role="toolbar" aria-label="Actions">
-        <button
-          type="button"
-          class="btn primary"
-          (click)="openCreate()"
-          aria-label="Add product"
-        >
-          + Add product
-        </button>
-      </header>
-
-      <div role="status" aria-live="polite" class="hint">
-        Admin panel loaded. Table and filters will appear next.
-      </div>
       <app-product-table />
     </section>
   `,
@@ -35,24 +20,6 @@ import { ProductTableComponent } from '../components/product-table.component';
     `
       .container {
         padding: 24px;
-      }
-      .toolbar {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 16px;
-      }
-      .btn {
-        padding: 8px 12px;
-        border: 1px solid currentColor;
-        background: transparent;
-        cursor: pointer;
-      }
-      .btn.primary {
-        border-color: #2e2e2e;
-      }
-      .hint {
-        color: #2e2e2e;
       }
       .sr-only {
         position: absolute;
@@ -74,8 +41,4 @@ export class ProductsAdminPage {
   readonly title = computed(() =>
     this.creating() ? 'New product' : 'Products'
   );
-
-  openCreate(): void {
-    this.creating.set(true);
-  }
 }

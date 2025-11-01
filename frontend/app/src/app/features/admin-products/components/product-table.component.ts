@@ -5,17 +5,25 @@ import {
   effect,
   inject,
   signal,
+  viewChild,
 } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ProductApi, Product, ProductQuery } from '../services/product.api';
 import { DecimalPipe } from '@angular/common';
+import { ProductFormComponent } from './product-form.component';
+import { ConfirmDeleteDialogComponent } from './confirm-delete.dialog';
 
 @Component({
   selector: 'app-product-table',
   standalone: true,
-  imports: [ReactiveFormsModule, DecimalPipe],
+  imports: [
+    ReactiveFormsModule,
+    DecimalPipe,
+    ProductFormComponent,
+    ConfirmDeleteDialogComponent,
+  ],
   template: `
     <header class="toolbar" role="toolbar" aria-label="Actions">
       <button
@@ -77,6 +85,8 @@ import { DecimalPipe } from '@angular/common';
             class="th sortable"
             (click)="setSort('name')"
             tabindex="0"
+            (keyup.enter)="setSort('name')"
+            (keyup.space)="setSort('name')"
             aria-label="Sort by name"
           >
             Name
@@ -88,6 +98,8 @@ import { DecimalPipe } from '@angular/common';
             class="th sortable"
             (click)="setSort('price')"
             tabindex="0"
+            (keyup.enter)="setSort('price')"
+            (keyup.space)="setSort('price')"
             aria-label="Sort by price"
           >
             Price
@@ -97,6 +109,8 @@ import { DecimalPipe } from '@angular/common';
             class="th sortable"
             (click)="setSort('stock')"
             tabindex="0"
+            (keyup.enter)="setSort('stock')"
+            (keyup.space)="setSort('stock')"
             aria-label="Sort by stock"
           >
             Stock
@@ -161,6 +175,10 @@ import { DecimalPipe } from '@angular/common';
         Next
       </button>
     </nav>
+
+    <!-- dialogs -->
+    <app-product-form #formDlg (closed)="onClosed($event)"></app-product-form>
+    <app-confirm-delete #delDlg></app-confirm-delete>
   `,
   styles: [
     `
@@ -251,6 +269,9 @@ export class ProductTableComponent {
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+
+  formDlg = viewChild.required(ProductFormComponent);
+  delDlg = viewChild.required(ConfirmDeleteDialogComponent);
 
   readonly qp = toSignal(this.route.queryParamMap, {
     initialValue: this.route.snapshot.queryParamMap,
@@ -346,13 +367,16 @@ export class ProductTableComponent {
   }
 
   new(): void {
-    /* open dialog step 3 */
+    this.formDlg().openCreate();
   }
-  edit(_p: Product): void {
-    /* open dialog step 3 */
+  edit(p: Product): void {
+    this.formDlg().openEdit(p);
   }
   del(p: Product): void {
-    if (!confirm('Confirm delete?')) return; // sera remplacé par double confirmation à l’étape 3
-    this.api.delete(p.id).subscribe(() => this.fetch());
+    this.delDlg().show(p);
+  }
+
+  onClosed(saved: boolean): void {
+    if (saved) this.fetch();
   }
 }
