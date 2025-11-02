@@ -4,6 +4,7 @@ from dtos.order_dto import OrderInDTO
 from mappers.order_mapper import order_to_dto
 from repositories.order_repository import OrderRepository
 from models.order_model import Order
+from mappers.order_mapper import dto_to_order
 
 
 
@@ -13,13 +14,15 @@ class OrderService:
     def create(order_dto: OrderInDTO) -> Order:
         if not order_dto.items or order_dto.total <= 0:
             raise InvalidOrder("Cannot create an empty or invalid order.")
-
-        order = order_to_dto(order_dto)
+        order = dto_to_order(order_dto)
         return OrderRepository.create(order)
 
     @staticmethod
     def find_all() -> List[Order]:
         return OrderRepository.find_all()
+
+    def find_by_email(email: str) -> List[Order]:
+        return OrderRepository.find_by_email(email)
 
     @staticmethod
     def find_by_id(order_id: int) -> Order:

@@ -15,16 +15,21 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(app.instance_path, "app.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY", "dev-secret")
-
+    app.config["JWT_TOKEN_LOCATION"] = ["headers"]
+    app.config["JWT_HEADER_NAME"] = "Authorization"
+    app.config["JWT_HEADER_TYPE"] = "Bearer"
     os.makedirs(app.instance_path, exist_ok=True)
 
     # Extensions
     db.init_app(app)
     bcrypt.init_app(app)
     jwt.init_app(app)
-    CORS(app, origins="http://localhost:4200", supports_credentials=True)
-
-    # DB init
+    CORS(
+        app,
+        resources={r"/*": {"origins": "http://localhost:4200"}},
+        supports_credentials=True,
+        allow_headers=["Content-Type", "Authorization"]
+    )
     with app.app_context():
         from models import product_model, user_model, order_model
         db.create_all()

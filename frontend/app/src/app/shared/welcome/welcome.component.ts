@@ -19,7 +19,8 @@ export class WelcomeComponent {
   { label: 'Cart', description: 'Shop your cart', link: '/app/cart', icon: '', roles: ['CLIENT'] },
 
     { label: 'Products', description: 'Catalogs & stocks', link: '/admin/products', icon: '', roles: ['ADMIN'] },
-    { label: 'Create product', description: 'Create product', link: '/admin/create-product', icon: '', roles: ['ADMIN'] }
+    { label: 'Create product', description: 'Create product', link: '/admin/create-product', icon: '', roles: ['ADMIN'] },
+    { label: 'Orders', description: 'Orders', link: '/orders', icon: '', roles: ['ADMIN', "CLIENT"] }
 
   ];
 }
