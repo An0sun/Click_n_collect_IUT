@@ -4,6 +4,8 @@ import { HomeComponent } from './shared/home/home.component';
 import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { ProductListComponent } from './features/products/pages/product-list/product-list.component';
 import { CreateProductPageComponent } from './features/products/pages/create-product-page/create-product-page.component';
+import { CartPageComponent } from './features/cart/pages/cart-page/cart-page.component';
+import { OrderComponent } from './features/order/components/order/order.component';
 
 import { LoginComponent } from './features/authentification/pages/login/login.component';
 import { RegisterComponent } from './features/authentification/pages/register/register.component';
@@ -22,8 +24,8 @@ export const routes: Routes = [
     path: 'auth/register',
     component : RegisterComponent,
   },
-  { 
-    path: 'auth/logout', 
+  {
+    path: 'auth/logout',
     component : LogoutComponent,
   },
 
@@ -52,6 +54,14 @@ export const routes: Routes = [
       {
         path: 'product-list',
         component : ProductListComponent
+      },
+      {
+        path: 'cart',
+        component : CartPageComponent
+      },
+      {
+        path: 'orders',
+        component : OrderComponent
       }
     ],
   },
