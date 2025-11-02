@@ -7,8 +7,8 @@ import { CartItem } from '../models/cart-item/cart-item.module';
 })
 export class CartService {
   private storageKey = 'cart';
+  private productsKey = 'products';
 
-  /** Vérifie si on est bien dans un navigateur (et pas côté serveur) */
   private isBrowser(): boolean {
     return typeof window !== 'undefined' && !!window.localStorage;
   }
@@ -27,10 +27,21 @@ export class CartService {
   addToCart(product: Product): void {
     let cart = this.getCart();
     const existing = cart.find(item => item.product.id === product.id);
+
     if (existing) {
-      existing.quantity++;
+      if (this.verifyQuantity(product.id, existing.quantity + 1, product.stock)) {
+        existing.quantity++;
+      } else {
+        alert("Insufficient stock !");
+        return;
+      }
     } else {
-      cart.push({ product, quantity: 1 });
+      if (this.verifyQuantity(product.id, 1, product.stock)) {
+        cart.push({ product, quantity: 1, price: product.price});
+      } else {
+        alert("Insufficient stock !");
+        return;
+      }
     }
     this.saveCart(cart);
   }
@@ -44,7 +55,14 @@ export class CartService {
     let cart = this.getCart();
     const item = cart.find(i => i.product.id === productId);
     if (item) {
-      item.quantity += change;
+      const newQuantity = item.quantity + change;
+
+      if (!this.verifyQuantity(productId, newQuantity, item.product.stock)) {
+        alert("Insufficient stock !");
+        return;
+      }
+
+      item.quantity = newQuantity;
       if (item.quantity <= 0) {
         this.removeFromCart(productId);
       } else {
@@ -53,8 +71,13 @@ export class CartService {
     }
   }
 
-  clearCart(): void {
-    if (!this.isBrowser()) return;
-    localStorage.removeItem(this.storageKey);
+  verifyQuantity(productId: number, newQuantity: number, stock: number): boolean {
+    return newQuantity <= stock;
   }
+
+  clearCart(): void {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('cart');
+  }
+}
 }

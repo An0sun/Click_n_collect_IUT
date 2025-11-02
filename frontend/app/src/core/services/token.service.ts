@@ -1,6 +1,6 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
+import {jwtDecode } from 'jwt-decode';
 const KEY = 'app_token';
 
 @Injectable({ providedIn:'root' })
@@ -19,19 +19,31 @@ export class TokenService{
     return localStorage.getItem(KEY);
   }
 
+  getUserId(): number | null {
+    const payload = this.dec();
+    return payload?.sub ?? payload?.id ?? null;
+  }
+
+  getUserName(): string | null {
+    return this.dec()?.name ?? null;
+  }
+
+  getUserEmail(): string | null {
+    return this.dec()?.email ?? null;
+  }
+
   clear(){
     if (!this.isBrowser) return;
     localStorage.removeItem(KEY);
   }
 
-  private dec(){
-    if (!this.isBrowser) return null;
-    const t = this.get();
-    if (!t) return null;
-    const [, p] = t.split('.');
+  dec(): any | null {
+    const token = this.get();
+    if (!token) return null;
     try {
-      return JSON.parse(atob(p.replace(/-/g,'+').replace(/_/g,'/')));
-    } catch {
+      return jwtDecode(token);
+    } catch (e) {
+      console.error('Token decoding error:', e);
       return null;
     }
   }
@@ -49,4 +61,5 @@ export class TokenService{
     if (!this.isBrowser) return false;
     return !!this.get() && !this.isExpired();
   }
+
 }
