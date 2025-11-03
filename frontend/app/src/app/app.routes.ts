@@ -10,6 +10,7 @@ import { OrderComponent } from './features/order/components/order/order.componen
 import { LoginComponent } from './features/authentification/pages/login/login.component';
 import { RegisterComponent } from './features/authentification/pages/register/register.component';
 import { LogoutComponent } from './features/authentification/components/logout/logout.component';
+import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-page.component';
 export const routes: Routes = [
   {
     path: '',
@@ -28,6 +29,10 @@ export const routes: Routes = [
     component : LogoutComponent,
   },
 
+  {
+    path : 'orders',
+    component : OrdersPageComponent
+  },
 
   {
     path: 'welcome',

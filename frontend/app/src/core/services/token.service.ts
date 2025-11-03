@@ -9,14 +9,14 @@ export class TokenService{
 
   private get isBrowser() { return isPlatformBrowser(this.platformId); }
 
-  set(t:string){
+  set(token: string) {
     if (!this.isBrowser) return;
-    localStorage.setItem(KEY, t);
+    localStorage.setItem('token', token);
   }
 
   get(){
     if (!this.isBrowser) return null;
-    return localStorage.getItem(KEY);
+    return localStorage.getItem('token');
   }
 
   getUserId(): number | null {
@@ -34,7 +34,7 @@ export class TokenService{
 
   clear(){
     if (!this.isBrowser) return;
-    localStorage.removeItem(KEY);
+    localStorage.removeItem('token');
   }
 
   dec(): any | null {
