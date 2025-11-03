@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { OrdersService } from '../../services/orders.service';
-import { Order } from '../../models/order.model';
 import { OrderCardComponent } from '../../components/order-card/order-card.component';
 import { CommonModule } from '@angular/common';
+import { Order, OrderStatus } from '../../models/orders.model';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-orders-page',
@@ -14,6 +14,7 @@ export class OrdersPageComponent {
   private ordersService = inject(OrdersService);
 
   orders: ReadonlyArray<Order> = [];
+
 
   ngOnInit() {
     this.ordersService.getOrders().subscribe(list => this.orders = list ?? []);

@@ -5,7 +5,7 @@ import { WelcomeComponent } from './shared/welcome/welcome.component';
 import { ProductListComponent } from './features/products/pages/product-list/product-list.component';
 import { CreateProductPageComponent } from './features/products/pages/create-product-page/create-product-page.component';
 import { CartPageComponent } from './features/cart/pages/cart-page/cart-page.component';
-import { OrderComponent } from './features/order/components/order/order.component';
+import { OrderSummary } from './features/orders/components/orders-summary/order-summary.component';
 
 import { LoginComponent } from './features/authentification/pages/login/login.component';
 import { RegisterComponent } from './features/authentification/pages/register/register.component';
@@ -61,7 +61,7 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        component : OrderComponent
+        component : OrderSummary
       }
     ],
   },

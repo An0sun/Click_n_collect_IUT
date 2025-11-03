@@ -5,14 +5,12 @@ from shared.extensions import db
 
 
 class OrderRepository:
-    @staticmethod
     def create(order: Order) -> Order:
         db.session.add(order)
         db.session.commit()
         db.session.refresh(order)  
         return order
 
-    @staticmethod
     def find_by_id(order_id: int) -> Optional[Order]:
         request = select(Order).where(Order.id == order_id)
         return db.session.scalars(request).one_or_none()
@@ -21,12 +19,10 @@ class OrderRepository:
         request = select(Order).where(Order.email == email).order_by(Order.created_at.desc())
         return db.session.scalars(request).all()
     
-    @staticmethod
     def find_all() -> List[Order]:
         request = select(Order).order_by(Order.created_at.desc())
         return db.session.scalars(request).all()
 
-    @staticmethod
     def delete(order_id: int) -> bool:
         request = select(Order).where(Order.id == order_id)
         order = db.session.scalars(request).one_or_none()

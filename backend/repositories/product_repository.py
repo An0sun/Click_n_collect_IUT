@@ -4,7 +4,6 @@ from shared.extensions import db
 from models.product_model import Product
 
 class ProductRepository:
-    @staticmethod
     def build_query(q: Optional[str], category: Optional[str], sort: Optional[str]):
         stmt = select(Product)
         if q:
@@ -25,30 +24,24 @@ class ProductRepository:
         }.get(sort or "", desc(Product.id))
         return stmt.order_by(order)
 
-    @staticmethod
     def paginate(stmt, page: int, per_page: int):
         return db.paginate(stmt, page=page, per_page=per_page, error_out=False)
 
-    @staticmethod
     def get_by_id(pid : int) -> Optional[Product]:
         return db.session.get(Product, pid)
-    
-    @staticmethod
+
     def create(p: Product) -> Product:
         db.session.add(p)
         db.session.commit()
         return p
 
-    @staticmethod
     def delete(p: Product) -> None:
         db.session.delete(p)
         db.session.commit()
 
-    @staticmethod
     def save() -> None:
         db.session.commit()
 
-    @staticmethod
     def update_stock(product_id: int, new_stock: int) -> None:
         product = db.session.get(Product, product_id)
         if product:

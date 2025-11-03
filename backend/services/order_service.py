@@ -8,7 +8,6 @@ from models.order_model import Order
 
 class OrderService:
 
-    @staticmethod
     def create(order_dto: OrderInDTO) -> Order:
         if not order_dto.items or order_dto.total <= 0:
             raise InvalidOrder("Cannot create an empty or invalid order.")
@@ -17,7 +16,6 @@ class OrderService:
         OrderService._update_stocks_after_order(created_order)
         return OrderRepository.create(order)
     
-    @staticmethod
     def _update_stocks_after_order(order: Order) -> None:
 
         for item in order.items:
@@ -28,21 +26,18 @@ class OrderService:
             new_stock = max(product.stock - item.quantity, 0)
             ProductRepository.update_stock(item.product_id, new_stock)
 
-    @staticmethod
     def find_all() -> List[Order]:
         return OrderRepository.find_all()
 
     def find_by_email(email: str) -> List[Order]:
         return OrderRepository.find_by_email(email)
 
-    @staticmethod
     def find_by_id(order_id: int) -> Order:
         order = OrderRepository.find_by_id(order_id)
         if not order:
             raise OrderNotFound()
         return order
 
-    @staticmethod
     def delete(order_id: int) -> None:
         deleted = OrderRepository.delete(order_id)
         if not deleted:
