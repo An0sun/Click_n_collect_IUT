@@ -8,7 +8,7 @@ from mappers.order_mapper import order_to_dto
 bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
 
-@bp_orders.get("/")
+@bp_orders.get("")
 @jwt_required()
 def find_all() :
     jwt = get_jwt()
