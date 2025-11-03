@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-import { OrderService } from '../../../order/services/order.service';
+import { OrdersService } from '../../../orders/services/orders.service';
 import { CartItem } from '../../models/cart-item/cart-item.module';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class CartComponent {
   cart: CartItem[] = [];
 
-  constructor(private cartService: CartService, private orderService: OrderService, private router: Router) {}
+  constructor(private cartService: CartService, private orderService: OrdersService, private router: Router) {}
 
   ngOnInit() {
     this.loadCart();

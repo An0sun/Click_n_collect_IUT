@@ -5,7 +5,7 @@ from services.product_service import ProductService
 from pydantic import ValidationError
 
 
-bp = Blueprint("products", __name__, url_prefix="/api/products")
+bp = Blueprint("products", __name__, url_prefix="/products")
 
 @bp.get("/")
 def list_products():

@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { OrdersService } from '../../services/orders.service';
-import { Order } from '../../models/order.model';
 import { OrderCardComponent } from '../../components/order-card/order-card.component';
 import { CommonModule } from '@angular/common';
+import { Order } from '../../models/orders.model';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-orders-page',

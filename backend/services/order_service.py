@@ -10,28 +10,25 @@ from mappers.order_mapper import dto_to_order
 
 class OrderService:
 
-    @staticmethod
     def create(order_dto: OrderInDTO) -> Order:
         if not order_dto.items or order_dto.total <= 0:
             raise InvalidOrder("Cannot create an empty or invalid order.")
         order = dto_to_order(order_dto)
         return OrderRepository.create(order)
 
-    @staticmethod
     def find_all() -> List[Order]:
         return OrderRepository.find_all()
 
     def find_by_email(email: str) -> List[Order]:
         return OrderRepository.find_by_email(email)
 
-    @staticmethod
     def find_by_id(order_id: int) -> Order:
         order = OrderRepository.find_by_id(order_id)
         if not order:
             raise OrderNotFound()
         return order
 
-    @staticmethod
+    
     def delete(order_id: int) -> None:
         deleted = OrderRepository.delete(order_id)
         if not deleted:

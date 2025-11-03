@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { Order } from '../../models/order.model';
-import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
+import { Order } from '../../models/orders.model';
 
 @Component({
-  selector: 'app-order',
+  selector: 'app-order-summary',
   standalone: true,
   imports: [],
-  templateUrl: './order.component.html',
-  styleUrl: './order.component.scss'
+  templateUrl: './order-summary.component.html',
+  styleUrl: './order-summary.component.scss'
 })
-export class OrderComponent {
+export class OrderSummary {
   order: Order | null = null;
 
   constructor(private router: Router) {
