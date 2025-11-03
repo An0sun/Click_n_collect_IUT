@@ -32,6 +32,7 @@ class ProductRepository:
     @staticmethod
     def get_by_id(pid : int) -> Optional[Product]:
         return db.session.get(Product, pid)
+    
     @staticmethod
     def create(p: Product) -> Product:
         db.session.add(p)
@@ -46,3 +47,10 @@ class ProductRepository:
     @staticmethod
     def save() -> None:
         db.session.commit()
+
+    @staticmethod
+    def update_stock(product_id: int, new_stock: int) -> None:
+        product = db.session.get(Product, product_id)
+        if product:
+            product.stock = new_stock
+            db.session.commit()

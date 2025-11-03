@@ -16,6 +16,6 @@ class OrderInDTO(BaseModel):
     items: List[OrderItemDTO]
 
 
-class OrderDTO(OrderInDTO):
+class OrderOutDTO(OrderInDTO):
     id: int
     created_at: datetime
