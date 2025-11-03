@@ -8,7 +8,7 @@ from mappers.order_mapper import order_to_dto
 bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
 
-@bp_orders.get("")
+@bp_orders.get("/")
 @jwt_required()
 def find_all() :
     jwt = get_jwt()
@@ -28,7 +28,7 @@ def find_by_id(order_id: int):
     order = OrderService.find_by_id(order_id)
     return jsonify(order_to_dto(order).model_dump()), HTTPStatus.OK 
 
-@bp_orders.post("")
+@bp_orders.post("/")
 def create():
     order_create_dto = OrderInDTO.model_validate_json(request.data)
     created_order = OrderService.create(order_create_dto)

@@ -1,9 +1,9 @@
 from models.order_model import Order, OrderItem
-from dtos.order_dto import OrderDTO, OrderItemDTO, OrderInDTO
+from dtos.order_dto import OrderItemDTO, OrderInDTO, OrderOutDTO
+from datetime import datetime
 
-
-def order_to_dto(order: Order) -> OrderDTO:
-    return OrderDTO(
+def order_to_dto(order: Order) -> OrderInDTO:
+    return OrderOutDTO(
         id=order.id,
         customer_name=order.customer_name,
         email=order.email,
@@ -11,12 +11,12 @@ def order_to_dto(order: Order) -> OrderDTO:
         created_at=order.created_at,
         items=[
             OrderItemDTO(
-                product_id=i.product_id,
-                product_name=i.product_name,
-                quantity=i.quantity,
-                price=i.price
+                product_id=item.product_id,
+                product_name=item.product_name,
+                quantity=item.quantity,
+                price=item.price
             )
-            for i in order.items
+            for item in order.items
         ]
     )
 
@@ -26,6 +26,7 @@ def dto_to_order(order_dto: OrderInDTO) -> Order:
         customer_name=order_dto.customer_name,
         email=order_dto.email,
         total=order_dto.total,
+        created_at=datetime.utcnow()
     )
 
     order.items = [
@@ -33,8 +34,9 @@ def dto_to_order(order_dto: OrderInDTO) -> Order:
             product_id=item.product_id,
             product_name=item.product_name,
             quantity=item.quantity,
-            price=item.price,
+            price=item.price
         )
         for item in order_dto.items
     ]
+
     return order

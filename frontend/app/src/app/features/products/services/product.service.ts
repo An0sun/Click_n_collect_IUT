@@ -9,7 +9,7 @@ import { map, Observable } from 'rxjs';
 })
 export class ProductService {
   private baseUrl = "http://localhost:5000";
-  private apiUrl = `${this.baseUrl}/api/products/`;
+  private apiUrl = `${this.baseUrl}/products/`;
 
   constructor(private http: HttpClient) {}
 
@@ -30,13 +30,13 @@ export class ProductService {
       `${this.apiUrl}?page=${page}`
     );
   }
-  
+
   createProduct(product: Omit<Product, 'id'>): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
   }
 
   deleteProduct(id: number) {
-  return this.http.delete<{ message: string }>(`${this.baseUrl}/api/products/${id}`);
+  return this.http.delete<{ message: string }>(`${this.baseUrl}/products/${id}`);
 }
 
 }

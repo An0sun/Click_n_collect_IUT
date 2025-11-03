@@ -41,6 +41,7 @@ def login() :
         
         additional_claims={
             "role": user.role.value,
+            "name": user.name,
             "email": user.email,
         }    
     )

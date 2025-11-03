@@ -5,7 +5,7 @@ from services.product_service import ProductService
 from pydantic import ValidationError
 
 
-bp = Blueprint("products", __name__, url_prefix="/api/products")
+bp = Blueprint("products", __name__, url_prefix="/products")
 
 @bp.get("/")
 def list_products():
@@ -54,7 +54,6 @@ def create_product():
     try:
         payload = ProductInDTO.model_validate(data).model_dump()
     except ValidationError as e:
-        # logs utiles
         print("VALIDATION ERROR:", e.errors())
         return jsonify({"message": "invalid body", "errors": e.errors()}), 400
     except Exception as e:

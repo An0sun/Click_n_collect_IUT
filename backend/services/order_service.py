@@ -1,12 +1,10 @@
-from exceptions.order_exceptions import OrderNotFound, InvalidOrder
+from exceptions.order_exceptions import OrderNotFound, InvalidOrder, ProductNotFound
 from typing import List
 from dtos.order_dto import OrderInDTO
-from mappers.order_mapper import order_to_dto
-from repositories.order_repository import OrderRepository
-from models.order_model import Order
 from mappers.order_mapper import dto_to_order
-
-
+from repositories.order_repository import OrderRepository
+from repositories.product_repository import ProductRepository
+from models.order_model import Order
 
 class OrderService:
 
@@ -15,7 +13,20 @@ class OrderService:
         if not order_dto.items or order_dto.total <= 0:
             raise InvalidOrder("Cannot create an empty or invalid order.")
         order = dto_to_order(order_dto)
+        created_order = OrderRepository.create(order)
+        OrderService._update_stocks_after_order(created_order)
         return OrderRepository.create(order)
+    
+    @staticmethod
+    def _update_stocks_after_order(order: Order) -> None:
+
+        for item in order.items:
+            product = ProductRepository.get_by_id(item.product_id)
+            if not product:
+                raise ProductNotFound("Product not found.")
+
+            new_stock = max(product.stock - item.quantity, 0)
+            ProductRepository.update_stock(item.product_id, new_stock)
 
     @staticmethod
     def find_all() -> List[Order]:

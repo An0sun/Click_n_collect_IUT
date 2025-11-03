@@ -17,3 +17,8 @@ class DuplicateOrder(Conflict):
     """Levée quand une commande en double est détectée."""
     def __init__(self, description: str = "Order already exists."):
         super().__init__(description=description)
+
+class ProductNotFound(NotFound):
+    """Levée quand un produit lié à une commande est introuvable."""
+    def __init__(self, description: str = "Product not found."):
+        super().__init__(description=description)

@@ -10,8 +10,8 @@ import { TokenService } from '../../../../core/services/token.service';
 })
 export class OrderService {
   private baseUrl = "http://localhost:5000";
-  private apiUrl = `${this.baseUrl}/api/orders/`;
-  private productsUrl = `${this.baseUrl}/api/products/`;
+  private apiUrl = `${this.baseUrl}/orders/`;
+  private productsUrl = `${this.baseUrl}/products/`;
 
   private tokenService = inject(TokenService);
 
