@@ -1,0 +1,24 @@
+tags: [products]
+summary: Création d’un produit
+description: |
+  Crée un nouveau produit à partir des données envoyées dans le corps JSON.
+
+consumes: [application/json]
+
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: '#/definitions/ProductInDTO'
+
+responses:
+  201:
+    description: Produit créé avec succès
+    schema:
+      $ref: '#/definitions/ProductOutDTO'
+
+  400:
+    description: Données invalides
+    schema:
+      $ref: '#/definitions/ErrorBadRequestResponse'

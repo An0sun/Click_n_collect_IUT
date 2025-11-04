@@ -5,15 +5,19 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from dtos.user_dto import RegisterDTO, LoginDTO, PublicUserDTO
 from services.user_service import UserService
 
+from flasgger.utils import swag_from
+
 auth_bp = Blueprint("auth", __name__, url_prefix = "/auth")
 
 @auth_bp.post("/register")
+@swag_from("../docs/auth/register.yaml")
 def register() :
     dto = RegisterDTO.model_validate_json(request.data)
     user = UserService.register(dto)
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.CREATED
 
 @auth_bp.post("/login")
+@swag_from("../docs/auth/login.yaml")
 def login() :
     dto = LoginDTO.model_validate_json(request.data)
     user = UserService.verify_user(dto)
@@ -35,6 +39,7 @@ def login() :
 
 @auth_bp.get("/me")
 @jwt_required()
+@swag_from("../docs/auth/me.yaml")
 def me() :
     current_id = get_jwt_identity()
     user = UserService.get_user_by_id(current_id)
@@ -42,6 +47,7 @@ def me() :
 
 @auth_bp.post("/change-password")
 @jwt_required()
+@swag_from("../docs/auth/change_password.yaml")
 def change_password() :
     data = request.get_json(silent=True) or {}
 

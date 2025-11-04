@@ -1,0 +1,33 @@
+tags: [users]
+summary: Mise à jour partielle d’un utilisateur (PATCH)
+description: |
+  Modifie certaines informations d’un utilisateur (nom, prénom).  
+  Accessible uniquement aux administrateurs.
+parameters:
+  - name: user_id
+    in: path
+    type: integer
+    required: true
+    description: ID de l’utilisateur à mettre à jour
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: "#/definitions/UpdateProfileDTO"
+responses:
+  200:
+    description: Utilisateur mis à jour avec succès
+    schema:
+      $ref: "#/definitions/PublicUserDTO"
+  404:
+    description: Utilisateur introuvable
+    schema:
+      $ref: "#/definitions/ErrorNotFoundResponse"
+  403:
+    description: Accès refusé
+    schema:
+      $ref: "#/definitions/ErrorForbiddenResponse"
+  422:
+    description: Données invalides
+    schema:
+      $ref: "#/definitions/ErrorUnprocessableEntityResponse"

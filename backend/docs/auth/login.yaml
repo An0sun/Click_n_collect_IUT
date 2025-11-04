@@ -1,0 +1,30 @@
+tags: [auth]
+summary: Connexion d’un utilisateur
+description: |
+  Authentifie un utilisateur à partir de son email et mot de passe.  
+  Retourne un token JWT et les informations de l’utilisateur connecté.
+consumes: [application/json]
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: "#/definitions/LoginDTO"
+responses:
+  200:
+    description: Connexion réussie
+    schema:
+      type: object
+      properties:
+        token:
+          type: string
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        expires_in:
+          type: integer
+          example: 900
+        user:
+          $ref: "#/definitions/PublicUserDTO"
+  401:
+    description: Identifiants invalides
+    schema:
+      $ref: "#/definitions/ErrorUnauthorizedResponse"

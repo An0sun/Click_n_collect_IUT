@@ -1,0 +1,25 @@
+tags: [users]
+summary: Créer un nouvel utilisateur
+description: |
+  Crée un utilisateur avec les informations fournies (nom, prénom, email, mot de passe).  
+  Aucun rôle spécifique requis.
+consumes: [application/json]
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: "#/definitions/RegisterDTO"
+responses:
+  201:
+    description: Utilisateur créé avec succès
+    schema:
+      $ref: "#/definitions/PublicUserDTO"
+  409:
+    description: L’utilisateur existe déjà
+    schema:
+      $ref: "#/definitions/ErrorConflictResponse"
+  422:
+    description: Données invalides
+    schema:
+      $ref: "#/definitions/ErrorUnprocessableEntityResponse"

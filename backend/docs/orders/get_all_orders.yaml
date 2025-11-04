@@ -1,0 +1,26 @@
+tags: [orders]
+summary: Liste toutes les commandes
+description: |
+  Récupère la liste de toutes les commandes disponibles :
+  - Si l'utilisateur est **ADMIN**, toutes les commandes sont renvoyées.
+  - Sinon, seules les commandes liées à son **email JWT** sont renvoyées.
+
+security:
+  - BearerAuth: []
+
+responses:
+  200:
+    description: Liste des commandes trouvées.
+    schema:
+      type: array
+      items:
+        $ref: '#/definitions/OrderOutDTO'
+
+  401:
+    description: JWT manquant ou invalide.
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Email introuvable dans le token"

@@ -1,0 +1,30 @@
+tags: [orders]
+summary: Crée une nouvelle commande
+description: |
+  Crée une commande à partir des informations fournies dans le corps de la requête.  
+  Les stocks des produits sont automatiquement mis à jour après création.
+
+consumes: [application/json]
+
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: '#/definitions/OrderInDTO'
+
+responses:
+  201:
+    description: Commande créée avec succès.
+    schema:
+      $ref: '#/definitions/OrderOutDTO'
+
+  422:
+    description: Données invalides ou commande vide.
+    schema:
+      $ref: '#/definitions/ErrorUnprocessableEntityResponse'
+
+  404:
+    description: Produit associé introuvable.
+    schema:
+      $ref: '#/definitions/ErrorProductNotFoundResponse'

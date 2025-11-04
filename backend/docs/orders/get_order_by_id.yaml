@@ -1,0 +1,22 @@
+tags: [orders]
+summary: Récupère une commande par son ID
+description: |
+  Récupère les détails complets d'une commande à partir de son **ID**.
+
+parameters:
+  - in: path
+    name: order_id
+    type: integer
+    required: true
+    description: Identifiant unique de la commande.
+
+responses:
+  200:
+    description: Commande trouvée.
+    schema:
+      $ref: '#/definitions/OrderOutDTO'
+
+  404:
+    description: Commande introuvable.
+    schema:
+      $ref: '#/definitions/ErrorNotFoundResponse'
