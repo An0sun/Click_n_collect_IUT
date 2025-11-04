@@ -14,7 +14,7 @@ export interface ProductPage {
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = `/products`;
+  private readonly apiUrl = `http://localhost:5000/products`;
 
   listPage(params: {
     q?: string;

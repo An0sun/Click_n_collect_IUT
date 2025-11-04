@@ -68,8 +68,8 @@ interface DialogData {
         </mat-select>
       </mat-form-field>
 
-      <div class="row">
-        <mat-form-field appearance="outline">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <mat-form-field appearance="outline" class="w-full">
           <mat-label>Price (€)</mat-label>
           <input
             matInput
@@ -81,7 +81,7 @@ interface DialogData {
           />
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="w-full">
           <mat-label>Stock</mat-label>
           <input
             matInput
@@ -107,15 +107,7 @@ interface DialogData {
       </button>
     </div>
   `,
-  styles: [
-    `
-      .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-    `,
-  ],
+
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductEditDialogComponent {

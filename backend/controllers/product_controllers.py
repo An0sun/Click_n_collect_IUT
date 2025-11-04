@@ -2,9 +2,9 @@ from http import HTTPStatus
 from flask import Blueprint, request, jsonify
 from pydantic import ValidationError
 
-from product_exceptions import ProductNotFound, InvalidProduct, BadProductRequest
+from exceptions.product_exceptions import ProductNotFound, InvalidProduct, BadProductRequest
 from services.product_service import ProductService
-from dto.product_dto import ProductInDTO, ProductUpdateDTO, ProductOutDTO
+from dtos.product_dto import ProductInDTO, ProductUpdateDTO, ProductOutDTO
 
 bp = Blueprint("products", __name__, url_prefix="/products")
 

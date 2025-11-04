@@ -1,5 +1,5 @@
 from models.product_model import Product
-from dto.product_dto import ProductInDTO, ProductUpdateDTO, ProductOutDTO
+from dtos.product_dto import ProductInDTO, ProductUpdateDTO, ProductOutDTO
 
 def product_to_dto(p: Product) -> ProductOutDTO:
     return ProductOutDTO.model_validate(p) 

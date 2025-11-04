@@ -40,9 +40,12 @@ type SortParam = `${SortKey}_${SortDir}`;
     MatDialogModule,
   ],
   template: `
-    <section class="container" aria-label="Products management">
-      <header class="toolbar" role="search">
-        <mat-form-field appearance="outline">
+    <section class="max-w-6xl mx-auto p-4" aria-label="Products management">
+      <header
+        class="flex flex-col sm:flex-row gap-3 sm:items-center mb-4"
+        role="search"
+      >
+        <mat-form-field appearance="outline" class="w-full sm:w-1/3">
           <mat-label>Search</mat-label>
           <input
             matInput
@@ -53,7 +56,7 @@ type SortParam = `${SortKey}_${SortDir}`;
           />
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="w-full sm:w-1/6">
           <mat-label>Category</mat-label>
           <mat-select [formControl]="categoryCtrl" aria-label="Category filter">
             <mat-option [value]="''">All</mat-option>
@@ -62,20 +65,22 @@ type SortParam = `${SortKey}_${SortDir}`;
           </mat-select>
         </mat-form-field>
 
-        <span class="spacer" aria-hidden="true"></span>
+        <div class="flex-1"></div>
 
         <button
           mat-raised-button
           color="primary"
           (click)="openCreate()"
           [attr.aria-label]="'Create product'"
+          class="ml-auto"
         >
-          <mat-icon aria-hidden="true">add</mat-icon> Create
+          <mat-icon aria-hidden="true">add</mat-icon>
+          <span class="ml-2">Create</span>
         </button>
       </header>
 
       <div
-        class="table-wrap"
+        class="overflow-auto rounded-lg bg-white shadow"
         role="region"
         aria-live="polite"
         aria-label="Products table"
@@ -83,13 +88,13 @@ type SortParam = `${SortKey}_${SortDir}`;
         <table
           mat-table
           [dataSource]="items()"
-          class="mat-elevation-z1"
+          class="mat-elevation-z1 w-full border-collapse"
           [trackBy]="trackById"
         >
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="w-[35%] px-4">
               <button
-                class="th-btn"
+                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
                 (click)="toggleSort('name')"
                 [attr.aria-sort]="ariaSort('name')"
               >
@@ -97,18 +102,22 @@ type SortParam = `${SortKey}_${SortDir}`;
                 <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
               </button>
             </th>
-            <td mat-cell *matCellDef="let p">{{ p.name }}</td>
+            <td mat-cell *matCellDef="let p" class="px-4">
+              <div class="truncate" [title]="p.name">{{ p.name }}</div>
+            </td>
           </ng-container>
 
           <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef>Category</th>
-            <td mat-cell *matCellDef="let p">{{ p.category }}</td>
+            <th mat-header-cell *matHeaderCellDef class="w-[20%] px-4">
+              Category
+            </th>
+            <td mat-cell *matCellDef="let p" class="px-4">{{ p.category }}</td>
           </ng-container>
 
           <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
               <button
-                class="th-btn"
+                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
                 (click)="toggleSort('price')"
                 [attr.aria-sort]="ariaSort('price')"
               >
@@ -116,15 +125,15 @@ type SortParam = `${SortKey}_${SortDir}`;
                 <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
               </button>
             </th>
-            <td mat-cell *matCellDef="let p">
+            <td mat-cell *matCellDef="let p" class="px-4">
               {{ p.price | number : '1.2-2' }} €
             </td>
           </ng-container>
 
           <ng-container matColumnDef="stock">
-            <th mat-header-cell *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
               <button
-                class="th-btn"
+                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
                 (click)="toggleSort('stock')"
                 [attr.aria-sort]="ariaSort('stock')"
               >
@@ -132,12 +141,14 @@ type SortParam = `${SortKey}_${SortDir}`;
                 <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
               </button>
             </th>
-            <td mat-cell *matCellDef="let p">{{ p.stock }}</td>
+            <td mat-cell *matCellDef="let p" class="px-4">{{ p.stock }}</td>
           </ng-container>
 
           <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef>Actions</th>
-            <td mat-cell *matCellDef="let p">
+            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
+              Actions
+            </th>
+            <td mat-cell *matCellDef="let p" class="px-4 whitespace-nowrap">
               <button
                 mat-icon-button
                 color="primary"
@@ -157,8 +168,16 @@ type SortParam = `${SortKey}_${SortDir}`;
             </td>
           </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns"
+            class="bg-gray-50"
+          ></tr>
+          <tr
+            mat-row
+            *matRowDef="let row; columns: displayedColumns"
+            class="hover:bg-gray-50 transition-colors border-t border-gray-100"
+          ></tr>
         </table>
       </div>
 
@@ -171,53 +190,15 @@ type SortParam = `${SortKey}_${SortDir}`;
         aria-label="Products pagination"
       >
       </mat-paginator>
-
       @if (loading()) {
-      <p class="loading" role="status" aria-live="polite">Loading…</p>
+      <p class="mt-3 text-gray-700" role="status" aria-live="polite">
+        Loading…
+      </p>
       } @if (error()) {
-      <p class="error" role="alert">{{ error() }}</p>
+      <p class="mt-3 text-red-600" role="alert">{{ error() }}</p>
       }
     </section>
   `,
-  styles: [
-    `
-      .container {
-        max-width: 1200px;
-        margin: 24px auto;
-        padding: 0 16px;
-      }
-      .toolbar {
-        display: flex;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 12px;
-      }
-      .spacer {
-        flex: 1 1 auto;
-      }
-      .table-wrap {
-        overflow: auto;
-        border-radius: 8px;
-        background: #fff;
-      }
-      .th-btn {
-        all: unset;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        font-weight: 600;
-      }
-      .loading {
-        margin-top: 12px;
-        color: #374151;
-      }
-      .error {
-        margin-top: 12px;
-        color: #b91c1c;
-      }
-    `,
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminProductsPageComponent {
