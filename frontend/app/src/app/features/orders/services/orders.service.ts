@@ -71,4 +71,8 @@ export class OrdersService {
     return this.http.get<Order[]>(this.apiUrl);
   }
   
+  updateStatus(id: number, status: string) {
+    return this.http.patch<Order>(`${this.apiUrl}/${id}`, { status });
+  }
+
 }

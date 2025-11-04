@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 from sqlalchemy import select
 from models.order_model import Order
 from shared.extensions import db
@@ -33,3 +33,24 @@ class OrderRepository:
         db.session.delete(order)
         db.session.commit()
         return True
+    
+    def patch(order_id : int, changes : Dict[str, Any]) -> Optional[Order] :
+        ALLOWED_FIELDS = {"status", "customer_name", "email", "total"}
+        order = Order.query.get(order_id)
+        if not order :
+            return None
+
+        for field in ALLOWED_FIELDS :
+            if field in changes :
+                if field == "total" :
+                    order.total = float(changes["total"])
+                else :
+                    setattr(order, field, changes[field])
+
+        try :
+            db.session.commit()
+            db.session.refresh(order)
+            return order
+        except Exception :
+            db.session.rollback()
+            raise

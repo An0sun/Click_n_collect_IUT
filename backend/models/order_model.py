@@ -1,3 +1,4 @@
+from dtos.order_dto import OrderStatus
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import Integer, String, Float, ForeignKey, DateTime
 from datetime import datetime
@@ -12,6 +13,15 @@ class Order(db.Model):
     email: Mapped[str] = mapped_column(String(120), nullable=False)
     total: Mapped[float] = mapped_column(Float, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    status : Mapped[str] = mapped_column(
+        db.Enum(
+            OrderStatus,
+            name = "order_status",
+        ),
+        nullable = False,
+        server_default = OrderStatus.PENDING.value,
+        default = OrderStatus.PENDING.value,
+    )
 
     items: Mapped[list["OrderItem"]] = relationship(
         "OrderItem",

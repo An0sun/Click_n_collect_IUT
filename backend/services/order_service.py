@@ -1,6 +1,6 @@
 from exceptions.order_exceptions import OrderNotFound, InvalidOrder, ProductNotFound
-from typing import List
-from dtos.order_dto import OrderInDTO
+from typing import Any, Dict, List
+from dtos.order_dto import OrderInDTO, OrderStatus
 from mappers.order_mapper import dto_to_order
 from repositories.order_repository import OrderRepository
 from repositories.product_repository import ProductRepository
@@ -26,12 +26,21 @@ class OrderService:
             new_stock = max(product.stock - item.quantity, 0)
             ProductRepository.update_stock(item.product_id, new_stock)
 
-    def find_all() -> List[Order]:
-        return OrderRepository.find_all()
-
-    def find_by_email(email: str) -> List[Order]:
-        return OrderRepository.find_by_email(email)
-
+    def find_all() -> List[Order] :
+        return (
+            Order.query
+            .filter(Order.status != 'DELIVERED')
+            .order_by(Order.created_at.asc())
+            .all()
+        )
+    def find_by_email(email : str) -> List[Order] :
+        return (
+            Order.query
+            .filter_by(email = email)
+            .order_by(Order.created_at.desc())
+            .all()
+        )
+    
     def find_by_id(order_id: int) -> Order:
         order = OrderRepository.find_by_id(order_id)
         if not order:
@@ -42,3 +51,13 @@ class OrderService:
         deleted = OrderRepository.delete(order_id)
         if not deleted:
             raise OrderNotFound()
+
+
+    def patch(order_id : int, changes : Dict[str, Any]) -> Order :
+        if "status" in changes and changes["status"] not in {s.value for s in OrderStatus} :
+            raise ValueError("Invalid status")
+
+        updated = OrderRepository.patch(order_id, changes)
+        if not updated :
+            raise OrderNotFound()
+        return updated

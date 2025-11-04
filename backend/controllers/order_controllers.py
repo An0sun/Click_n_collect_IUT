@@ -1,22 +1,21 @@
 from flask import Blueprint, request, jsonify
 from http import HTTPStatus
-from dtos.order_dto import OrderInDTO
+from dtos.order_dto import OrderInDTO, OrderStatus
 from flask_jwt_extended import get_jwt, jwt_required
 from services.order_service import OrderService
 from mappers.order_mapper import order_to_dto
 
 bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
-
 @bp_orders.get("")
 @jwt_required()
 def find_all() :
-    jwt = get_jwt()
-    role = jwt.get("role")
+    claims = get_jwt()
+    role = claims.get("role")
     if role == "ADMIN" :
         orders = OrderService.find_all()
     else :
-        email = jwt.get("email")
+        email = claims.get("email")
         if not email :
             return {"message" : "Email introuvable dans le token"}, HTTPStatus.UNAUTHORIZED
         orders = OrderService.find_by_email(email)
@@ -38,3 +37,24 @@ def create():
 def delete(order_id: int):
     OrderService.delete(order_id)
     return "", HTTPStatus.NO_CONTENT
+
+
+@bp_orders.patch("/<int:order_id>")
+@jwt_required()
+def patch_order(order_id : int) :
+    claims = get_jwt()
+    role = claims.get("role")
+
+    data = request.get_json()
+    if not isinstance(data, dict) or not data:
+        return {"message" : "Empty or invalid payload"}, HTTPStatus.BAD_REQUEST
+
+    if role != "ADMIN":
+        return {"message" : "Forbidden"}, HTTPStatus.FORBIDDEN
+
+    if "status" in data:
+        if data["status"] not in {s.value for s in OrderStatus}:
+            return {"message": "Invalid status"}, HTTPStatus.BAD_REQUEST
+
+    updated = OrderService.patch(order_id, data)
+    return jsonify(order_to_dto(updated).model_dump()), HTTPStatus.OK
