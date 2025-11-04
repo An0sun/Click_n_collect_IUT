@@ -14,31 +14,31 @@ import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-
 export const routes: Routes = [
   {
     path: '',
-    component : HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'auth/login',
-    component : LoginComponent,
+    component: LoginComponent,
   },
   {
     path: 'auth/register',
-    component : RegisterComponent,
+    component: RegisterComponent,
   },
   {
     path: 'auth/logout',
-    component : LogoutComponent,
+    component: LogoutComponent,
   },
 
   {
-    path : 'orders',
-    component : OrdersPageComponent
+    path: 'orders',
+    component: OrdersPageComponent,
   },
 
   {
     path: 'welcome',
     canMatch: [RoleGuard],
     data: { roles: ['CLIENT', 'ADMIN'] },
-    component : WelcomeComponent
+    component: WelcomeComponent,
   },
 
   {
@@ -49,20 +49,20 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component : WelcomeComponent
+        component: WelcomeComponent,
       },
       {
         path: 'product-list',
-        component : ProductListComponent
+        component: ProductListComponent,
       },
       {
         path: 'cart',
-        component : CartPageComponent
+        component: CartPageComponent,
       },
       {
         path: 'orders',
-        component : OrderSummary
-      }
+        component: OrderSummary,
+      },
     ],
   },
 
@@ -74,15 +74,22 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component : WelcomeComponent
+        component: WelcomeComponent,
       },
       {
-        path:'create-product',
-        component : CreateProductPageComponent
-      }
+        path: 'create-product',
+        component: CreateProductPageComponent,
+      },
     ],
   },
 
+  {
+    path: 'admin/products',
+    loadChildren: () =>
+      import('./features/admin-products/admin-product.routes').then(
+        (m) => m.ADMIN_PRODUCT_ROUTES
+      ),
+  },
 
   { path: '**', redirectTo: '' },
 ];
