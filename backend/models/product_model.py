@@ -1,5 +1,6 @@
-from shared.extensions import db
 from sqlalchemy import CheckConstraint, Index, Numeric
+from shared.extensions import db
+
 
 class Product(db.Model):
     __tablename__ = "products"
@@ -18,3 +19,4 @@ class Product(db.Model):
         Index("ix_products_category", "category"),
         Index("ix_products_name", "name"),
     )
+ 

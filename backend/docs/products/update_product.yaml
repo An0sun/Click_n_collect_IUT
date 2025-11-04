@@ -1,0 +1,32 @@
+tags: [products]
+summary: Mise à jour d’un produit
+description: |
+  Met à jour les champs spécifiés d’un produit existant.
+
+parameters:
+  - in: path
+    name: pid
+    type: integer
+    required: true
+    description: Identifiant du produit à modifier
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: '#/definitions/ProductUpdateDTO'
+
+responses:
+  200:
+    description: Produit mis à jour avec succès
+    schema:
+      $ref: '#/definitions/ProductOutDTO'
+
+  400:
+    description: Données invalides
+    schema:
+      $ref: '#/definitions/ErrorBadRequestResponse'
+
+  404:
+    description: Produit introuvable
+    schema:
+      $ref: '#/definitions/ErrorNotFoundResponse'

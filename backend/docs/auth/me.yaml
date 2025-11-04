@@ -1,0 +1,16 @@
+tags: [auth]
+summary: Obtenir le profil de l’utilisateur connecté
+description: |
+  Renvoie les informations de l’utilisateur actuellement connecté.  
+  Nécessite un token JWT valide.
+security:
+  - BearerAuth: []
+responses:
+  200:
+    description: Informations de l’utilisateur connecté
+    schema:
+      $ref: "#/definitions/PublicUserDTO"
+  401:
+    description: Token manquant ou invalide
+    schema:
+      $ref: "#/definitions/ErrorUnauthorizedResponse"

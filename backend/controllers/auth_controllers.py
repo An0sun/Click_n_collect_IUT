@@ -5,37 +5,22 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from dtos.user_dto import RegisterDTO, LoginDTO, PublicUserDTO
 from services.user_service import UserService
 
+from flasgger.utils import swag_from
+
 auth_bp = Blueprint("auth", __name__, url_prefix = "/auth")
 
-
 @auth_bp.post("/register")
+@swag_from("../docs/auth/register.yaml")
 def register() :
-    try :
-        dto = RegisterDTO.model_validate_json(request.data)
-    except Exception :
-        return "", HTTPStatus.UNPROCESSABLE_ENTITY
-
-    user, err = UserService.register(dto)
-
-    if err == "This email exist already" :
-        return "", HTTPStatus.CONFLICT
-    if err :
-        return "", HTTPStatus.BAD_REQUEST
-
+    dto = RegisterDTO.model_validate_json(request.data)
+    user = UserService.register(dto)
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.CREATED
 
-
 @auth_bp.post("/login")
+@swag_from("../docs/auth/login.yaml")
 def login() :
-    try :
-        dto = LoginDTO.model_validate_json(request.data)
-    except Exception :
-        return "", HTTPStatus.UNAUTHORIZED
-
+    dto = LoginDTO.model_validate_json(request.data)
     user = UserService.verify_user(dto)
-    if not user :
-        return "", HTTPStatus.UNAUTHORIZED
-
     access_token = create_access_token(
         identity=user.id,
         
@@ -52,35 +37,29 @@ def login() :
         "user" : PublicUserDTO.model_validate(user).model_dump()
     }), HTTPStatus.OK
 
-
 @auth_bp.get("/me")
 @jwt_required()
+@swag_from("../docs/auth/me.yaml")
 def me() :
     current_id = get_jwt_identity()
     user = UserService.get_user_by_id(current_id)
-    if not user :
-        return "", HTTPStatus.NOT_FOUND
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
-
 
 @auth_bp.post("/change-password")
 @jwt_required()
+@swag_from("../docs/auth/change_password.yaml")
 def change_password() :
     data = request.get_json(silent=True) or {}
 
     old_password = str(data.get("old_password") or "")
     new_password = str(data.get("new_password") or "")
     if not old_password or not new_password :
-        return "", HTTPStatus.UNPROCESSABLE_ENTITY
-
+        return (
+            jsonify({"message": "Both old_password and new_password are required"}),
+            HTTPStatus.UNPROCESSABLE_ENTITY,
+        )
+    
     user_id = get_jwt_identity()
-    ok, err = UserService.change_password(user_id, old_password, new_password)
-
-    if err == "not found" :
-        return "", HTTPStatus.NOT_FOUND
-    if err == "invalid old password" :
-        return "", HTTPStatus.UNAUTHORIZED
-    if err :
-        return "", HTTPStatus.BAD_REQUEST
-
+    UserService.change_password(user_id, old_password, new_password)
+    
     return "", HTTPStatus.NO_CONTENT

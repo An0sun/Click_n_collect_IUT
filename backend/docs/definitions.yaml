@@ -1,0 +1,256 @@
+definitions:
+  # === Produits ===
+  ProductInDTO:
+    type: object
+    required: [name, description, category, price, stock]
+    properties:
+      name:
+        type: string
+        example: "Sandwich au poulet"
+      description:
+        type: string
+        example: "Sandwich frais avec poulet rôti et crudités."
+      category:
+        type: string
+        enum: ["Food", "Beverage"]
+        example: "Food"
+      price:
+        type: number
+        format: float
+        example: 5.99
+      stock:
+        type: integer
+        example: 30
+
+  ProductUpdateDTO:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Sandwich végétarien"
+      description:
+        type: string
+        example: "Version sans viande, à base de crudités."
+      category:
+        type: string
+        enum: ["Food", "Beverage"]
+        example: "Food"
+      price:
+        type: number
+        format: float
+        example: 4.99
+      stock:
+        type: integer
+        example: 50
+
+  ProductOutDTO:
+    allOf:
+      - $ref: '#/definitions/ProductInDTO'
+      - type: object
+        properties:
+          id:
+            type: integer
+            example: 12
+
+  PaginationResponse:
+    type: object
+    properties:
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/ProductOutDTO'
+      page:
+        type: integer
+        example: 1
+      per_page:
+        type: integer
+        example: 10
+      total:
+        type: integer
+        example: 50
+      pages:
+        type: integer
+        example: 5
+
+  # === Commandes ===
+  OrderItemDTO:
+    type: object
+    properties:
+      product_id:
+        type: integer
+        example: 12
+      product_name:
+        type: string
+        example: "Casque Bluetooth"
+      quantity:
+        type: integer
+        example: 2
+      price:
+        type: number
+        format: float
+        example: 79.99
+
+  OrderInDTO:
+    type: object
+    required: [customer_name, email, total, items]
+    properties:
+      customer_name:
+        type: string
+        example: "Alice Dupont"
+      email:
+        type: string
+        example: "alice.dupont@example.com"
+      total:
+        type: number
+        format: float
+        example: 159.98
+      items:
+        type: array
+        items:
+          $ref: '#/definitions/OrderItemDTO'
+
+  OrderOutDTO:
+    allOf:
+      - $ref: '#/definitions/OrderInDTO'
+      - type: object
+        properties:
+          id:
+            type: integer
+            example: 42
+          created_at:
+            type: string
+            format: date-time
+            example: "2025-11-04T12:45:00"
+
+  # === Utilisateurs ===
+  RegisterDTO:
+    type: object
+    required: [name, first_name, email, password]
+    properties:
+      name:
+        type: string
+        example: "Dupont"
+      first_name:
+        type: string
+        example: "Alice"
+      email:
+        type: string
+        example: "alice.dupont@example.com"
+      password:
+        type: string
+        example: "secret123"
+
+  UpdateProfileDTO:
+    type: object
+    properties:
+      name:
+        type: string
+        example: "Durand"
+      first_name:
+        type: string
+        example: "Lucie"
+
+  PublicUserDTO:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 3
+      name:
+        type: string
+        example: "Dupont"
+      first_name:
+        type: string
+        example: "Alice"
+      email:
+        type: string
+        example: "alice.dupont@example.com"
+      role:
+        type: string
+        enum: ["CLIENT", "ADMIN"]
+        example: "CLIENT"
+
+  # === Authentification ===
+  LoginDTO:
+    type: object
+    required: [email, password]
+    properties:
+      email:
+        type: string
+        example: "alice.dupont@example.com"
+      password:
+        type: string
+        example: "secret123"
+
+  ChangePasswordDTO:
+    type: object
+    required: [old_password, new_password]
+    properties:
+      old_password:
+        type: string
+        example: "ancienMDP123"
+      new_password:
+        type: string
+        example: "nouveauMDP456"
+
+  LoginResponse:
+    type: object
+    properties:
+      token:
+        type: string
+        example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+      expires_in:
+        type: integer
+        example: 900
+      user:
+        $ref: '#/definitions/PublicUserDTO'
+
+  # === Réponses d'erreur ===
+  ErrorNotFoundResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Resource not found."
+
+  ErrorUnprocessableEntityResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Invalid data."
+
+  ErrorConflictResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Resource already exists."
+
+  ErrorProductNotFoundResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Product not found."
+
+  ErrorBadRequestResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Invalid product data."
+
+  ErrorForbiddenResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Access denied."
+
+  ErrorUnauthorizedResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: "Invalid email or password."

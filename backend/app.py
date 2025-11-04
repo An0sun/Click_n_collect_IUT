@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
+from shared.swagger import init_swagger
 
 from shared.extensions import db, bcrypt, jwt
 from shared.errors import register_error_handlers
@@ -39,6 +40,8 @@ def create_app():
     # Blueprints + erreurs
     register_blueprints(app)
     register_error_handlers(app)
+
+    init_swagger(app)
 
     @app.route("/")
     def home():

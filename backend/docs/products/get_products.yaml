@@ -1,0 +1,47 @@
+tags: [products]
+summary: Liste paginée des produits
+description: |
+  Récupère la liste des produits filtrée et paginée.
+
+  - Recherche possible via `q` (nom ou description)
+  - Filtrage par `category`
+  - Tri possible avec `sort`
+  - Pagination avec `page` et `per_page`
+
+parameters:
+  - in: query
+    name: q
+    type: string
+    required: false
+    description: Filtre de recherche (nom ou description)
+  - in: query
+    name: category
+    type: string
+    required: false
+    description: Filtrer les produits par catégorie (`Food` ou `Beverage`)
+  - in: query
+    name: sort
+    type: string
+    required: false
+    description: "Champ de tri (ex: `price`, `name`)"
+  - in: query
+    name: page
+    type: integer
+    required: false
+    description: Numéro de page (défaut = 1)
+  - in: query
+    name: per_page
+    type: integer
+    required: false
+    description: Nombre d’éléments par page (défaut = 2)
+
+responses:
+  200:
+    description: Liste paginée des produits
+    schema:
+      $ref: '#/definitions/PaginationResponse'
+
+  400:
+    description: Paramètres de pagination invalides
+    schema:
+      $ref: '#/definitions/ErrorBadRequestResponse'

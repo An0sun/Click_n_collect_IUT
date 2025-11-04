@@ -1,0 +1,22 @@
+tags: [users]
+summary: Supprimer un utilisateur
+description: |
+  Supprime définitivement un utilisateur selon son ID.  
+  Accessible uniquement aux administrateurs.
+parameters:
+  - name: user_id
+    in: path
+    type: integer
+    required: true
+    description: ID de l’utilisateur à supprimer
+responses:
+  204:
+    description: Utilisateur supprimé avec succès (aucun contenu retourné)
+  404:
+    description: Utilisateur introuvable
+    schema:
+      $ref: "#/definitions/ErrorNotFoundResponse"
+  403:
+    description: Accès refusé
+    schema:
+      $ref: "#/definitions/ErrorForbiddenResponse"

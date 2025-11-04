@@ -1,0 +1,43 @@
+tags: [users]
+summary: Remplacer un utilisateur (PUT)
+description: |
+  Met à jour **toutes** les informations d’un utilisateur par ID.  
+  Accessible uniquement aux administrateurs.
+parameters:
+  - name: user_id
+    in: path
+    type: integer
+    required: true
+    description: ID de l’utilisateur à modifier
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Durand"
+        first_name:
+          type: string
+          example: "Lucie"
+        email:
+          type: string
+          example: "lucie.durand@example.com"
+responses:
+  200:
+    description: Utilisateur mis à jour avec succès
+    schema:
+      $ref: "#/definitions/PublicUserDTO"
+  404:
+    description: Utilisateur introuvable
+    schema:
+      $ref: "#/definitions/ErrorNotFoundResponse"
+  403:
+    description: Accès refusé
+    schema:
+      $ref: "#/definitions/ErrorForbiddenResponse"
+  422:
+    description: Données invalides
+    schema:
+      $ref: "#/definitions/ErrorUnprocessableEntityResponse"

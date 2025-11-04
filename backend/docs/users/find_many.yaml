@@ -1,0 +1,16 @@
+tags: [users]
+summary: Récupérer tous les utilisateurs
+description: |
+  Récupère la liste complète des utilisateurs.  
+  Accessible uniquement aux administrateurs.
+responses:
+  200:
+    description: Liste des utilisateurs récupérée avec succès
+    schema:
+      type: array
+      items:
+        $ref: "#/definitions/PublicUserDTO"
+  403:
+    description: Accès refusé (non administrateur)
+    schema:
+      $ref: "#/definitions/ErrorForbiddenResponse"

@@ -1,0 +1,25 @@
+tags: [auth]
+summary: Inscription d’un utilisateur
+description: |
+  Crée un nouveau compte utilisateur.  
+  Le rôle par défaut est **CLIENT**.
+consumes: [application/json]
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      $ref: "#/definitions/RegisterDTO"
+responses:
+  201:
+    description: Utilisateur inscrit avec succès
+    schema:
+      $ref: "#/definitions/PublicUserDTO"
+  409:
+    description: Email déjà utilisé
+    schema:
+      $ref: "#/definitions/ErrorConflictResponse"
+  422:
+    description: Données invalides
+    schema:
+      $ref: "#/definitions/ErrorUnprocessableEntityResponse"

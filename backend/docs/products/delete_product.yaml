@@ -1,0 +1,20 @@
+tags: [products]
+summary: Suppression d’un produit
+description: |
+  Supprime un produit existant à partir de son identifiant unique.
+
+parameters:
+  - in: path
+    name: pid
+    type: integer
+    required: true
+    description: Identifiant du produit à supprimer
+
+responses:
+  204:
+    description: Produit supprimé avec succès (aucun contenu)
+
+  404:
+    description: Produit introuvable
+    schema:
+      $ref: '#/definitions/ErrorNotFoundResponse'
