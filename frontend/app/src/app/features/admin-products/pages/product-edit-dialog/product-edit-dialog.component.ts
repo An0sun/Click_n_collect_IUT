@@ -41,70 +41,91 @@ interface DialogData {
     MatSelectModule,
   ],
   template: `
-    <h2 mat-dialog-title>
-      {{ mode === 'create' ? 'Create product' : 'Edit product' }}
-    </h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" mat-dialog-content>
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" required maxlength="120" />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Description</mat-label>
-        <input
-          matInput
-          formControlName="description"
-          required
-          maxlength="255"
-        />
-      </mat-form-field>
-
-      <mat-form-field appearance="outline" class="w-full">
-        <mat-label>Category</mat-label>
-        <mat-select formControlName="category" required>
-          <mat-option value="Food">Food</mat-option>
-          <mat-option value="Beverage">Beverage</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <mat-form-field appearance="outline" class="w-full">
-          <mat-label>Price (€)</mat-label>
-          <input
-            matInput
-            type="number"
-            step="0.01"
-            min="0"
-            formControlName="price"
-            required
+    <div class="p-6">
+      <h2 mat-dialog-title class="text-2xl font-bold mb-6 text-center">
+        {{ mode === 'create' ? 'Create product' : 'Edit product' }}
+      </h2>
+      
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" mat-dialog-content class="flex flex-col gap-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input 
+            matInput 
+            formControlName="name" 
+            required 
+            maxlength="120" 
+            placeholder="Enter product name"
           />
         </mat-form-field>
 
-        <mat-form-field appearance="outline" class="w-full">
-          <mat-label>Stock</mat-label>
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
           <input
             matInput
-            type="number"
-            step="1"
-            min="0"
-            formControlName="stock"
+            formControlName="description"
             required
+            maxlength="255"
+            placeholder="Enter product description"
           />
         </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category" required>
+            <mat-option value="Food">Food</mat-option>
+            <mat-option value="Beverage">Beverage</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="grid grid-cols-2 gap-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Price (€)</mat-label>
+            <input
+              matInput
+              type="number"
+              step="0.01"
+              min="0"
+              formControlName="price"
+              required
+              placeholder="0.00"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Stock</mat-label>
+            <input
+              matInput
+              type="number"
+              step="1"
+              min="0"
+              formControlName="stock"
+              required
+              placeholder="0"
+            />
+          </mat-form-field>
+        </div>
+      </form>
+
+      <div mat-dialog-actions class="flex justify-end gap-4 mt-6">
+        <button 
+          mat-stroked-button 
+          (click)="close(false)"
+          class="min-w-[100px] py-2"
+        >
+          Cancel
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          (click)="onSubmit()"
+          [disabled]="form.invalid || busy()"
+          class="min-w-[100px] py-2"
+        >
+          <span class="flex items-center justify-center gap-2">
+            <span>{{ busy() ? 'Saving...' : 'Save' }}</span>
+          </span>
+        </button>
       </div>
-    </form>
-
-    <div mat-dialog-actions align="end">
-      <button mat-button (click)="close(false)">Cancel</button>
-      <button
-        mat-raised-button
-        color="primary"
-        (click)="onSubmit()"
-        [disabled]="form.invalid || busy()"
-      >
-        Save
-      </button>
     </div>
   `,
 
