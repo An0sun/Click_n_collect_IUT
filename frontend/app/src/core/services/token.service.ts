@@ -43,7 +43,6 @@ export class TokenService{
     try {
       return jwtDecode(token);
     } catch (e) {
-      console.error('Token decoding error:', e);
       return null;
     }
   }

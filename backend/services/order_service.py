@@ -1,23 +1,33 @@
-from exceptions.order_exceptions import OrderNotFound, InvalidOrder, ProductNotFound
 from typing import Any, Dict, List
+from exceptions.order_exceptions import OrderNotFound, InvalidOrder, ProductNotFound
+
 from dtos.order_dto import OrderInDTO, OrderStatus
-from mappers.order_mapper import dto_to_order
+from mappers.order_mapper import dto_to_order, order_to_dto
 from repositories.order_repository import OrderRepository
 from repositories.product_repository import ProductRepository
 from models.order_model import Order
 
-class OrderService:
+from realtime.order_sse import push_order_created      # ✅ import manquant
+from realtime.product_sse import push_stock_updated
 
+class OrderService:
     def create(order_dto: OrderInDTO) -> Order:
         if not order_dto.items or order_dto.total <= 0:
             raise InvalidOrder("Cannot create an empty or invalid order.")
+
         order = dto_to_order(order_dto)
         created_order = OrderRepository.create(order)
-        OrderService._update_stocks_after_order(created_order)
-        return OrderRepository.create(order)
-    
-    def _update_stocks_after_order(order: Order) -> None:
 
+        # Si tu modifies les stocks ici, garde cette ligne
+        OrderService._update_stocks_after_order(created_order)
+
+        # ✅ DIFFUSER l’event "order_created" sur le flux global
+        payload = {"order": order_to_dto(created_order).model_dump(mode="json")}
+        push_order_created(payload)
+
+        return created_order  # ✅ ne recrée pas une 2e fois
+
+    def _update_stocks_after_order(order: Order) -> None:
         for item in order.items:
             product = ProductRepository.get_by_id(item.product_id)
             if not product:
@@ -25,14 +35,16 @@ class OrderService:
 
             new_stock = max(product.stock - item.quantity, 0)
             ProductRepository.update_stock(item.product_id, new_stock)
+            push_stock_updated(item.product_id, {"id": item.product_id, "stock": new_stock})
 
     def find_all() -> List[Order] :
         return (
             Order.query
-            .filter(Order.status != 'DELIVERED')
+            .filter(Order.status != "DELIVERED")
             .order_by(Order.created_at.asc())
             .all()
         )
+
     def find_by_email(email : str) -> List[Order] :
         return (
             Order.query
@@ -40,7 +52,7 @@ class OrderService:
             .order_by(Order.created_at.desc())
             .all()
         )
-    
+
     def find_by_id(order_id: int) -> Order:
         order = OrderRepository.find_by_id(order_id)
         if not order:
@@ -52,12 +64,11 @@ class OrderService:
         if not deleted:
             raise OrderNotFound()
 
-
-    def patch(order_id : int, changes : Dict[str, Any]) -> Order :
-        if "status" in changes and changes["status"] not in {s.value for s in OrderStatus} :
+    def patch(order_id: int, changes: Dict[str, Any]) -> Order:
+        if "status" in changes and changes["status"] not in {s.value for s in OrderStatus}:
             raise ValueError("Invalid status")
 
         updated = OrderRepository.patch(order_id, changes)
-        if not updated :
+        if not updated:
             raise OrderNotFound()
         return updated

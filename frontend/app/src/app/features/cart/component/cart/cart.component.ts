@@ -58,20 +58,13 @@ export class CartComponent {
         return;
       }
     }
-
-    this.orderService.processOrder(this.cart).subscribe({
-      next: (order) => {
-        alert('Order placed successfully');
-        this.cartService.clearCart();
-        this.router.navigate(['/app/orders'], {
-          state: { order }
-        });
-        this.loadCart();
-      },
-      error: (err) => {
-        console.error('Error while processing order:', err);
-        alert('Error while processing order');
-      }
-    });
+  this.orderService.createOrder(this.cart).subscribe({
+    next: (order) => {
+      alert('Order placed successfully');
+      this.cartService.clearCart();
+      this.router.navigate(['/app/orders'], { state: { order } });
+      this.loadCart();
+    }
+  });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, DestroyRef, inject, OnInit} from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { CustomerCardComponent } from '../../component/customer-card/customer-card.component';
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit{
   products: Product[] = [];
   loading = true;
   error: string | null = null;
-
+  private destroyRef = inject(DestroyRef);
   constructor(private productService: ProductService){}
 
   page = 1
@@ -33,6 +33,10 @@ export class ProductListComponent implements OnInit{
       })
 
       this.loadPage(1)
+      const sub = this.productService.onStockUpdates().subscribe(({ id, stock }) => {
+      this.products = this.products.map(p => (p.id === id ? { ...p, stock } : p));
+    });
+    this.destroyRef.onDestroy(() => sub.unsubscribe());
   }
 
   loadPage(newPage: number) {

@@ -51,36 +51,3 @@ def login() :
         "expires_in" : 15 * 60,
         "user" : PublicUserDTO.model_validate(user).model_dump()
     }), HTTPStatus.OK
-
-
-@auth_bp.get("/me")
-@jwt_required()
-def me() :
-    current_id = get_jwt_identity()
-    user = UserService.get_user_by_id(current_id)
-    if not user :
-        return "", HTTPStatus.NOT_FOUND
-    return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
-
-
-@auth_bp.post("/change-password")
-@jwt_required()
-def change_password() :
-    data = request.get_json(silent=True) or {}
-
-    old_password = str(data.get("old_password") or "")
-    new_password = str(data.get("new_password") or "")
-    if not old_password or not new_password :
-        return "", HTTPStatus.UNPROCESSABLE_ENTITY
-
-    user_id = get_jwt_identity()
-    ok, err = UserService.change_password(user_id, old_password, new_password)
-
-    if err == "not found" :
-        return "", HTTPStatus.NOT_FOUND
-    if err == "invalid old password" :
-        return "", HTTPStatus.UNAUTHORIZED
-    if err :
-        return "", HTTPStatus.BAD_REQUEST
-
-    return "", HTTPStatus.NO_CONTENT

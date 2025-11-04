@@ -4,8 +4,10 @@ from dtos.order_dto import OrderInDTO, OrderStatus
 from flask_jwt_extended import get_jwt, jwt_required
 from services.order_service import OrderService
 from mappers.order_mapper import order_to_dto
+from realtime.order_sse import push_order_event
+from mappers.order_mapper import order_to_dto
 
-bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
+bp_orders = Blueprint("orders", __name__, url_prefix ="/orders")
 
 @bp_orders.get("")
 @jwt_required()
@@ -39,22 +41,28 @@ def delete(order_id: int):
     return "", HTTPStatus.NO_CONTENT
 
 
+
+
 @bp_orders.patch("/<int:order_id>")
 @jwt_required()
 def patch_order(order_id : int) :
     claims = get_jwt()
-    role = claims.get("role")
-
-    data = request.get_json()
-    if not isinstance(data, dict) or not data:
-        return {"message" : "Empty or invalid payload"}, HTTPStatus.BAD_REQUEST
-
-    if role != "ADMIN":
+    if claims.get("role") != "ADMIN" :
         return {"message" : "Forbidden"}, HTTPStatus.FORBIDDEN
 
-    if "status" in data:
-        if data["status"] not in {s.value for s in OrderStatus}:
-            return {"message": "Invalid status"}, HTTPStatus.BAD_REQUEST
+    data = request.get_json()
 
     updated = OrderService.patch(order_id, data)
-    return jsonify(order_to_dto(updated).model_dump()), HTTPStatus.OK
+    out = order_to_dto(updated).model_dump()
+
+    if "status" in data :
+        status_value = (updated.status.value if hasattr(updated.status, "value") else str(updated.status))
+        push_order_event(
+            order_id,
+            "status_updated",
+            {"id" : updated.id, "status" : status_value}
+        )
+    else :
+        push_order_event(order_id, "order_updated", out)
+
+    return jsonify(out), HTTPStatus.OK
