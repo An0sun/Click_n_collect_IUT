@@ -4,7 +4,7 @@ from typing import Callable, TypedDict, Optional
 import yaml
 import logging
 from flasgger import Swagger
-
+import config
 
 class SwaggerSpec(TypedDict):
     endpoint: str
@@ -30,19 +30,22 @@ class SwaggerTemplate(TypedDict, total=False):
     definitions: dict[str, dict]
 
 
-# === Logger ===
 logger = logging.getLogger(__name__)
 
 
 def init_swagger(app) -> Optional[Swagger]:
-    """
-    Initialise la documentation Swagger / Flasgger pour l'application Flask.
-    """
-    # Dossier docs/
+
+    if hasattr(app, "_swagger_initialized") and app._swagger_initialized:
+        logger.debug("Swagger déjà initialisé, on saute.")
+        return None
+    
+    if not getattr(config, "SWAGGER_ENABLED", False):
+        logger.warning("Swagger désactivé (SWAGGER_ENABLED=0 dans .env).")
+        return None
+    
     docs_dir: Path = Path(__file__).resolve().parents[1] / "docs"
     defs_path: Path = docs_dir / "definitions.yaml"
 
-    # === Template de base ===
     template: SwaggerTemplate = {
         "swagger": "2.0",
         "info": {
@@ -71,7 +74,6 @@ def init_swagger(app) -> Optional[Swagger]:
         ],
     }
 
-    # === Chargement des définitions globales ===
     if not defs_path.exists():
         raise FileNotFoundError(f"Fichier Swagger introuvable : {defs_path}")
 
@@ -91,7 +93,6 @@ def init_swagger(app) -> Optional[Swagger]:
         logger.error("Erreur YAML dans %s : %s", defs_path, e)
         raise
 
-    # === Config Flasgger ===
     config_dict: SwaggerConfig = {
         "headers": [],
         "specs": [
@@ -109,6 +110,9 @@ def init_swagger(app) -> Optional[Swagger]:
     }
 
     swagger = Swagger(app, template=template, config=config_dict)
+    
+    app._swagger_initialized = True
+    
     logger.info(
         "Swagger initialisé. Documentation accessible sur /apidocs/ (dossier : %s)",
         docs_dir,

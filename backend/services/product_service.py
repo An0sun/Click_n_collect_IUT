@@ -23,6 +23,7 @@ class ProductService:
     def create(data: Dict[str, Any]) -> Product:
         data.pop('id', None)
         if not data.get("name") or not data.get("price"):
+          
             raise InvalidProduct()
         p = Product(**data)
         return ProductRepository.create(p)

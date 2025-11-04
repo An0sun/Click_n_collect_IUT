@@ -5,8 +5,11 @@ from flask_jwt_extended import get_jwt, jwt_required
 from services.order_service import OrderService
 from mappers.order_mapper import order_to_dto
 from flasgger.utils import swag_from
+import logging
+
 bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
+logger = logging.getLogger("lcde")
 
 @bp_orders.get("")
 @jwt_required()
@@ -21,7 +24,7 @@ def find_all() :
         if not email :
             return {"message" : "Email introuvable dans le token"}, HTTPStatus.UNAUTHORIZED
         orders = OrderService.find_by_email(email)
-
+    logger.info("Nombre de commandes récupérées : %d", len(orders))
     return jsonify([order_to_dto(o).model_dump() for o in orders]), HTTPStatus.OK
 
 @bp_orders.get("/<int:order_id>")
@@ -35,6 +38,7 @@ def find_by_id(order_id: int):
 def create():
     order_create_dto = OrderInDTO.model_validate_json(request.data)
     created_order = OrderService.create(order_create_dto)
+    logger.info("Commande #%s créée avec succès.", created_order.id)
     return jsonify(order_to_dto(created_order).model_dump()), HTTPStatus.CREATED
 
 @bp_orders.delete("/<int:order_id>")
