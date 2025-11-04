@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 from typing import Literal, Optional
 
+
 Category = Literal["Food", "Beverage"]
 
 class ProductInDTO(BaseModel):

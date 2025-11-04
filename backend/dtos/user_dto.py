@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field, field_validator
 from typing import Literal, Optional
-
+from enums.user_role import UserRole
 
 
 class RegisterDTO(BaseModel) : 
@@ -27,13 +27,12 @@ class UpdateProfileDTO(BaseModel) :
     name : Optional[str] = Field(default = None, min_length = 1, max_length = 20)
     first_name : Optional[str] = Field(default = None, min_length = 1, max_length = 20)
 
-    
 class PublicUserDTO(BaseModel) :
     id : int
     name : str
     first_name : str
     email : EmailStr
-    role : Literal["CLIENT", "ADMIN"]
+    role: UserRole  
 
     class Config:
         from_attributes = True

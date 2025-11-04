@@ -1,21 +1,17 @@
-from datetime import datetime
-from enum import Enum
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import String, Enum as SAEnum, Integer, DateTime, Boolean
+from sqlalchemy import String, Integer, Enum as SqlEnum
 from sqlalchemy.orm import Mapped, mapped_column
 from shared.extensions import db
+from enums.user_role import UserRole
 
-
-class UserRole(str, Enum) : 
-    CLIENT = "CLIENT"
-    ADMIN = "ADMIN"
-
-class User(db.Model) : 
+class User(db.Model):
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
-    name = db.Column(db.String(30), nullable = False)
-    first_name = db.Column(db.String(20), nullable = False)
-    email = db.Column(db.String(50), nullable = False)
-    password_hash = db.Column(String(255), nullable = False)
-    role = db.Column(SAEnum(UserRole), nullable = False, default = UserRole.CLIENT)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String(30), nullable=False)
+    first_name: Mapped[str] = mapped_column(String(20), nullable=False)
+    email: Mapped[str] = mapped_column(String(50), nullable=False, unique=True)
+    password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    role: Mapped[UserRole] = mapped_column(
+        SqlEnum(UserRole, name="user_role_enum"),
+        nullable=False
+    )
