@@ -85,8 +85,10 @@ export const routes: Routes = [
 
   {
     path: 'admin/products',
+    canMatch: [RoleGuard],
+    data: { roles: ['ADMIN'] },
     loadChildren: () =>
-      import('./features/admin-products/admin-product.routes').then(
+      import('./features/admin-products/admin-products.routes').then(
         (m) => m.ADMIN_PRODUCT_ROUTES
       ),
   },

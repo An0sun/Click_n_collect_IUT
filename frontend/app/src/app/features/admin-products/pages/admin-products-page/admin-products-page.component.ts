@@ -68,7 +68,7 @@ type SortParam = `${SortKey}_${SortDir}`;
           mat-raised-button
           color="primary"
           (click)="openCreate()"
-          aria-label="Create product"
+          [attr.aria-label]="'Create product'"
         >
           <mat-icon aria-hidden="true">add</mat-icon> Create
         </button>
@@ -142,7 +142,7 @@ type SortParam = `${SortKey}_${SortDir}`;
                 mat-icon-button
                 color="primary"
                 (click)="openEdit(p)"
-                aria-label="Edit {{ p.name }}"
+                [attr.aria-label]="'Edit ' + p.name"
               >
                 <mat-icon>edit</mat-icon>
               </button>
@@ -150,7 +150,7 @@ type SortParam = `${SortKey}_${SortDir}`;
                 mat-icon-button
                 color="warn"
                 (click)="confirmDelete(p)"
-                aria-label="Delete {{ p.name }}"
+                [attr.aria-label]="'Delete ' + p.name"
               >
                 <mat-icon>delete</mat-icon>
               </button>

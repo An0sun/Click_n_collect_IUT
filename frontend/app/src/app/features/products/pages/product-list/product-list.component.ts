@@ -1,38 +1,42 @@
-import { Component, OnInit} from '@angular/core';
-import { ProductService } from '../../services/product.service';
-import { Product } from '../../models/product.model';
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../../../products/models/product.model';
 import { CustomerCardComponent } from '../../component/customer-card/customer-card.component';
 import { PaginationComponent } from '../../../../shared/pagination/pagination.component';
+import {
+  ProductService,
+  ProductPage,
+} from '../../../admin-products/services/product.service';
+
 @Component({
   selector: 'app-product-list',
-  standalone : true,
-  imports: [ CustomerCardComponent, PaginationComponent],
+  standalone: true,
+  imports: [CustomerCardComponent, PaginationComponent],
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.scss'
+  styleUrl: './product-list.component.scss',
 })
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
   products: Product[] = [];
   loading = true;
   error: string | null = null;
 
-  constructor(private productService: ProductService){}
+  page = 1;
+  totalPages = 1;
 
-  page = 1
-  totalPages = 1
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-      this.productService.getProducts().subscribe({
-        next: (data) => {
-          this.products = data;
-          this.loading = false;
-        },
-        error : () =>{
-          this.error = "Impossible de charger les produits";
-          this.loading = false
-        }
-      })
+    this.productService.getProducts().subscribe({
+      next: (data: Product[]) => {
+        this.products = data;
+        this.loading = false;
+      },
+      error: () => {
+        this.error = 'Unable to load products';
+        this.loading = false;
+      },
+    });
 
-      this.loadPage(1)
+    this.loadPage(1);
   }
 
   loadPage(newPage: number) {
@@ -42,16 +46,15 @@ export class ProductListComponent implements OnInit{
     this.loading = true;
 
     this.productService.getProductsPagines(this.page).subscribe({
-      next: (res) => {
+      next: (res: ProductPage) => {
         this.products = res.items;
         this.totalPages = res.pages;
         this.loading = false;
       },
       error: () => {
-        this.error = "Impossible de charger les produits";
+        this.error = 'Unable to load products';
         this.loading = false;
-      }
+      },
     });
   }
-  
 }

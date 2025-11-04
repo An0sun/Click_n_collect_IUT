@@ -62,4 +62,17 @@ export class ProductService {
   delete(id: number) {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  // --- compatibility wrappers for existing pages ---
+  createProduct(product: Omit<Product, 'id'>) {
+    return this.create(product);
+  }
+
+  getProducts() {
+    return this.listPage({ page: 1, per_page: 100 }).pipe(map((r) => r.items));
+  }
+
+  getProductsPagines(page: number, perPage = 20) {
+    return this.listPage({ page, per_page: perPage });
+  }
 }
