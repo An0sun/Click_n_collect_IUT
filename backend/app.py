@@ -7,12 +7,12 @@ from shared.swagger import init_swagger
 from shared.extensions import db, bcrypt, jwt
 from shared.errors import register_error_handlers
 from controllers import register_blueprints
-from error_handlers import register_error_handlers
 
 def create_app():
     load_dotenv()
     app = Flask(__name__, instance_relative_config=True)
-    register_error_handlers(app)
+
+    app.url_map.strict_slashes = False
 
     # Config
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(app.instance_path, "app.db")

@@ -29,7 +29,6 @@ class ProductService:
     @staticmethod
     def create(data: Dict[str, Any]) -> Product:
         data.pop("id", None)
-        # basic validation
         if not data.get("name") or data.get("price") is None:
             raise InvalidProduct("Missing required fields: name and price")
         p = Product(**data)
@@ -43,8 +42,6 @@ class ProductService:
         product = ProductRepository.get_by_id(pid)
         if not product:
             raise ProductNotFound()
-
-        # Only update allowed fields
         for k in _ALLOWED_FIELDS & set(data.keys()):
             setattr(product, k, data[k])
 

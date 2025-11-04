@@ -31,7 +31,7 @@ def list_products():
     per_page = min(max(per_page, 1), 100)
 
     pagination = ProductService.list(q, category, sort, page, per_page)
-    items = [product_to_dto(p).model_dump(mode="json") for p in pagination.items]
+    items = [product_to_dto(p).model_dump() for p in pagination.items]
 
     return (
         jsonify(

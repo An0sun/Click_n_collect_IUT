@@ -55,3 +55,28 @@ class ProductRepository:
     @staticmethod
     def save() -> None:
         db.session.commit()
+
+    @staticmethod
+    def update_stock(product_id: int, new_stock: int) -> Optional[Product]:
+        p = db.session.get(Product, product_id)
+        if not p:
+            return None
+        p.stock = new_stock
+        db.session.commit()
+        db.session.refresh(p)
+        return p
+
+    @staticmethod
+    def decrement_stock(product_id: int, delta: int) -> Optional[Product]:
+        p = db.session.get(Product, product_id)
+        if not p:
+            return None
+        if p.stock is None:
+            p.stock = 0
+        new_stock = p.stock - delta
+        if new_stock < 0:
+            return None  
+        p.stock = new_stock
+        db.session.commit()
+        db.session.refresh(p)
+        return p
