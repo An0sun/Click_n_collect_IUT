@@ -1,107 +1,80 @@
-from flask import Blueprint, request, jsonify
-
-from dtos.product_dto import ProductInDTO, ProductOutDTO, ProductUpdateDTO
-from services.product_service import ProductService
+# product_controllers.py
+from flask import Blueprint, request, jsonify, abort
 from pydantic import ValidationError
-
+from services.product_service import ProductService
+from dto.product_dto import ProductInDTO, ProductUpdateDTO, ProductOutDTO
 
 bp = Blueprint("products", __name__, url_prefix="/products")
 
-@bp.get("/")
+def _dto_dump(model) -> dict:
+    d = ProductOutDTO.model_validate(model).model_dump(mode="json")
+    if isinstance(d.get("price"), str): d["price"] = float(d["price"])
+    return d
+
+@bp.get("")
 def list_products():
-    q = (request.args.get("q") or "").strip() or None
-    category = (request.args.get("category") or "").strip() or None
-    sort = (request.args.get("sort") or "").strip() or None
+    q = request.args.get("q")
+    category = request.args.get("category")
+    sort = request.args.get("sort")
 
     try:
-        page = max(int(request.args.get("page", 1)), 1)
-        per_page = min(max(int(request.args.get("per_page", 2)), 1), 100)
+        page = int(request.args.get("page", 1))
     except ValueError:
-        return jsonify({"message": "page/per_page must be integers"}), 400
+        page = 1
 
-    pagination = ProductService.list(q, category, sort, page, per_page)
-    items = [
-        ProductOutDTO.model_validate(
-            {
-                "id": p.id,
-                "name": p.name,
-                "description": p.description,
-                "category": p.category,
-                "price": p.price,
-                "stock": p.stock,
-            }
-        ).model_dump(mode="json")
-        for p in pagination.items
-    ]
+    try:
+        per_page = int(request.args.get("per_page", 20))
+    except ValueError:
+        per_page = 20
+    per_page = min(max(per_page, 1), 100)
 
-    return (
-        jsonify(
-            {
-                "items": items,
-                "page": page,
-                "per_page": per_page,
-                "total": pagination.total,
-                "pages": pagination.pages,
-            }
-        ),
-        200,
-    )
+    pagination = ProductService.list(q=q, category=category, sort=sort, page=page, per_page=per_page)
+    items = [_dto_dump(p) for p in pagination.items]
+    return jsonify({
+        "items": items,
+        "page": pagination.page,
+        "per_page": pagination.per_page,
+        "total": pagination.total,
+        "pages": pagination.pages
+    }), 200
 
+@bp.get("/<int:pid>")
+def get_product(pid: int):
+    p = ProductService.get(pid)
+    if not p:
+        abort(404)
+    return jsonify(_dto_dump(p)), 200
 
-@bp.post("/")
+@bp.post("")
 def create_product():
     data = request.get_json(silent=True) or {}
     try:
-        payload = ProductInDTO.model_validate(data).model_dump()
+        dto = ProductInDTO.model_validate(data)
     except ValidationError as e:
-        print("VALIDATION ERROR:", e.errors())
-        return jsonify({"message": "invalid body", "errors": e.errors()}), 400
-    except Exception as e:
-        return jsonify({"message": "invalid body", "detail": str(e)}), 400
-
-    p = ProductService.create(payload)
-    return jsonify({"message": "Produit créé", "id": p.id}), 201
-
+        return jsonify({"error": e.errors()}), 400
+    p = ProductService.create(dto.model_dump())
+    resp = jsonify(_dto_dump(p))
+    resp.headers["Location"] = f"/products/{p.id}"
+    return resp, 201
 
 @bp.patch("/<int:pid>")
-@bp.put("/<int:pid>")
 def update_product(pid: int):
     data = request.get_json(silent=True) or {}
     try:
-        payload = ProductUpdateDTO.model_validate(data).model_dump(
-            exclude_none=True
-        )
+        dto = ProductUpdateDTO.model_validate(data)
+        payload = dto.model_dump(exclude_unset=True)
         if not payload:
-            return jsonify({"message": "no fields to update"}), 400
-    except Exception as e:
-        return jsonify({"message": "invalid body", "detail": str(e)}), 400
-    print("ok1")
-
+            return jsonify({"error": "no fields to update"}), 400
+    except ValidationError as e:
+        return jsonify({"error": e.errors()}), 400
     p = ProductService.update(pid, payload)
     if not p:
-        return jsonify({"message": "product not found"}), 404
-    print("ok2")
-
-    return (
-        jsonify(
-            ProductOutDTO.model_validate(
-                {
-                    "id": p.id,
-                    "name": p.name,
-                    "description": p.description,
-                    "category": p.category,
-                    "price": p.price,
-                    "stock": p.stock,
-                }
-            ).model_dump()
-        ),
-        200,
-    )
-
+        abort(404)
+    return jsonify(_dto_dump(p)), 200
 
 @bp.delete("/<int:pid>")
 def delete_product(pid: int):
     ok = ProductService.delete(pid)
     if not ok:
-        return jsonify({"message": "product not found"}), 404
-    return jsonify({"message": "deleted"}), 200
+        abort(404)
+    return "", 204
