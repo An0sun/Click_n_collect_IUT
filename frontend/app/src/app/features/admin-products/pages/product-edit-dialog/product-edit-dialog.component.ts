@@ -45,15 +45,20 @@ interface DialogData {
       <h2 mat-dialog-title class="text-2xl font-bold mb-6 text-center">
         {{ mode === 'create' ? 'Create product' : 'Edit product' }}
       </h2>
-      
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" mat-dialog-content class="flex flex-col gap-4">
+
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        mat-dialog-content
+        class="flex flex-col gap-4"
+      >
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
-          <input 
-            matInput 
-            formControlName="name" 
-            required 
-            maxlength="120" 
+          <input
+            matInput
+            formControlName="name"
+            required
+            maxlength="120"
             placeholder="Enter product name"
           />
         </mat-form-field>
@@ -107,8 +112,8 @@ interface DialogData {
       </form>
 
       <div mat-dialog-actions class="flex justify-end gap-4 mt-6">
-        <button 
-          mat-stroked-button 
+        <button
+          mat-stroked-button
           (click)="close(false)"
           class="min-w-[100px] py-2"
         >

@@ -9,7 +9,10 @@ export const ADMIN_PRODUCT_ROUTES: Routes = [
   },
   {
     path: 'create',
-    loadComponent: () => import('./pages/create-product-page/create-product-page.component').then(m => m.AdminCreateProductPageComponent),
+    loadComponent: () =>
+      import('./pages/create-product-page/create-product-page.component').then(
+        (m) => m.AdminCreateProductPageComponent
+      ),
     title: 'Admin • Create Product',
-  }
+  },
 ];

@@ -28,16 +28,22 @@ import { ProductService } from '../../services/product.service';
   template: `
     <div class="min-h-screen bg-black/5" aria-label="Create product">
       <div class="max-w-2xl mx-auto p-6">
-        <div class="bg-white rounded-xl shadow-lg p-6 border border-neutral-200">
+        <div
+          class="bg-white rounded-xl shadow-lg p-6 border border-neutral-200"
+        >
           <h1 class="text-2xl font-bold mb-6 text-center">Create Product</h1>
-          
-          <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+
+          <form
+            [formGroup]="createProductForm"
+            (ngSubmit)="onSubmit()"
+            class="flex flex-col gap-4"
+          >
             <mat-form-field appearance="outline">
               <mat-label>Name</mat-label>
-              <input 
-                matInput 
-                formControlName="name" 
-                required 
+              <input
+                matInput
+                formControlName="name"
+                required
                 placeholder="Enter product name"
               />
             </mat-form-field>
@@ -89,8 +95,8 @@ import { ProductService } from '../../services/product.service';
             </div>
 
             <div class="flex justify-end gap-4 mt-6">
-              <button 
-                mat-stroked-button 
+              <button
+                mat-stroked-button
                 type="button"
                 (click)="router.navigate(['/admin/products'])"
                 class="min-w-[100px] py-2"
