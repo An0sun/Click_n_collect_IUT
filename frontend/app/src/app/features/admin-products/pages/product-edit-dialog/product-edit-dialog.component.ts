@@ -129,17 +129,19 @@ export class ProductEditDialogComponent {
   readonly busy = signal(false);
 
   readonly form = new FormGroup({
-    name: new FormControl(this.data.product?.name ?? '', [
-      Validators.required,
-      Validators.maxLength(120),
-    ]),
-    description: new FormControl(this.data.product?.description ?? '', [
-      Validators.required,
-      Validators.maxLength(255),
-    ]),
+    name: new FormControl<string>(this.data.product?.name ?? '', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.maxLength(120)],
+    }),
+    description: new FormControl<string>(this.data.product?.description ?? '', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.maxLength(255)],
+    }),
     category: new FormControl<'Food' | 'Beverage'>(
       this.data.product?.category ?? 'Food',
-      { nonNullable: true }
+      {
+        nonNullable: true,
+      }
     ),
     price: new FormControl<number>(this.data.product?.price ?? 0, {
       nonNullable: true,
@@ -155,11 +157,15 @@ export class ProductEditDialogComponent {
     if (this.form.invalid) return;
     this.busy.set(true);
 
+    const v = this.form.getRawValue();
     const payload = {
-      ...this.form.getRawValue(),
-      price: Number(this.form.value.price),
-      stock: Number(this.form.value.stock),
-    };
+      name: v.name,
+      description: v.description,
+      category: v.category,
+      price: Number(v.price),
+      stock: Number(v.stock),
+    } as Omit<Product, 'id'>;
+
     const req =
       this.mode === 'create'
         ? this.svc.create(payload)

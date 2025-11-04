@@ -4,6 +4,7 @@ import {
   computed,
   inject,
   signal,
+  DestroyRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
@@ -19,6 +20,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { debounceTime, distinctUntilChanged, startWith } from 'rxjs/operators';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog.component';
 import { ProductEditDialogComponent } from '../product-edit-dialog/product-edit-dialog.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 type SortKey = 'name' | 'price' | 'stock';
 type SortDir = 'asc' | 'desc';
@@ -221,6 +223,7 @@ type SortParam = `${SortKey}_${SortDir}`;
 export class AdminProductsPageComponent {
   private readonly svc = inject(ProductService);
   private readonly dialog = inject(MatDialog);
+  private readonly destroyRef = inject(DestroyRef);
 
   readonly qCtrl = new FormControl<string>('', { nonNullable: true });
   readonly categoryCtrl = new FormControl<'' | 'Food' | 'Beverage'>('', {
@@ -254,23 +257,25 @@ export class AdminProductsPageComponent {
       .pipe(
         startWith(this.qCtrl.value),
         debounceTime(250),
-        distinctUntilChanged()
+        distinctUntilChanged(),
+        takeUntilDestroyed(this.destroyRef)
       )
       .subscribe(() => this.loadPage(1));
 
     this.categoryCtrl.valueChanges
-      .pipe(startWith(this.categoryCtrl.value), distinctUntilChanged())
+      .pipe(
+        startWith(this.categoryCtrl.value),
+        distinctUntilChanged(),
+        takeUntilDestroyed(this.destroyRef)
+      )
       .subscribe(() => this.loadPage(1));
   }
 
   trackById = (_: number, p: Product) => p.id;
 
   ariaSort(key: SortKey): 'ascending' | 'descending' | undefined {
-    return this.sortKey() === key
-      ? this.sortDir() === 'asc'
-        ? 'ascending'
-        : 'descending'
-      : undefined;
+    if (this.sortKey() !== key) return undefined;
+    return this.sortDir() === 'asc' ? 'ascending' : 'descending';
   }
 
   toggleSort(key: SortKey) {
@@ -292,7 +297,7 @@ export class AdminProductsPageComponent {
   loadPage(pg: number) {
     this._loading.set(true);
     this._error.set(null);
-    const sort: SortParam = `${this.sortKey()}_${this.sortDir()}` as SortParam;
+    const sort: SortParam = `${this.sortKey()}_${this.sortDir()}`;
 
     this.svc
       .listPage({

@@ -11,9 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
   selector: 'app-confirm-dialog',
   imports: [CommonModule, MatDialogModule, MatButtonModule],
   template: `
-    <h2 mat-dialog-title>{{ data?.title || 'Confirm' }}</h2>
+    <h2 mat-dialog-title>{{ data.title || 'Confirm' }}</h2>
     <div mat-dialog-content>
-      <p id="confirm-message">{{ data?.message || 'Confirm this action?' }}</p>
+      <p id="confirm-message">{{ data.message || 'Confirm this action?' }}</p>
     </div>
     <div mat-dialog-actions align="end">
       <button mat-button (click)="close(false)" cdkFocusInitial>Cancel</button>
@@ -30,7 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmDialogComponent {
-  readonly data = inject(MAT_DIALOG_DATA, { optional: true }) as {
+  readonly data = inject(MAT_DIALOG_DATA) as {
     title?: string;
     message?: string;
   };
