@@ -40,165 +40,170 @@ type SortParam = `${SortKey}_${SortDir}`;
     MatDialogModule,
   ],
   template: `
-    <section class="max-w-6xl mx-auto p-4" aria-label="Products management">
-      <header
-        class="flex flex-col sm:flex-row gap-3 sm:items-center mb-4"
-        role="search"
-      >
-        <mat-form-field appearance="outline" class="w-full sm:w-1/3">
-          <mat-label>Search</mat-label>
-          <input
-            matInput
-            [formControl]="qCtrl"
-            placeholder="name or description"
-            inputmode="search"
-            aria-label="Search product"
-          />
-        </mat-form-field>
+    <section class="min-h-screen bg-black/5" aria-label="Products management">
+      <div class="max-w-7xl mx-auto p-6">
+        <div class="bg-white rounded-xl shadow-lg p-6 border border-neutral-200">
+          <header class="flex flex-col sm:flex-row gap-4 sm:items-center mb-6" role="search">
+            <mat-form-field appearance="outline" class="w-full sm:w-1/3">
+              <mat-label>Search</mat-label>
+              <!-- spacing to avoid overlap between prefix icon and input text -->
+              <mat-icon matPrefix class="mr-2 ml-1">search</mat-icon>
+              <input
+                matInput
+                [formControl]="qCtrl"
+                placeholder="Search products..."
+                inputmode="search"
+                aria-label="Search product"
+                class="pl-6"
+              />
+            </mat-form-field>
 
-        <mat-form-field appearance="outline" class="w-full sm:w-1/6">
-          <mat-label>Category</mat-label>
-          <mat-select [formControl]="categoryCtrl" aria-label="Category filter">
-            <mat-option [value]="''">All</mat-option>
-            <mat-option value="Food">Food</mat-option>
-            <mat-option value="Beverage">Beverage</mat-option>
-          </mat-select>
-        </mat-form-field>
+            <mat-form-field appearance="outline" class="w-full sm:w-1/6">
+              <mat-label>Category</mat-label>
+              <mat-icon matPrefix class="mr-2 ml-1">category</mat-icon>
+              <!-- add a custom panel class so we can force a white background for the overlay -->
+              <mat-select [formControl]="categoryCtrl" aria-label="Category filter" class="pl-4" [panelClass]="'category-panel'">
+                <mat-option [value]="''">All</mat-option>
+                <mat-option value="Food">Food</mat-option>
+                <mat-option value="Beverage">Beverage</mat-option>
+              </mat-select>
+            </mat-form-field>
 
-        <div class="flex-1"></div>
+            <div class="flex-1"></div>
 
-        <button
-          mat-raised-button
-          color="primary"
-          (click)="openCreate()"
-          [attr.aria-label]="'Create product'"
-          class="ml-auto"
-        >
-          <mat-icon aria-hidden="true">add</mat-icon>
-          <span class="ml-2">Create</span>
-        </button>
-      </header>
+            <button
+              mat-flat-button
+              color="warn"
+              (click)="openCreate()"
+              class="!min-w-[120px] !h-[45px] shadow-md hover:shadow-lg transition-all"
+            >
+              <mat-icon class="mr-2">add_circle</mat-icon>
+              <span>Create</span>
+            </button>
+          </header>
 
-      <div
-        class="overflow-auto rounded-lg bg-white shadow"
-        role="region"
-        aria-live="polite"
-        aria-label="Products table"
-      >
-        <table
-          mat-table
-          [dataSource]="items()"
-          class="mat-elevation-z1 w-full border-collapse"
-          [trackBy]="trackById"
-        >
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef class="w-[35%] px-4">
-              <button
-                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
-                (click)="toggleSort('name')"
-                [attr.aria-sort]="ariaSort('name')"
-              >
-                Name
-                <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
-              </button>
-            </th>
-            <td mat-cell *matCellDef="let p" class="px-4">
-              <div class="truncate" [title]="p.name">{{ p.name }}</div>
-            </td>
-          </ng-container>
+          <div class="overflow-x-auto rounded-lg border border-neutral-200" role="region" aria-live="polite">
+            <table mat-table [dataSource]="items()" class="min-w-full" [trackBy]="trackById">
+              <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef class="w-[35%] !px-6 font-bold text-sm" style="background:#0f172a; color:#fff;">
+                  <button class="inline-flex items-center gap-2 font-medium" (click)="toggleSort('name')">
+                    Name
+                    <mat-icon class="!w-5 !h-5 !text-base">unfold_more</mat-icon>
+                  </button>
+                </th>
+                  <td mat-cell *matCellDef="let p" class="!px-6 !py-4">
+                  <div class="truncate font-medium" [title]="p.name">{{ p.name }}</div>
+                </td>
+              </ng-container>
 
-          <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef class="w-[20%] px-4">
-              Category
-            </th>
-            <td mat-cell *matCellDef="let p" class="px-4">{{ p.category }}</td>
-          </ng-container>
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef class="w-[20%] !px-6 font-bold text-sm" style="background:#0f172a; color:#fff;">Category</th>
+                  <td mat-cell *matCellDef="let p" class="!px-6 !py-4">{{ p.category }}</td>
+              </ng-container>
 
-          <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
-              <button
-                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
-                (click)="toggleSort('price')"
-                [attr.aria-sort]="ariaSort('price')"
-              >
-                Price
-                <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
-              </button>
-            </th>
-            <td mat-cell *matCellDef="let p" class="px-4">
-              {{ p.price | number : '1.2-2' }} €
-            </td>
-          </ng-container>
+              <ng-container matColumnDef="price">
+                  <th mat-header-cell *matHeaderCellDef class="w-[15%] !px-6 font-bold text-sm" style="background:#0f172a; color:#fff;">
+                  <button class="inline-flex items-center gap-2 font-medium" (click)="toggleSort('price')">
+                    Price
+                    <mat-icon class="!w-5 !h-5 !text-base">unfold_more</mat-icon>
+                  </button>
+                </th>
+                  <td mat-cell *matCellDef="let p" class="!px-6 !py-4">{{ p.price | number:'1.2-2' }} €</td>
+              </ng-container>
 
-          <ng-container matColumnDef="stock">
-            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
-              <button
-                class="inline-flex items-center gap-1 font-semibold cursor-pointer"
-                (click)="toggleSort('stock')"
-                [attr.aria-sort]="ariaSort('stock')"
-              >
-                Stock
-                <mat-icon fontIcon="unfold_more" aria-hidden="true"></mat-icon>
-              </button>
-            </th>
-            <td mat-cell *matCellDef="let p" class="px-4">{{ p.stock }}</td>
-          </ng-container>
+              <ng-container matColumnDef="stock">
+                  <th mat-header-cell *matHeaderCellDef class="w-[15%] !px-6 font-bold text-sm" style="background:#0f172a; color:#fff;">
+                  <button class="inline-flex items-center gap-2 font-medium" (click)="toggleSort('stock')">
+                    Stock
+                    <mat-icon class="!w-5 !h-5 !text-base">unfold_more</mat-icon>
+                  </button>
+                </th>
+                  <td mat-cell *matCellDef="let p" class="!px-6 !py-4">{{ p.stock }}</td>
+              </ng-container>
 
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef class="w-[15%] px-4">
-              Actions
-            </th>
-            <td mat-cell *matCellDef="let p" class="px-4 whitespace-nowrap">
-              <button
-                mat-icon-button
-                color="primary"
-                (click)="openEdit(p)"
-                [attr.aria-label]="'Edit ' + p.name"
-              >
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button
-                mat-icon-button
-                color="warn"
-                (click)="confirmDelete(p)"
-                [attr.aria-label]="'Delete ' + p.name"
-              >
-                <mat-icon>delete</mat-icon>
-              </button>
-            </td>
-          </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="w-[15%] !px-6 font-bold text-sm" style="background:#0f172a; color:#fff;">Actions</th>
+                  <td mat-cell *matCellDef="let p" class="!px-6 !py-4">
+                  <div class="flex gap-2">
+                    <button mat-icon-button color="primary" (click)="openEdit(p)" class="!w-8 !h-8">
+                      <mat-icon class="!w-5 !h-5 !text-base">edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="confirmDelete(p)" class="!w-8 !h-8">
+                      <mat-icon class="!w-5 !h-5 !text-base">delete</mat-icon>
+                    </button>
+                  </div>
+                </td>
+              </ng-container>
 
-          <tr
-            mat-header-row
-            *matHeaderRowDef="displayedColumns"
-            class="bg-gray-50"
-          ></tr>
-          <tr
-            mat-row
-            *matRowDef="let row; columns: displayedColumns"
-            class="hover:bg-gray-50 transition-colors border-t border-gray-100"
-          ></tr>
-        </table>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr 
+                mat-row 
+                *matRowDef="let row; columns: displayedColumns"
+                class="hover:bg-neutral-50 transition-colors border-t border-neutral-200"
+              ></tr>
+            </table>
+          </div>
+
+          <div class="mt-4 flex items-center justify-center bg-white border border-neutral-200 rounded-lg overflow-hidden px-6 py-3">
+            <mat-paginator class="admin-products-paginator"
+              [length]="total()"
+              [pageIndex]="page() - 1"
+              [pageSize]="perPage()"
+              [pageSizeOptions]="[5, 10, 20, 50, 100]"
+              [showFirstLastButtons]="true"
+              (page)="onPage($event)"
+              
+              aria-label="Products pagination"
+            >
+            </mat-paginator>
+          </div>
+
+          @if (loading()) {
+            <div class="mt-4 flex items-center justify-center text-neutral-600">
+              <mat-icon class="animate-spin mr-2">refresh</mat-icon>
+              <span>Loading...</span>
+            </div>
+          }
+
+          @if (error()) {
+            <div class="mt-4 p-4 bg-red-50 text-red-600 rounded-lg border border-red-200 flex items-center">
+              <mat-icon class="mr-2">error</mat-icon>
+              <span>{{ error() }}</span>
+            </div>
+          }
+        </div>
       </div>
-
-      <mat-paginator
-        [length]="total()"
-        [pageIndex]="page() - 1"
-        [pageSize]="perPage()"
-        [pageSizeOptions]="[10, 20, 50, 100]"
-        (page)="onPage($event)"
-        aria-label="Products pagination"
-      >
-      </mat-paginator>
-      @if (loading()) {
-      <p class="mt-3 text-gray-700" role="status" aria-live="polite">
-        Loading…
-      </p>
-      } @if (error()) {
-      <p class="mt-3 text-red-600" role="alert">{{ error() }}</p>
-      }
     </section>
   `,
+  styles: [
+    `
+    /* Ensure the mat-select options panel is solid white and above other content */
+    ::ng-deep .category-panel {
+      background: #ffffff !important;
+      color: #111 !important;
+      z-index: 3000 !important;
+    }
+
+    /* Make sure mat-options are also on white background */
+    .category-panel .mat-option {
+      background: #ffffff !important;
+      color: #111 !important;
+    }
+
+    /* Center paginator content inside its container */
+    :host ::ng-deep .admin-products-paginator {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100%;
+    }
+
+    /* Slight spacing for the page-size selector */
+    :host ::ng-deep .admin-products-paginator .mat-paginator-page-size {
+      margin-right: 1rem;
+    }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminProductsPageComponent {
@@ -270,9 +275,19 @@ export class AdminProductsPageComponent {
   }
 
   onPage(e: PageEvent) {
-    this.perPage.set(e.pageSize);
-    this.page.set(e.pageIndex + 1);
-    this.loadPage(this.page());
+    const newPage = e.pageIndex + 1;
+    const newPerPage = e.pageSize;
+    
+    if (this.perPage() === newPerPage) {
+      // same page size: just change page
+      this.page.set(newPage);
+      this.loadPage(newPage);
+    } else {
+      // different page size: reset to first page with new page size
+      this.perPage.set(newPerPage);
+      this.page.set(1);
+      this.loadPage(1);
+    }
   }
 
   loadPage(pg: number) {
