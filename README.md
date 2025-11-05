@@ -44,15 +44,6 @@ Suivi en temps réel via **SSE** . Rôles **CLIENT/ADMIN** . Swagger disponible.
 - **Admin** : CRUD produits, gestion commandes
 - **Temps réel** : SSE commandes et stock
 
-### Captures d’écran
-
-_(à ajouter dans `docs/screens/`)_
-
-- `products-list.png`
-- `cart.png`
-- `admin-orders.png`
-- `admin-product-edit.png`
-
 ### Scénario rapide
 
 1. Ouvrir la page Produits
@@ -141,8 +132,8 @@ flowchart LR
 
 ## 5) Modèle de données
 
-| Entité        | Champs principaux                                        |
-| ------------- | -------------------------------------------------------- |
+| Entité             | Champs principaux                                        |
+| ------------------- | -------------------------------------------------------- |
 | **Product**   | id, name, description, category, price, stock, image_url |
 | **Order**     | id, user_id, status, total, created_at                   |
 | **OrderItem** | id, order_id, product_id, quantity, unit_price           |
@@ -277,11 +268,11 @@ afin d’ajouter la nouvelle colonne à la base existante (`instance/app.db`).
 
 Le projet contient plusieurs **seeders indépendants** afin d’initialiser chaque table.
 
-| Seeder       | Fichier                           | Description                                                               |
-| ------------ | --------------------------------- | ------------------------------------------------------------------------- |
-| Utilisateurs | `backend/shared/seed_users.py`    | Crée un compte**admin**et un compte**client**                             |
-| Produits     | `backend/shared/seed_products.py` | Insère**30 produits réels**(cafés, boissons, viennoiseries, snacks)       |
-| Commandes    | `backend/shared/seed_orders.py`   | Crée une commande d’exemple liée au client                                |
+| Seeder       | Fichier                             | Description                                                                   |
+| ------------ | ----------------------------------- | ----------------------------------------------------------------------------- |
+| Utilisateurs | `backend/shared/seed_users.py`    | Crée un compte**admin**et un compte**client**                    |
+| Produits     | `backend/shared/seed_products.py` | Insère**30 produits réels**(cafés, boissons, viennoiseries, snacks)  |
+| Commandes    | `backend/shared/seed_orders.py`   | Crée une commande d’exemple liée au client                                 |
 | Global       | `backend/shared/seed.py`          | Réinitialise la base (`drop_all`) puis exécute tous les seeders ci-dessus |
 
 #### Commande complète :
@@ -291,11 +282,11 @@ Le projet contient plusieurs **seeders indépendants** afin d’initialiser chaq
 
 #### Exemple de résultat :
 
-| Table        | Données créées                                                            |
-| ------------ | ------------------------------------------------------------------------- |
+| Table              | Données créées                                                             |
+| ------------------ | ----------------------------------------------------------------------------- |
 | **users**    | 2 utilisateurs (`admin@iut.univ-paris8.fr`,`etudiant@iut.univ-paris8.fr`) |
-| **products** | 30 produits variés avec images Unsplash                                   |
-| **orders**   | 1 commande test associée au compte client                                 |
+| **products** | 30 produits variés avec images Unsplash                                      |
+| **orders**   | 1 commande test associée au compte client                                    |
 
 > exécuter à nouveau `seed.py` pour regénérer la base.
 
@@ -426,27 +417,27 @@ Quelques problèmes qui nous arrivait :
 
 ## 19) Traçabilité cahier des charges
 
-| Exigence             | État | Emplacement                         |
-| -------------------- | ---- | ----------------------------------- |
-| CRUD produits        | OK   | `controllers/products_*`            |
-| URL image produit    | OK   | `product_model.py`,`product_dto.py` |
-| Commandes + statuts  | OK   | `order_controllers.py`              |
-| Pagination commandes | OK   | `order_service.py`                  |
-| Auth + rôles         | OK   | JWT                                 |
-| SSE admin/client     | OK   | `/orders/sse`,`/products/sse`       |
-| Logs séparés         | OK   | `logs/success.log`,`logs/error.log` |
-| Restriction email    | OK   | `dtos/user_dto.py`                  |
+| Exigence             | État | Emplacement                             |
+| -------------------- | ----- | --------------------------------------- |
+| CRUD produits        | OK    | `controllers/products_*`              |
+| URL image produit    | OK    | `product_model.py`,`product_dto.py` |
+| Commandes + statuts  | OK    | `order_controllers.py`                |
+| Pagination commandes | OK    | `order_service.py`                    |
+| Auth + rôles        | OK    | JWT                                     |
+| SSE admin/client     | OK    | `/orders/sse`,`/products/sse`       |
+| Logs séparés       | OK    | `logs/success.log`,`logs/error.log` |
+| Restriction email    | OK    | `dtos/user_dto.py`                    |
 
 ---
 
 ## 20) Livrables
 
-- [x] Code complet (front/back)
-- [x] README + Swagger
-- [x] Logs séparés
-- [x] Auth et rôles
-- [x] Pagination commandes
-- [x] Restriction domaine e-mail
+- [X] Code complet (front/back)
+- [X] README + Swagger
+- [X] Logs séparés
+- [X] Auth et rôles
+- [X] Pagination commandes
+- [X] Restriction domaine e-mail
 
 ---
 
