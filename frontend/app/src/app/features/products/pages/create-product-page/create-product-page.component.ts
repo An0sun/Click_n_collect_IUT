@@ -36,15 +36,7 @@ export class CreateProductPageComponent {
     }
     this.submitting = true;
     this.productService.createProduct(this.createProductForm.value as Omit<Product, 'id'>).subscribe({
-      next: () => {
-        alert('Produit créé avec succès');
-        this.router.navigateByUrl('/admin/products');
-      },
-      error: (err) => {
-        console.error(err);
-        alert("Erreur lors de la création du produit.");
-        this.submitting = false;
-      }
+      complete: () => this.router.navigateByUrl('/admin/products'),
     });
   }
   

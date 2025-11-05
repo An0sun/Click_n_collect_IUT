@@ -1,3 +1,4 @@
+from security.guards import requires_roles
 from flask import Blueprint, request, jsonify
 from http import HTTPStatus
 from dtos.order_dto import OrderInDTO, OrderStatus
@@ -7,13 +8,12 @@ from mappers.order_mapper import order_to_dto
 from flasgger.utils import swag_from
 import logging
 
-bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
 logger = logging.getLogger("lcde")
 from realtime.order_sse import push_order_event
 from mappers.order_mapper import order_to_dto
 
-bp_orders = Blueprint("orders", __name__, url_prefix ="/orders")
+bp_orders = Blueprint("orders", __name__, url_prefix = "/orders")
 
 @bp_orders.get("")
 @jwt_required()
@@ -32,12 +32,21 @@ def find_all() :
     return jsonify([order_to_dto(o).model_dump() for o in orders]), HTTPStatus.OK
 
 @bp_orders.get("/<int:order_id>")
+@jwt_required()
 @swag_from("../docs/orders/get_order_by_id.yaml")
-def find_by_id(order_id: int):
+def find_by_id(order_id : int) :
     order = OrderService.find_by_id(order_id)
-    return jsonify(order_to_dto(order).model_dump()), HTTPStatus.OK 
+
+    claims = get_jwt()
+    role = claims.get("role")
+    if role != "ADMIN" :
+        requester_email = claims.get("email")
+        if not requester_email or requester_email.lower() != (order.email or "").lower() :
+            return {"message" : "Forbidden"}, HTTPStatus.FORBIDDEN
+    return jsonify(order_to_dto(order).model_dump()), HTTPStatus.OK
 
 @bp_orders.post("/")
+@jwt_required()
 @swag_from("../docs/orders/create_order.yaml")
 def create():
     order_create_dto = OrderInDTO.model_validate_json(request.data)
@@ -46,6 +55,8 @@ def create():
     return jsonify(order_to_dto(created_order).model_dump()), HTTPStatus.CREATED
 
 @bp_orders.delete("/<int:order_id>")
+@jwt_required()
+@requires_roles("ADMIN")
 @swag_from("../docs/orders/delete_order.yaml")
 def delete(order_id: int):
     OrderService.delete(order_id)
@@ -63,7 +74,11 @@ def patch_order(order_id : int) :
 
     data = request.get_json()
 
-    updated = OrderService.patch(order_id, data)
+    try :
+        updated = OrderService.patch(order_id, data)
+    except ValueError as e :
+        return {"message" : str(e)}, HTTPStatus.UNPROCESSABLE_ENTITY
+    
     out = order_to_dto(updated).model_dump()
 
     if "status" in data :

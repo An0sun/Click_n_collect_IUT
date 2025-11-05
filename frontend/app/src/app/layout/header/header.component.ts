@@ -12,4 +12,8 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
   isMenuOpen = false;
   tokens = inject(TokenService);
+
+  get isAdmin() {
+    return this.tokens.getRole?.() === 'ADMIN';
+  }
 }

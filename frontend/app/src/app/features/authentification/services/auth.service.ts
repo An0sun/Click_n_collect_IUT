@@ -36,6 +36,4 @@ register(payload: { name: string; first_name: string; email: string; password: s
     })
   );
 }
-
-  logout() { this.tokens.clear(); }
 }

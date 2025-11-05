@@ -19,10 +19,6 @@ export class RegisterComponent {
   constructor(private auth: AuthService, private router: Router) {}
   private tokens = inject(TokenService);
 
-  ngOnInit() {
-    this.tokens.clear();
-  }
-
   onSubmit(dto: { name?: string; first_name?: string; firstName?: string; email?: string; password?: string }) {
     this.loading = true;
     this.error = '';

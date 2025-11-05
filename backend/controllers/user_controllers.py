@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from http import HTTPStatus
 from typing import Optional
 
+from flask_jwt_extended import jwt_required
 from security.guards import requires_roles
 from dtos.user_dto import RegisterDTO, UpdateProfileDTO, PublicUserDTO
 from services.user_service import UserService
@@ -35,6 +36,7 @@ def create() :
 
 @user_bp.put("/<int:user_id>")
 @swag_from("../docs/users/update.yaml")
+@jwt_required()
 @requires_roles("ADMIN")
 def update(user_id : int) :
     payload = request.get_json(silent=True) or {}
@@ -52,6 +54,7 @@ def update(user_id : int) :
 
 @user_bp.patch("/<int:user_id>")
 @swag_from("../docs/users/patch.yaml")
+@jwt_required()
 @requires_roles("ADMIN")
 def patch(user_id : int) :
     update_dto = UpdateProfileDTO.model_validate_json(request.data)
@@ -60,6 +63,7 @@ def patch(user_id : int) :
 
 @user_bp.delete("/<int:user_id>")
 @swag_from("../docs/users/delete.yaml")
+@jwt_required()
 @requires_roles("ADMIN")
 def remove(user_id : int) :
     UserService.delete_user(user_id)
