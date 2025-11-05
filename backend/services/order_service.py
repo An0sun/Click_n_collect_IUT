@@ -7,7 +7,7 @@ from repositories.order_repository import OrderRepository
 from repositories.product_repository import ProductRepository
 from models.order_model import Order
 
-from realtime.order_sse import push_order_created      # ✅ import manquant
+from realtime.order_sse import push_order_created
 from realtime.product_sse import push_stock_updated
 
 class OrderService:
@@ -18,14 +18,12 @@ class OrderService:
         order = dto_to_order(order_dto)
         created_order = OrderRepository.create(order)
 
-        # Si tu modifies les stocks ici, garde cette ligne
         OrderService._update_stocks_after_order(created_order)
 
-        # ✅ DIFFUSER l’event "order_created" sur le flux global
         payload = {"order": order_to_dto(created_order).model_dump(mode="json")}
         push_order_created(payload)
 
-        return created_order  # ✅ ne recrée pas une 2e fois
+        return created_order 
 
     def _update_stocks_after_order(order: Order) -> None:
         for item in order.items:
@@ -41,7 +39,7 @@ class OrderService:
         return (
             Order.query
             .filter(Order.status != "DELIVERED")
-            .order_by(Order.created_at.asc())
+            .order_by(Order.created_at.desc())
             .all()
         )
 

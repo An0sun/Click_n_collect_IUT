@@ -38,10 +38,6 @@ def create_app():
     register_blueprints(app)
     register_error_handlers(app)
 
-    @app.route("/")
-    def home():
-        return jsonify({"message": "Bienvenue sur l’API Click & Collect 🚀"})
-
     return app
 
 if __name__ == "__main__":

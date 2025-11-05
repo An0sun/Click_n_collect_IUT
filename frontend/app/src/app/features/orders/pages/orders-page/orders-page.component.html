@@ -16,12 +16,14 @@
               <label class="text-sm">
                 Statut :
                 <select
-                  [value]="order.status"
                   #sel
                   (mouseenter)="ensureSse(order.id)"
                   (change)="onChangeStatus(order.id, sel.value)">
-                  @for (s of STATUSES; track s) { <option [value]="s">{{ s }}</option> }
+                  @for (s of STATUSES; track s) {
+                    <option [value]="s" [selected]="isSelected(order.status, s)">{{ s }}</option>
+                  }
                 </select>
+''
               </label>
             }
           </div>

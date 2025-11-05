@@ -120,4 +120,10 @@ ensureSse(orderId: number) {
       }
     });
   }
+
+isSelected(current: any, option: string): boolean {
+  const val = typeof current === 'string' ? current : (current?.value ?? current);
+  return val === option;
+}
+
 }
