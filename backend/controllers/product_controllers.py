@@ -40,8 +40,8 @@ def list_products():
 def create_product():
     logger.info("Création d’un nouveau produit demandée.")
     product_dto = ProductInDTO.model_validate_json(request.data)
-    # Use JSON mode to serialize types (e.g., HttpUrl) to primitives
-    created_product = ProductService.create(product_dto.model_dump(mode="json"))
+
+    created_product = ProductService.create(product_dto.model_dump())
 
     logger.info("Produit créé : %s (ID=%d)", created_product.name, created_product.id)
     return jsonify(product_to_dto(created_product).model_dump()), HTTPStatus.CREATED
@@ -53,11 +53,7 @@ def create_product():
 @swag_from("../docs/products/update_product.yaml")
 def update_product(pid: int):
     update_dto = ProductUpdateDTO.model_validate_json(request.data)
-    # Ensure serialization for complex types
-    updated_product = ProductService.update(
-        pid,
-        update_dto.model_dump(exclude_none=True, mode="json")
-    )
+    updated_product = ProductService.update(pid, update_dto.model_dump(exclude_none=True))
     return jsonify(product_to_dto(updated_product).model_dump()), HTTPStatus.OK
 
 @bp.delete("/<int:pid>")
