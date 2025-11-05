@@ -8,7 +8,7 @@
             <div class="flex gap-6 sm:gap-4 max-sm:flex-col">
               <div class="w-24 h-24 shrink-0">
                 <img
-                  [src]="'https://images.unsplash.com/photo-1757743066455-4b5b471cdb80?q=80&w=600&auto=format&fit=crop'"
+                  [src]="item.product.imageUrl || placeholderUrl"
                   alt="{{ item.product.name }}"
                   class="w-full h-full object-contain"
                 />

@@ -12,6 +12,7 @@ import { OrdersService } from '../../../orders/services/orders.service';
 })
 export class CartComponent {
   cart: CartItem[] = [];
+  placeholderUrl = 'https://images.unsplash.com/photo-1757743066455-4b5b471cdb80?q=80&w=600&auto=format&fit=crop';
 
   constructor(private cartService: CartService, private orderService: OrdersService, private router: Router) {}
 
