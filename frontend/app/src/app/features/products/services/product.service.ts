@@ -26,18 +26,22 @@ export class ProductService {
       per_page: number;
       total: number;
       pages: number;
-    }>(
-      `${this.apiUrl}?page=${page}`
-    );
+    }>(`${this.apiUrl}?page=${page}`);
   }
+
+
 
   createProduct(product: Omit<Product, 'id'>): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
   }
 
   deleteProduct(id: number) {
-  return this.http.delete<{ message: string }>(`${this.baseUrl}/products/${id}`);
-}
+    return this.http.delete<{ message: string }>(`${this.baseUrl}/products/${id}`);
+  }
+
+  updateProduct(id: number, patch: Partial<Product>): Observable<Product> {
+    return this.http.patch<Product>(`${this.apiUrl}${id}`, patch);
+  }
 
   onStockUpdates(): Observable<{ id: number; stock: number }> {
     if (!this.stockStream$) {

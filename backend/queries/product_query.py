@@ -6,12 +6,12 @@ Category = Literal["Food", "Beverage"]
 SortField = Literal["name", "price", "stock", "created_at"]
 
 class ProductListQuery(BaseModel):
-    
+
     q: Optional[str] = None
     category: Optional[Category] = None
     sort: Optional[SortField] = None
     page: int = Field(default=1, ge=1)
-    per_page: int = Field(default=10, ge=1, le=100)
+    per_page: int = Field(default=8, ge=1, le=100)
 
     @field_validator("q", "category", "sort", mode="before")
     @classmethod

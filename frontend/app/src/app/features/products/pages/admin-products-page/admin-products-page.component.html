@@ -1,0 +1,31 @@
+<div class="p-4 md:p-6">
+  <h1 class="text-2xl font-semibold mb-4">Gestion des produits</h1>
+
+  @if (loading) {
+    <p class="text-gray-500">Chargement…</p>
+  } @else {
+    <app-admin-products-table
+      [products]="products"
+      [loading]="loading"
+      [page]="page || 1"
+      [pages]="pages || 1"
+      [total]="total || 0"
+      [perPage]="perPage"
+      (pageChange)="onPageChange($event)"
+      (editRequest)="onAskEdit($event)"
+      (deleteProduct)="onDelete($event)"
+    />
+  }
+
+  @if (!loading && products.length === 0) {
+    <p class="text-gray-500 mt-3">Aucun produit.</p>
+  }
+</div>
+
+@if (editingProduct) {
+  <app-product-update
+    [product]="editingProduct!"
+    (saved)="onUpdateSaved()"
+    (cancel)="onUpdateCancel()"
+  ></app-product-update>
+}
