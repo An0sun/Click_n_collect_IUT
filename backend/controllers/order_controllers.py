@@ -8,13 +8,12 @@ from mappers.order_mapper import order_to_dto
 from flasgger.utils import swag_from
 import logging
 
-bp_orders = Blueprint("orders", __name__, url_prefix="/orders")
 
 logger = logging.getLogger("lcde")
 from realtime.order_sse import push_order_event
 from mappers.order_mapper import order_to_dto
 
-bp_orders = Blueprint("orders", __name__, url_prefix ="/orders")
+bp_orders = Blueprint("orders", __name__, url_prefix = "/orders")
 
 @bp_orders.get("")
 @jwt_required()
@@ -45,7 +44,9 @@ def find_by_id(order_id : int) :
         if not requester_email or requester_email.lower() != (order.email or "").lower() :
             return {"message" : "Forbidden"}, HTTPStatus.FORBIDDEN
     return jsonify(order_to_dto(order).model_dump()), HTTPStatus.OK
+
 @bp_orders.post("/")
+@jwt_required()
 @swag_from("../docs/orders/create_order.yaml")
 def create():
     order_create_dto = OrderInDTO.model_validate_json(request.data)
