@@ -21,6 +21,10 @@ definitions:
       stock:
         type: integer
         example: 30
+      image_url:
+        type: string
+        format: url
+        example: "https://example.com/images/produit.jpg"
 
   ProductUpdateDTO:
     type: object
@@ -42,6 +46,10 @@ definitions:
       stock:
         type: integer
         example: 50
+      image_url:
+        type: string
+        format: url
+        example: "https://example.com/images/produit.jpg"
 
   ProductOutDTO:
     allOf:

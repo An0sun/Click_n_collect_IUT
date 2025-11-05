@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, field_validator, ConfigDict
+from pydantic import BaseModel, Field, field_validator, ConfigDict, HttpUrl
 from typing import Literal, Optional
 
 
@@ -10,6 +10,7 @@ class ProductInDTO(BaseModel):
     category: Category
     price: float
     stock: int
+    image_url: Optional[HttpUrl] = Field(default=None)
 
     @field_validator("price")
     @classmethod
@@ -30,6 +31,7 @@ class ProductUpdateDTO(BaseModel):
     category: Optional[Category] = None
     price: Optional[float] = None
     stock: Optional[int] = None
+    image_url: Optional[HttpUrl] = None
 
     @field_validator("price")
     @classmethod
@@ -50,3 +52,4 @@ class ProductOutDTO(BaseModel):
     category: Category
     price: float
     stock: int
+    image_url: Optional[str] = None

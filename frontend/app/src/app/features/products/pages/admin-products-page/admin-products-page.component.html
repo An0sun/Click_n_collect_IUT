@@ -1,5 +1,13 @@
 <div class="p-4 md:p-6">
-  <h1 class="text-2xl font-semibold mb-4">Gestion des produits</h1>
+  <div class="flex items-center justify-between mb-4">
+    <h1 class="text-2xl font-semibold">Gestion des produits</h1>
+    <a
+      class="px-3 py-2 rounded-lg bg-amber-800 text-white hover:bg-amber-900"
+      routerLink="/admin/create-product"
+    >
+      Créer un produit
+    </a>
+  </div>
 
   @if (loading) {
     <p class="text-gray-500">Chargement…</p>

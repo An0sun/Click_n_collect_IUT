@@ -16,7 +16,7 @@
 
     <div class="w-full h-48 sm:h-56 lg:h-40 overflow-hidden">
       <img
-        [src]="'https://images.unsplash.com/photo-1757743066455-4b5b471cdb80?q=80&w=600&auto=format&fit=crop'"
+        [src]="product.imageUrl || placeholderUrl"
         [alt]="product.name"
         class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
       />

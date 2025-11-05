@@ -28,6 +28,7 @@ export class ProductUpdateComponent implements OnInit {
       description: ['', [Validators.required, Validators.maxLength(255)]],
       price: [0, [Validators.required, Validators.min(0)]],
       stock: [0, [Validators.required, Validators.min(0)]],
+      imageUrl: [null, [Validators.pattern(/^https?:\/\//i)]]
     });
 
     if (this.product) {
@@ -37,6 +38,7 @@ export class ProductUpdateComponent implements OnInit {
         description: this.product.description,
         price: this.product.price,
         stock: this.product.stock,
+        imageUrl: this.product.imageUrl ?? null,
       });
     }
   }
@@ -46,7 +48,7 @@ export class ProductUpdateComponent implements OnInit {
 
     const raw = this.form.getRawValue();
     const patch: Partial<Product> = {};
-    (['name','category','description','price','stock'] as const).forEach((k) => {
+    (['name','category','description','price','stock','imageUrl'] as const).forEach((k) => {
       if ((this.product as any)[k] !== (raw as any)[k]) {
         (patch as any)[k] = (raw as any)[k];
       }

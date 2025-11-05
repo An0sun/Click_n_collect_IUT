@@ -13,26 +13,51 @@ export class ProductService {
   private stockStream$?: Observable<{ id: number; stock: number }>;
   constructor(private http: HttpClient) {}
 
+  private toCamel(p: any): Product {
+    return {
+      id: p.id,
+      name: p.name,
+      category: p.category,
+      description: p.description,
+      price: p.price,
+      stock: p.stock,
+      imageUrl: p.image_url ?? null,
+    };
+  }
+
+  private toSnake(data: Partial<Product>): any {
+    const { imageUrl, ...rest } = data as any;
+    const payload: any = { ...rest };
+    if (imageUrl !== undefined) payload.image_url = imageUrl || null;
+    return payload;
+  }
+
   getProducts(): Observable<Product[]> {
-    return this.http.get<{ items: Product[] }>(this.apiUrl).pipe(
-      map((response: { items: Product[] }) => response.items)
+    return this.http.get<{ items: any[] }>(this.apiUrl).pipe(
+      map((response) => response.items.map((p: any) => this.toCamel(p)))
     );
   }
 
   getProductsPagines(page: number = 1) {
     return this.http.get<{
-      items: Product[];
+      items: any[];
       page: number;
       per_page: number;
       total: number;
       pages: number;
-    }>(`${this.apiUrl}?page=${page}`);
+    }>(`${this.apiUrl}?page=${page}`).pipe(
+      map((res) => ({
+        ...res,
+        items: res.items.map((p: any) => this.toCamel(p)),
+      }))
+    );
   }
 
 
 
   createProduct(product: Omit<Product, 'id'>): Observable<Product> {
-    return this.http.post<Product>(this.apiUrl, product);
+    const payload = this.toSnake(product);
+    return this.http.post<any>(this.apiUrl, payload).pipe(map((p) => this.toCamel(p)));
   }
 
   deleteProduct(id: number) {
@@ -40,7 +65,8 @@ export class ProductService {
   }
 
   updateProduct(id: number, patch: Partial<Product>): Observable<Product> {
-    return this.http.patch<Product>(`${this.apiUrl}${id}`, patch);
+    const payload = this.toSnake(patch);
+    return this.http.patch<any>(`${this.apiUrl}${id}`, payload).pipe(map((p) => this.toCamel(p)));
   }
 
   onStockUpdates(): Observable<{ id: number; stock: number }> {

@@ -10,6 +10,7 @@ def product_to_dto(product: Product) -> ProductOutDTO:
         category=product.category,
         price=product.price,
         stock=product.stock,
+        image_url=product.image_url,
     )
 
 def dto_to_product(product_dto: ProductInDTO) -> Product:
@@ -19,6 +20,7 @@ def dto_to_product(product_dto: ProductInDTO) -> Product:
         category=product_dto.category,
         price=product_dto.price,
         stock=product_dto.stock,
+        image_url=product_dto.image_url if hasattr(product_dto, 'image_url') else None,
     )
 
 def update_model_from_dto(product: Product, update_dto: ProductUpdateDTO) -> Product:

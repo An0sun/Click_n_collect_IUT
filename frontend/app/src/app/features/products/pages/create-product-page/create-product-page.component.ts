@@ -23,12 +23,28 @@ export class CreateProductPageComponent {
     description: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
     price: new FormControl<number | null>(null, [Validators.required]),
     stock: new FormControl<number | null>(null, [Validators.required]),
+    imageUrl: new FormControl<string | null>(null, [Validators.pattern(/^https?:\/\//i)])
   });
 
   
+  submitting = false;
+
   onSubmit() {
+    if (this.createProductForm.invalid) {
+      this.createProductForm.markAllAsTouched();
+      return;
+    }
+    this.submitting = true;
     this.productService.createProduct(this.createProductForm.value as Omit<Product, 'id'>).subscribe({
-      complete: () => this.router.navigateByUrl('/welcome'),
+      next: () => {
+        alert('Produit créé avec succès');
+        this.router.navigateByUrl('/admin/products');
+      },
+      error: (err) => {
+        console.error(err);
+        alert("Erreur lors de la création du produit.");
+        this.submitting = false;
+      }
     });
   }
   
@@ -38,4 +54,5 @@ export class CreateProductPageComponent {
   get description() { return this.createProductForm.get('description'); }
   get price() { return this.createProductForm.get('price'); }
   get stock() { return this.createProductForm.get('stock'); }
+  get imageUrl() { return this.createProductForm.get('imageUrl'); }
 }

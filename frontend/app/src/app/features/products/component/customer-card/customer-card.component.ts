@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 
 export class CustomerCardComponent {
   @Input() product!: Product;
+  placeholderUrl = 'https://images.unsplash.com/photo-1757743066455-4b5b471cdb80?q=80&w=600&auto=format&fit=crop';
   constructor(private cartService: CartService, private router: Router){}
 
   addToCart(product: Product) {
