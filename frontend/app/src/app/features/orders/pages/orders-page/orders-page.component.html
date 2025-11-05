@@ -8,7 +8,12 @@
       @for (order of orders; track order.id) {
         <article class="rounded border p-3">
           <div class="flex items-center justify-between gap-3">
-            <h2 class="font-semibold">Commande #{{ order.id }} ({{order.created_at | date:'dd/MM/yy'}})</h2>
+          <h2 class="font-semibold">
+            Commande #{{ order.id }} ({{ order.created_at | date:'dd/MM/yy' }})
+            <span class="ml-2 text-sm font-normal text-gray-600">
+              — par {{ order.customer_name }}
+            </span>
+          </h2>
 
             @if (!isAdmin) {
               <app-orders-status [status]="order.status"></app-orders-status>

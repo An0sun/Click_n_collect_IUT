@@ -24,7 +24,7 @@ export class OrdersPageComponent {
   
   isAdmin = this.tokens.getRole() === 'ADMIN';
   orders: ReadonlyArray<Order> = [];
-  readonly STATUSES = ['PENDING','PREPARING','READY','DELIVERED'] as const;
+  readonly STATUSES = ['PREPARING','READY','CONSUMED'] as const;
   
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -38,7 +38,7 @@ private attachSse(orderId: number) {
     const { order } = JSON.parse(e.data);
     const id = Number(order.id);
 
-    if (this.isAdmin && order.status === 'DELIVERED') {
+    if (this.isAdmin && order.status === 'CONSUMED') {
       this.orders = this.orders.filter(o => o.id !== id);
       return;
     }
@@ -50,7 +50,7 @@ private attachSse(orderId: number) {
     const { id, status } = JSON.parse(e.data);
     const oid = Number(id);
 
-    if (this.isAdmin && status === 'DELIVERED') {
+    if (this.isAdmin && status === 'CONSUMED') {
       this.orders = this.orders.filter(o => o.id !== oid);
     } else {
       this.orders = this.orders.map(o => (o.id === oid ? { ...o, status } : o));
@@ -61,7 +61,7 @@ private attachSse(orderId: number) {
     const updated = JSON.parse(e.data);
     const oid = Number(updated.id);
 
-    if (this.isAdmin && updated.status === 'DELIVERED') {
+    if (this.isAdmin && updated.status === 'CONSUMED') {
       this.orders = this.orders.filter(o => o.id !== oid);
     } else {
       this.orders = this.orders.map(o => (o.id === oid ? updated : o));
@@ -74,13 +74,13 @@ private attachSse(orderId: number) {
 ngOnInit() {
   this.ordersService.getOrders().subscribe(list => {
     const base = list ?? [];
-    this.orders = this.isAdmin ? base.filter(o => o.status !== 'DELIVERED') : base;
+    this.orders = this.isAdmin ? base.filter(o => o.status !== 'CONSUMED') : base;
 
     if (isPlatformBrowser(this.platformId)) {
       for (const o of this.orders.slice(0, this.MAX_SSE)) this.attachSse(o.id);
 
       const sub = this.ordersService.onNewOrders().subscribe(order => {
-        if (this.isAdmin && order.status === 'DELIVERED') return;
+        if (this.isAdmin && order.status === 'CONSUMED') return;
         if (!this.orders.some(o => o.id === Number(order.id))) {
           this.orders = [order, ...this.orders];
           this.ensureSse(order.id);
@@ -112,7 +112,7 @@ ensureSse(orderId: number) {
     this.ordersService.updateStatus(orderId, status).subscribe({
       next: (updated) => {
         const id = Number(updated.id);
-        if (this.isAdmin && updated.status === 'DELIVERED') {
+        if (this.isAdmin && updated.status === 'CONSUMED') {
           this.orders = this.orders.filter(o => o.id !== id);
         } else {
           this.orders = this.orders.map(o => (o.id === id ? updated : o));

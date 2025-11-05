@@ -27,7 +27,7 @@ def dto_to_order(order_dto: OrderInDTO) -> Order:
         customer_name=order_dto.customer_name,
         email=order_dto.email,
         total=order_dto.total,
-        status = OrderStatus.PENDING.value
+        status = OrderStatus.PREPARING.value
     )
 
     order.items = [

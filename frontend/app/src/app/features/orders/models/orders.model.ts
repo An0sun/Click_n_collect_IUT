@@ -1,4 +1,4 @@
-export type OrderStatus = 'PENDING' | 'PREPARING' | 'READY' | 'DELIVERED';
+export type OrderStatus = 'PREPARING' | 'READY' | 'CONSUMED';
 
 export interface Order {
   id: number;

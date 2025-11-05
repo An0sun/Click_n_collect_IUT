@@ -38,7 +38,7 @@ class OrderService:
     def find_all() -> List[Order] :
         return (
             Order.query
-            .filter(Order.status != "DELIVERED")
+            .filter(Order.status != "CONSUMED")
             .order_by(Order.created_at.desc())
             .all()
         )

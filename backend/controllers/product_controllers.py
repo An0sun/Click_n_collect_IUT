@@ -6,6 +6,8 @@ from mappers.product_mapper import product_to_dto
 from flasgger.utils import swag_from
 from queries.product_query import ProductListQuery
 import logging
+from flask_jwt_extended import jwt_required
+from security.guards import requires_roles
 
 bp = Blueprint("products", __name__, url_prefix="/products")
 logger = logging.getLogger("lcde")
@@ -32,6 +34,8 @@ def list_products():
     }), HTTPStatus.OK
 
 @bp.post("/")
+@jwt_required()
+@requires_roles("ADMIN")
 @swag_from("../docs/products/create_product.yaml")
 def create_product():
     logger.info("Création d’un nouveau produit demandée.")
@@ -44,6 +48,8 @@ def create_product():
 
 @bp.patch("/<int:pid>")
 @bp.put("/<int:pid>")
+@jwt_required()
+@requires_roles("ADMIN")
 @swag_from("../docs/products/update_product.yaml")
 def update_product(pid: int):
     update_dto = ProductUpdateDTO.model_validate_json(request.data)
@@ -51,6 +57,8 @@ def update_product(pid: int):
     return jsonify(product_to_dto(updated_product).model_dump()), HTTPStatus.OK
 
 @bp.delete("/<int:pid>")
+@jwt_required()
+@requires_roles("ADMIN")
 @swag_from("../docs/products/delete_product.yaml")
 def delete_product(pid: int):
     ProductService.delete(pid)  

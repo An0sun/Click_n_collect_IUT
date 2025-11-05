@@ -28,7 +28,7 @@ export class CreateProductPageComponent {
   
   onSubmit() {
     this.productService.createProduct(this.createProductForm.value as Omit<Product, 'id'>).subscribe({
-      complete: () => this.router.navigateByUrl('/welcome'),
+      complete: () => this.router.navigateByUrl('/admin/products'),
     });
   }
   

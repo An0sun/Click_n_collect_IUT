@@ -4,10 +4,9 @@ from typing import List
 from datetime import datetime
 
 class OrderStatus(str, Enum) :
-    PENDING = 'PENDING'
     PREPARING = 'PREPARING'
     READY = 'READY'
-    DELIVERED = 'DELIVERED'
+    CONSUMED = 'CONSUMED'
     
 
 class OrderItemDTO(BaseModel):

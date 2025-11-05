@@ -10,18 +10,20 @@ import { TokenService } from '../../../../../core/services/token.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  loading=false; error='';
   constructor(private auth:AuthService, private router:Router){}
   private tokens = inject(TokenService);
 
-  ngOnInit() {
-    this.tokens.clear();
-  }
-  onSubmit(dto:{email:string;password:string}) {
-    this.error='';
-    this.auth.login(dto).subscribe({
-      next: (user) => this.router.navigateByUrl('/welcome'),
-      error: e => this.error = e.message || 'Connexion failed'
-    });
-  }
+
+onSubmit(dto: { email: string; password: string }) {
+  this.auth.login(dto).subscribe({
+    next: () => {
+      const role = this.tokens.getRole?.();
+      const target = role === 'ADMIN' ? '/admin/products' : '/app/product-list';
+      this.router.navigateByUrl(target, { replaceUrl: true });
+    }
+  });
+}
+
+
+
 }
