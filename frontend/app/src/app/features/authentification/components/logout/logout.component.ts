@@ -10,7 +10,7 @@ import { TokenService } from '../../../../../core/services/token.service';
   styleUrl: './logout.component.scss'
 })
 export class LogoutComponent {
-  @Input() label = 'Logout';
+  @Input() label = 'Deconnexion';
   private tokens = inject(TokenService);
   private router = inject(Router);
 

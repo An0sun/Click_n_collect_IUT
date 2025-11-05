@@ -35,21 +35,19 @@ class OrderService:
             ProductRepository.update_stock(item.product_id, new_stock)
             push_stock_updated(item.product_id, {"id": item.product_id, "stock": new_stock})
 
-    def find_all() -> List[Order] :
-        return (
-            Order.query
-            .filter(Order.status != "CONSUMED")
-            .order_by(Order.created_at.desc())
-            .all()
-        )
+    def find_all(page: int = 1) :
+        try :
+            page = max(1, int(page or 1))
+        except (TypeError, ValueError) :
+            page = 1
+        return OrderRepository.paginate_all(page = page, per_page = 20)
 
-    def find_by_email(email : str) -> List[Order] :
-        return (
-            Order.query
-            .filter_by(email = email)
-            .order_by(Order.created_at.desc())
-            .all()
-        )
+    def find_by_email(email : str, page : int = 1) :
+        try :
+            page = max(1, int(page or 1))
+        except (TypeError, ValueError) :
+            page = 1
+        return OrderRepository.paginate_by_email(email = email, page = page, per_page = 20)
 
     def find_by_id(order_id: int) -> Order:
         order = OrderRepository.find_by_id(order_id)

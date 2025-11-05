@@ -11,24 +11,24 @@
     <nav class="hidden md:flex items-center gap-6">
       @if (tokens.isLoggedIn()) {
         @if (isAdmin) {
-          <a routerLink="/admin/products" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Products</a>
-          <a routerLink="/admin/create-product" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Create Product</a>
-          <a routerLink="/admin/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Orders</a>
+          <a routerLink="/admin/products" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Produits</a>
+          <a routerLink="/admin/create-product" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Création de produit</a>
+          <a routerLink="/admin/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Commandes</a>
         } @else {
-          <a routerLink="/app/product-list" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Shop</a>
-          <a routerLink="/app/cart" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Cart</a>
-          <a routerLink="/app/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Orders</a>
+          <a routerLink="/app/product-list" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Boutique</a>
+          <a routerLink="/app/cart" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Panier</a>
+          <a routerLink="/app/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Commandes</a>
         }
 
         <app-logout></app-logout>
       } @else {
         <a routerLink="/auth/login"
            class="block rounded-md bg-amber-800 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-amber-900">
-          Login
+          Connexion
         </a>
         <a routerLink="/auth/register"
            class="rounded-md border border-amber-800 px-5 py-2.5 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">
-          Register
+          Inscription
         </a>
       }
     </nav>

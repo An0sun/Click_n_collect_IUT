@@ -8,13 +8,14 @@
       @for (order of orders; track order.id) {
         <article class="rounded border p-3">
           <div class="flex items-center justify-between gap-3">
-          <h2 class="font-semibold">
-            Commande #{{ order.id }} ({{ order.created_at | date:'dd/MM/yy' }})
-            <span class="ml-2 text-sm font-normal text-gray-600">
-              — par {{ order.customer_name }}
-            </span>
-          </h2>
-
+            <h2 class="font-semibold">
+              Commande #{{ order.id }} ({{ order.created_at | date:'dd/MM/yy' }})
+              @if (isAdmin) {
+                <span class="ml-2 text-sm font-normal text-gray-600">
+                  — par {{ order.customer_name }}
+                </span>
+              }
+            </h2>
             @if (!isAdmin) {
               <app-orders-status [status]="order.status"></app-orders-status>
             } @else {
@@ -45,5 +46,19 @@
         </article>
       }
     </div>
+    <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
+    <div>
+      Page {{ currentPage }} / {{ totalPages }} — {{ perPage }} par page — total: {{ total }}
+    </div>
+    <div class="flex gap-2">
+      <button class="rounded border px-3 py-1"
+              [disabled]="currentPage <= 1"
+              (click)="goPrev()">Précédent</button>
+      <button class="rounded border px-3 py-1"
+              [disabled]="currentPage >= totalPages"
+              (click)="goNext()">Suivant</button>
+    </div>
+  </div>
+
   }
 </section>

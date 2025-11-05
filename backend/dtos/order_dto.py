@@ -1,13 +1,9 @@
 from enum import Enum
+from enums.order_status import OrderStatus
 from pydantic import BaseModel, Field, EmailStr
 from typing import List
 from datetime import datetime
 
-class OrderStatus(str, Enum) :
-    PREPARING = 'PREPARING'
-    READY = 'READY'
-    CONSUMED = 'CONSUMED'
-    
 
 class OrderItemDTO(BaseModel):
     product_id: int

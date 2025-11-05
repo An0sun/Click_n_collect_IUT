@@ -14,16 +14,13 @@ export class LoginComponent {
   private tokens = inject(TokenService);
 
 
-onSubmit(dto: { email: string; password: string }) {
-  this.auth.login(dto).subscribe({
-    next: () => {
-      const role = this.tokens.getRole?.();
-      const target = role === 'ADMIN' ? '/admin/products' : '/app/product-list';
-      this.router.navigateByUrl(target, { replaceUrl: true });
-    }
-  });
-}
-
-
-
+  onSubmit(dto: { email: string; password: string }) {
+    this.auth.login(dto).subscribe({
+      next: () => {
+        const role = this.tokens.getRole?.();
+        const target = role === 'ADMIN' ? '/admin/products' : '/app/product-list';
+        this.router.navigateByUrl(target, { replaceUrl: true });
+      }
+    });
+  }
 }

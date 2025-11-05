@@ -54,3 +54,20 @@ class OrderRepository:
         except Exception :
             db.session.rollback()
             raise
+
+
+    def paginate_all(page : int, per_page : int):
+        req = (
+            select(Order)
+            .where(Order.status != "CONSOMEE")
+            .order_by(Order.created_at.desc())
+        )
+        return db.paginate(req, page = page, per_page = per_page, error_out = False)
+
+    def paginate_by_email(email : str, page : int, per_page : int) :
+        req = (
+            select(Order)
+            .where(Order.email == email)
+            .order_by(Order.created_at.desc())
+        )
+        return db.paginate(req, page = page, per_page = per_page, error_out= False)

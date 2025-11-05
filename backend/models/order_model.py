@@ -19,8 +19,8 @@ class Order(db.Model):
             name = "order_status",
         ),
         nullable = False,
-        server_default = OrderStatus.PREPARING.value,
-        default = OrderStatus.PREPARING.value,
+        server_default = OrderStatus.PREPARATION.value,
+        default = OrderStatus.PREPARATION.value,
     )
 
     items: Mapped[list["OrderItem"]] = relationship(

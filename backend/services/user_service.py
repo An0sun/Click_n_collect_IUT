@@ -41,9 +41,12 @@ class UserService :
             raise UserNotFound()
 
         if email is not None and email != user.email :
+            if email.split("@")[-1].lower().strip() != "iut.univ-paris8.fr":
+                raise InvalidUser()
             if UserRepository.get_by_email(email) :
                 raise DuplicateUser()
-            user.email = email
+            
+        user.email = email
 
         user.name = name.strip()
         user.first_name = first_name.strip()

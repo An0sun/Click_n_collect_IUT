@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, switchMap, of, throwError, share } from 'rxjs';
 import { CartItem } from '../../cart/models/cart-item/cart-item.module';
 import { TokenService } from '../../../../core/services/token.service';
-import { Order } from '../models/orders.model';
+import { Order, OrdersPage } from '../models/orders.model';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-  private baseUrl = "http://localhost:5000";
+  private readonly baseUrl: string = environment.baseUrl;
   private apiUrl = `${this.baseUrl}/orders`;
   private tokenService = inject(TokenService);
   private newOrders$?: Observable<Order>;
@@ -69,11 +70,9 @@ export class OrdersService {
     return this.http.post<Order>(this.apiUrl, orderData);
   }
 
-
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.apiUrl);
+  getOrders(page = 1) {
+    return this.http.get<OrdersPage>(`${this.apiUrl}?page=${page}`);
   }
-
   getOrder(id: number): Observable<Order> {
     return this.http.get<Order>(`${this.apiUrl}/${id}`);
   }

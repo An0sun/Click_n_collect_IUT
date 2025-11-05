@@ -20,19 +20,34 @@ export class AuthFormComponent {
   form = this.authForm.group({
     name: [''],
     first_name: [''],
-    email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(8), this.strongPassword]],
+    email: ['', []],
+    password: ['', []],
   });
 
 
   get isRegister() { return this.mode === 'register'; }
 
-  strongPassword(control: any) {
-    const v: string = String(control.value || '');
-    if (!/[A-Za-z]/.test(v) || !/\d/.test(v)) return { weakPassword: true };
-    return null;
+    ngOnInit() {
+    const form = this.form.controls;
+
+    form.email.setValidators([Validators.required, Validators.email]);
+
+    if (this.isRegister) {
+      form.name.setValidators([Validators.required, Validators.minLength(2)]);
+      form.first_name.setValidators([Validators.required, Validators.minLength(2)]);
+      form.password.setValidators([Validators.required, Validators.minLength(8)]);
+    } 
+    else {
+      form.password.setValidators([Validators.required]);
+    }
+
+    form.email.updateValueAndValidity({ emitEvent: false });
+    form.name.updateValueAndValidity({ emitEvent: false });
+    form.first_name.updateValueAndValidity({ emitEvent: false });
+    form.password.updateValueAndValidity({ emitEvent: false });
   }
 
+  
   onSubmit() {
     if (this.form.invalid) { this.form.markAllAsTouched(); return; }
     const { name, first_name, email, password } = this.form.value;

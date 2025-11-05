@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, share } from 'rxjs';
+import { environment } from '../../../../environment/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = "http://localhost:5000";
+  private readonly baseUrl: string = environment.baseUrl;
   private apiUrl = `${this.baseUrl}/products/`;
   private stockStream$?: Observable<{ id: number; stock: number }>;
   constructor(private http: HttpClient) {}

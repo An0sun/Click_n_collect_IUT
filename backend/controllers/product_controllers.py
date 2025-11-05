@@ -36,8 +36,8 @@ def list_products():
 @bp.post("/")
 @jwt_required()
 @requires_roles("ADMIN")
-@swag_from("../docs/products/create_product.yaml")
-def create_product():
+@swag_from("../docs/products/create.yaml")
+def create():
     logger.info("Création d’un nouveau produit demandée.")
     product_dto = ProductInDTO.model_validate_json(request.data)
 
@@ -50,8 +50,8 @@ def create_product():
 @bp.put("/<int:pid>")
 @jwt_required()
 @requires_roles("ADMIN")
-@swag_from("../docs/products/update_product.yaml")
-def update_product(pid: int):
+@swag_from("../docs/products/update.yaml")
+def update(pid: int):
     update_dto = ProductUpdateDTO.model_validate_json(request.data)
     updated_product = ProductService.update(pid, update_dto.model_dump(exclude_none=True))
     return jsonify(product_to_dto(updated_product).model_dump()), HTTPStatus.OK
@@ -59,7 +59,7 @@ def update_product(pid: int):
 @bp.delete("/<int:pid>")
 @jwt_required()
 @requires_roles("ADMIN")
-@swag_from("../docs/products/delete_product.yaml")
-def delete_product(pid: int):
+@swag_from("../docs/products/delete.yaml")
+def delete(pid: int):
     ProductService.delete(pid)  
     return "", HTTPStatus.NO_CONTENT
