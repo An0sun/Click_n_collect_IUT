@@ -1,26 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-     "./src/**/*.{html,ts}"
-  ],
+  content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
       colors: {
-        brown: {
-          50:  '#fdf8f6',
-          100: '#f5eae6',
-          200: '#e6cfc3',
-          300: '#d4a38f',
-          400: '#b87558',
-          500: '#9c5336', 
-          600: '#7a3f2a',
-          700: '#5a2e20',
-          800: '#422419',
-          900: '#2c1810',
+        // Bleu principal
+        primary: {
+          light: '#BFDBFE',   // bleu très clair
+          DEFAULT: '#2563EB', // bleu standard
+          dark: '#1D4ED8',    // bleu foncé
         },
+
+        // Fond & cartes
+        background: '#F3F4F6', // fond général
+        card: '#FFFFFF',       // cartes, blocs
+
+        // Texte & gris
+        text: '#111827',       // quasi noir
+        muted: '#6B7280',      // texte secondaire
+        borderSubtle: '#E5E7EB',
+        grayDark: '#374151',
+        black: '#000000',
+        white: '#FFFFFF',
       },
     },
   },
   plugins: [],
 }
-
