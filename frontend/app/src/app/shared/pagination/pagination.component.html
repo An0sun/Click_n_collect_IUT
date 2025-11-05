@@ -1,10 +1,13 @@
-<ul class="flex flex-wrap justify-center gap-2 text-gray-900 mt-8">
+<ul class="flex flex-wrap justify-center gap-2 text-primary-dark mt-6">
+
   <li>
     <button
       (click)="loadPage(page - 1)"
       [disabled]="page === 1"
-      class="grid w-10 h-10 place-content-center rounded-md border transition-colors
-             bg-amber-800 text-white hover:bg-amber-900 disabled:opacity-50 text-sm sm:text-base"
+      class="grid w-8 h-8 sm:w-9 sm:h-9 place-content-center rounded-full border border-gray-300
+             bg-white text-gray-700 hover:bg-primary hover:text-white hover:border-primary
+             disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-gray-700
+             text-xs sm:text-sm transition-colors shadow-sm"
     >
       «
     </button>
@@ -14,10 +17,10 @@
     <li>
       <button
         (click)="loadPage(p)"
-        class="w-9 h-9 sm:w-10 sm:h-10 rounded border text-center text-sm font-medium transition-colors"
+        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border text-center text-xs sm:text-sm font-medium transition-colors shadow-sm"
         [ngClass]="{
-          'bg-amber-800 text-white border-amber-800 hover:bg-amber-900': page === p,
-          'bg-white text-gray-700 border-gray-300 hover:bg-gray-100': page !== p
+          'bg-primary text-white border-primary hover:bg-primary-dark': page === p,
+          'bg-white text-gray-700 border-gray-300 hover:bg-blue-50 hover:text-primary': page !== p
         }"
       >
         {{ p }}
@@ -29,8 +32,10 @@
     <button
       (click)="loadPage(page + 1)"
       [disabled]="page === totalPages"
-      class="grid w-10 h-10 place-content-center rounded-md border transition-colors
-             bg-amber-800 text-white hover:bg-amber-900 disabled:opacity-50 text-sm sm:text-base"
+      class="grid w-8 h-8 sm:w-9 sm:h-9 place-content-center rounded-full border border-gray-300
+             bg-white text-gray-700 hover:bg-primary hover:text-white hover:border-primary
+             disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-gray-700
+             text-xs sm:text-sm transition-colors shadow-sm"
     >
       »
     </button>

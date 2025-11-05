@@ -1,41 +1,66 @@
 @if (product) {
-  <article
-    class="group relative block w-full max-w-sm sm:max-w-md lg:max-w-xs rounded-lg shadow-md bg-white"
+  <div
+    class="group relative bg-card rounded-2xl overflow-hidden shadow-md
+           border border-borderSubtle hover:border-primary/50
+           max-w-xs w-full text-sm text-text transition"
   >
-    <button
-      class="absolute end-2 top-2 z-10 rounded-full bg-white p-1 text-amber-800 transition hover:text-amber-900 shadow"
-      type="button"
-    >
-      <span class="sr-only">Favori</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-           stroke-width="1.5" stroke="currentColor" class="size-4">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-      </svg>
-    </button>
 
-    <div class="w-full h-48 sm:h-56 lg:h-40 overflow-hidden">
-      <img
-        [src]="product.imageUrl || placeholderUrl"
-        [alt]="product.name"
-        class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-      />
-    </div>
 
-    <div class="relative border border-gray-200 bg-white p-4">
-      <p class="text-amber-800 font-semibold text-base">{{ product.price }} €</p>
-      <h3 class="mt-1 text-lg font-semibold text-gray-900 truncate">{{ product.name }}</h3>
-      <p class="mt-1 text-sm text-gray-700 line-clamp-2">{{ product.description }}</p>
-      <p class="mt-1 text-xs text-gray-500">Stock : {{ product.stock }}</p>
+    <div class="relative">
+      <div class="w-full h-40 overflow-hidden bg-gray-100">
+        <img
+          [src]="product.imageUrl || placeholderUrl"
+          [alt]="product.name"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+        />
+      </div>
 
-      <div class="mt-4 flex flex-col sm:flex-row gap-3">
-        <button (click)="addToCart(product)" class="w-full rounded-md bg-amber-800 px-3 py-2 text-sm font-medium text-white transition hover:bg-amber-900 hover:scale-105">
-          Add to cart
-        </button>
-        <button (click)="addToCart(product)" (click)="goToCart()" class="w-full rounded-md border border-amber-800 px-3 py-2 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white hover:scale-105">
-          Buy
-        </button>
+      <div
+        class="absolute top-2 right-2 px-2 py-1 rounded-full text-[10px]
+               font-semibold uppercase tracking-wide shadow-md
+               bg-primary text-white"
+      >
+        {{ product.stock > 0 ? 'Available' : 'Out of stock' }}
       </div>
     </div>
-  </article>
+
+    <div class="p-3.5 space-y-2 border-t border-borderSubtle">
+      <h3 class="text-base font-semibold text-text truncate">
+        {{ product.name }}
+      </h3>
+
+      <p class="text-xs text-muted line-clamp-2">
+        {{ product.description }}
+      </p>
+
+      <p class="text-[11px] text-muted">
+        Stock :
+        <span class="font-semibold text-primary-dark">
+          {{ product.stock }}
+        </span>
+      </p>
+
+      <div class="mt-2.5 flex items-center justify-between gap-2">
+        <span
+          class="font-bold text-base text-primary-dark px-2 py-0.5 rounded-full
+                 bg-primary-light/30"
+        >
+          {{ product.price }} €
+        </span>
+
+        <div class="flex gap-1.5">
+          <button
+            class="bg-primary hover:bg-primary-dark text-white font-medium text-[11px]
+                   py-1 px-3 rounded-lg shadow-sm transition
+                   disabled:opacity-40 disabled:cursor-not-allowed"
+            (click)="addToCart(product)"
+            [disabled]="product.stock <= 0"
+          >
+            Add to cart
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
 }

@@ -21,6 +21,8 @@ export class AdminProductsTableComponent {
   @Output() editRequest = new EventEmitter<number>();
   @Output() deleteProduct = new EventEmitter<number>();
 
+  placeholderUrl = 'https://via.placeholder.com/100x100?text=No+Image';
+
   trackById = (_: number, p: Product) => p.id;
 
   first() { if (this.page !== 1) this.pageChange.emit(1); }
