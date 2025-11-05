@@ -12,9 +12,9 @@ export class OrdersStatusComponent {
 
   get label(): string {
     switch (this.status) {
-      case 'PREPARING': return 'PREPARING';
-      case 'READY': return 'READY';
-      case 'CONSUMED': return 'CONSUMED';
+      case 'PREPARATION': return 'En préparation';
+      case 'PRET': return 'Prête';
+      case 'CONSOMEE': return 'Consomée';
       default: return this.status ?? '';
     }
   }

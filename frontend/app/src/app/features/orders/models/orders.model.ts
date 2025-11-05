@@ -1,4 +1,4 @@
-export type OrderStatus = 'PREPARING' | 'READY' | 'CONSUMED';
+export type OrderStatus = 'PREPARATION' | 'PRET' | 'CONSOMEE';
 
 export interface Order {
   id: number;
@@ -17,4 +17,12 @@ export interface OrderItem {
   product_name: string;
   quantity: number;
   price: number;
+}
+
+export interface OrdersPage {
+  items: Order[];
+  page: number;
+  per_page: number;
+  total: number;
+  pages: number;
 }

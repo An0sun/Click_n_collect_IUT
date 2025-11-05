@@ -28,46 +28,45 @@
           @if (isAdmin) {
             <a routerLink="/admin/products" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Products
+              Produits
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a routerLink="/admin/create-product" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Create Product
+              Création de produit
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a routerLink="/admin/orders" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Orders
+              Commandes
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           } @else {
             <a routerLink="/app/product-list" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Shop
+              Boutique
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a routerLink="/app/cart" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Cart
+              Panier
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a routerLink="/app/orders" routerLinkActive="text-blue-600"
                class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
-              Orders
+              Commandes
               <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
           }
-
           <app-logout></app-logout>
         } @else {
           <a routerLink="/auth/login"
              class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2.5 rounded-full font-medium text-sm shadow-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
-            Login
+            Connexion
           </a>
           <a routerLink="/auth/register"
              class="border border-blue-600 text-blue-600 px-5 py-2.5 rounded-full font-medium text-sm hover:bg-blue-600 hover:text-white transition-all duration-300">
-            Register
+            Inscription
           </a>
         }
       </div>
@@ -77,6 +76,7 @@
         (click)="isMenuOpen = !isMenuOpen"
         class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200"
       >
+        <span class="sr-only">Ouvrir le menu</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -89,29 +89,28 @@
           @if (tokens.isLoggedIn()) {
             @if (isAdmin) {
               <a routerLink="/admin/products" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Products</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Produits</a>
               <a routerLink="/admin/create-product" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Create Product</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Création de produit</a>
               <a routerLink="/admin/orders" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Orders</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Commandes</a>
             } @else {
               <a routerLink="/app/product-list" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Shop</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Boutique</a>
               <a routerLink="/app/cart" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Cart</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Panier</a>
               <a routerLink="/app/orders" (click)="isMenuOpen=false"
-                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Orders</a>
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Commandes</a>
             }
-
             <app-logout></app-logout>
           } @else {
             <a routerLink="/auth/login" (click)="isMenuOpen=false"
                class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-5 py-2.5 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition">
-              Login
+              Connexion
             </a>
             <a routerLink="/auth/register" (click)="isMenuOpen=false"
                class="block w-full border border-blue-600 text-blue-600 text-center px-5 py-2.5 rounded-full font-medium hover:bg-blue-600 hover:text-white transition">
-              Register
+              Inscription
             </a>
           }
         </div>

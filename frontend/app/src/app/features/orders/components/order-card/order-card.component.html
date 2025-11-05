@@ -1,6 +1,4 @@
-<div
-  class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden"
->
+<div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden">
   <div class="p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
     <div class="flex items-center gap-4">
       <div>
@@ -8,13 +6,13 @@
           {{ orderItem.product_name }}
         </h2>
         <p class="text-sm text-gray-600">
-          Quantity:
+          Quantité :
           <span class="font-medium text-gray-800">{{ orderItem.quantity }}</span>
         </p>
         <p class="text-sm text-gray-600">
-          Price:
+          Prix :
           <span class="font-medium text-gray-800">
-            {{ orderItem.price | currency: 'EUR' }}
+            {{ orderItem.price | currency:'EUR' }}
           </span>
         </p>
       </div>
@@ -22,9 +20,9 @@
 
     <div class="text-right border-t sm:border-t-0 sm:border-l border-gray-100 pt-4 sm:pt-0 sm:pl-5">
       <p class="text-sm font-medium text-gray-900">
-        Subtotal:
+        Sous-total :
         <span class="text-blue-600 font-semibold">
-          {{ orderItem.quantity * orderItem.price | currency: 'EUR' }}
+          {{ orderItem.quantity * orderItem.price | currency:'EUR' }}
         </span>
       </p>
     </div>

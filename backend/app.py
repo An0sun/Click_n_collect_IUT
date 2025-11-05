@@ -34,7 +34,6 @@ def create_app():
         allow_headers=["Content-Type", "Authorization"]
     )
     with app.app_context():
-        from models import product_model, user_model, order_model
         db.create_all()
 
     register_logging_middleware(app)     

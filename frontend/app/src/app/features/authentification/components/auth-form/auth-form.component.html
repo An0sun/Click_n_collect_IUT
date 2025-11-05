@@ -1,108 +1,113 @@
 <main class="min-h-[calc(100vh-40px)] bg-white flex items-center justify-center py-10">
   <div class="relative sm:max-w-2xl w-full mx-4">
-    <!-- Fond coloré incliné -->
-    <div
-      class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-500 shadow-lg transform -skew-y-3 sm:skew-y-0 sm:-rotate-3 sm:rounded-3xl">
-    </div>
+    <div class="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-500 shadow-lg transform -skew-y-3 sm:skew-y-0 sm:-rotate-3 sm:rounded-3xl"></div>
 
-    <!-- Carte principale -->
     <div class="relative bg-white shadow-xl sm:rounded-3xl px-8 py-12 sm:p-14 border border-gray-100">
-      <div class="text-center mb-10">
-        <h1 class="text-3xl font-bold text-gray-800">
-          {{ isRegister ? 'Create an Account' : 'Welcome Back' }}
-        </h1>
-        <p class="text-gray-500 text-base mt-2">
-          {{ isRegister ? 'Please fill in your details below.' : 'Enter your login to continue.' }}
+      <header class="mb-10 text-center">
+        <h2 class="text-3xl font-bold text-gray-800">
+          {{ submitLabel }}
+        </h2>
+        <p class="mt-2 text-base text-gray-500">
+          Entrez vos identifiants pour continuer.
         </p>
-      </div>
+      </header>
 
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
-        @if (isRegister) {
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()"
+        class="space-y-6"
+      >
+        <div class="grid gap-6">
+          @if (isRegister) {
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+              <input
+                id="name"
+                type="text"
+                formControlName="name"
+                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+                placeholder="Dupont"
+              />
+              @if (form.get('name')?.touched && form.get('name')?.invalid) {
+                <p class="mt-1 text-sm text-red-600">Nom invalide.</p>
+              }
+            </div>
+
+            <div>
+              <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+              <input
+                id="first_name"
+                type="text"
+                formControlName="first_name"
+                class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+                placeholder="Léa"
+              />
+              @if (form.get('first_name')?.touched && form.get('first_name')?.invalid) {
+                <p class="mt-1 text-sm text-red-600">Prénom invalide.</p>
+              }
+            </div>
+          }
+
           <div>
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Adresse e-mail</label>
             <input
-              id="name"
-              type="text"
-              formControlName="name"
-              placeholder="Doe"
-              class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+              id="email"
+              type="email"
+              formControlName="email"
+              autocomplete="email"
+              class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+              placeholder="nom@example.com"
             />
-            @if (form.get('name')?.touched && form.get('name')?.invalid) {
-              <p class="text-sm text-red-600 mt-1">Name invalid.</p>
+            @if (form.get('email')?.touched && form.get('email')?.invalid) {
+              <p class="mt-1 text-sm text-red-600">Adresse e-mail invalide.</p>
             }
           </div>
 
           <div>
-            <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First name</label>
+            <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Mot de passe</label>
             <input
-              id="first_name"
-              type="text"
-              formControlName="first_name"
-              placeholder="Léa"
-              class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+              id="password"
+              type="password"
+              formControlName="password"
+              autocomplete="current-password"
+              class="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
+              placeholder="Au moins 8 caractères"
             />
-            @if (form.get('first_name')?.touched && form.get('first_name')?.invalid) {
-              <p class="text-sm text-red-600 mt-1">First name invalid.</p>
+            @if (form.get('password')?.touched && form.get('password')?.invalid) {
+              <p class="mt-1 text-sm text-red-600">
+                Mot de passe trop faible (8+ caractères, lettres et chiffres).
+              </p>
             }
           </div>
-        }
-
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-          <input
-            id="email"
-            type="email"
-            formControlName="email"
-            autocomplete="email"
-            placeholder="name@example.com"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
-          />
-          @if (form.get('email')?.touched && form.get('email')?.invalid) {
-            <p class="text-sm text-red-600 mt-1">Email address invalid.</p>
-          }
         </div>
 
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-          <input
-            id="password"
-            type="password"
-            formControlName="password"
-            autocomplete="current-password"
-            placeholder="At least 8 characters"
-            class="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition"
-          />
-          @if (form.get('password')?.touched && form.get('password')?.invalid) {
-            <p class="text-sm text-red-600 mt-1">Password too weak.</p>
-          }
-        </div>
+        <div class="pt-4 flex items-center justify-between">
+          <div class="text-xs text-gray-600">
+            @if (!isRegister) {
+              <span>Pas de compte ?
+                <a routerLink="/auth/register" class="text-indigo-600 font-semibold hover:underline underline-offset-2">
+                  Inscrivez-vous
+                </a>
+              </span>
+            }
+            @else {
+              <span>Vous avez déjà un compte ?
+                <button routerLink="/auth/login" class="text-indigo-600 font-semibold hover:underline underline-offset-2">
+                  Connectez-vous
+                </button>
+              </span>
+            }
+          </div>
 
-        <div class="pt-4">
           <button
             type="submit"
             [disabled]="form.invalid || form.pending"
-            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-gray-400"
           >
             {{ submitLabel }}
           </button>
         </div>
       </form>
-
-      <div class="text-center text-sm text-gray-600 mt-8">
-        @if (!isRegister) {
-          <span>No account yet?
-            <a routerLink="/auth/register" class="text-indigo-600 font-semibold hover:underline">
-              Sign up
-            </a>
-          </span>
-        } @else {
-          <span>Already have an account?
-            <a routerLink="/auth/login" class="text-indigo-600 font-semibold hover:underline">
-              Sign in
-            </a>
-          </span>
-        }
-      </div>
     </div>
   </div>
 </main>

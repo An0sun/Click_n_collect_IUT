@@ -11,17 +11,32 @@ class RegisterDTO(BaseModel) :
     
     @field_validator("email")
     @classmethod
-    def normalize_email(login_class, value : str) -> str :
-        return value.lower().strip()
+    def normalize_and_check_domain(cls, value: str) -> str :
+        v = value.lower().strip()
+        try :
+            local, domain = v.split("@", 1)
+        except ValueError :
+            raise ValueError("Invalid email")
+        if domain != "iut.univ-paris8.fr":
+            raise ValueError(f"Email must end with @iut.univ-paris8.fr")
+        return v
     
+
 class LoginDTO(BaseModel) :
     email : EmailStr
     password : str = Field(min_length = 8, max_length = 128)
 
     @field_validator("email")
     @classmethod
-    def normalize_email(login_class, value : str) -> str :
-        return value.lower().strip()
+    def normalize_and_check_domain(cls, value : str) -> str :
+        v = value.lower().strip()
+        try :
+            _, domain = v.split("@", 1)
+        except ValueError :
+            raise ValueError("Invalid email")
+        if domain != "iut.univ-paris8.fr":
+            raise ValueError(f"Email must end with @iut.univ-paris8.fr")
+        return v
 
 class UpdateProfileDTO(BaseModel) : 
     name : Optional[str] = Field(default = None, min_length = 1, max_length = 20)

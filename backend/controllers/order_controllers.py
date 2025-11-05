@@ -21,15 +21,28 @@ bp_orders = Blueprint("orders", __name__, url_prefix = "/orders")
 def find_all() :
     claims = get_jwt()
     role = claims.get("role")
+    email = claims.get("email")
+    try :
+        page = max(1, int(request.args.get("page", "1")))
+    except ValueError :
+        page = 1
+
     if role == "ADMIN" :
-        orders = OrderService.find_all()
+        pagination = OrderService.find_all(page = page)
     else :
-        email = claims.get("email")
         if not email :
-            return {"message" : "Email introuvable dans le token"}, HTTPStatus.UNAUTHORIZED
-        orders = OrderService.find_by_email(email)
-    logger.info("Nombre de commandes récupérées : %d", len(orders))
-    return jsonify([order_to_dto(o).model_dump() for o in orders]), HTTPStatus.OK
+            return {"message" : "Email not foud"}, HTTPStatus.UNAUTHORIZED
+        pagination = OrderService.find_by_email(email = email, page = page)
+
+    items = [order_to_dto(order).model_dump(mode="json") for order in pagination.items]
+    return jsonify({
+        "items" : items,
+        "page" : pagination.page,
+        "per_page" : pagination.per_page,
+        "total" : pagination.total,
+        "pages" : pagination.pages,
+    }), HTTPStatus.OK
+
 
 @bp_orders.get("/<int:order_id>")
 @jwt_required()

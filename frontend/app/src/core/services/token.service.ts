@@ -1,7 +1,6 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {jwtDecode } from 'jwt-decode';
-const KEY = 'app_token';
 
 @Injectable({ providedIn:'root' })
 export class TokenService{

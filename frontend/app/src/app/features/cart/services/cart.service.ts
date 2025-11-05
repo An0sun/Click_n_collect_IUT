@@ -7,7 +7,6 @@ import { CartItem } from '../models/cart-item/cart-item.module';
 })
 export class CartService {
   private storageKey = 'cart';
-  private productsKey = 'products';
 
   private isBrowser(): boolean {
     return typeof window !== 'undefined' && !!window.localStorage;

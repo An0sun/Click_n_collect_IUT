@@ -1,12 +1,12 @@
 import { Component, DestroyRef, inject, OnInit} from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
-import { CustomerCardComponent } from '../../component/customer-card/customer-card.component';
+import { ProductCardComponent } from '../../component/product-card/product-card.component';
 import { PaginationComponent } from '../../../../shared/pagination/pagination.component';
 @Component({
   selector: 'app-product-list',
   standalone : true,
-  imports: [ CustomerCardComponent, PaginationComponent],
+  imports: [ ProductCardComponent, PaginationComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })

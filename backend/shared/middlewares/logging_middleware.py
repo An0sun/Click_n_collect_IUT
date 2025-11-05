@@ -5,16 +5,13 @@ from flask import request, jsonify
 logger = logging.getLogger("lcde")
 
 def register_logging_middleware(app):
-    """Middleware global pour journaliser les requêtes, réponses et erreurs."""
 
     @app.before_request
     def before_request():
-        """Capture l’heure de début pour calculer la durée."""
         request.start_time = time.time()
 
     @app.after_request
     def after_request(response):
-        """Log chaque requête HTTP après son traitement."""
         try:
             duration = round((time.time() - request.start_time) * 1000, 2)
         except AttributeError:
@@ -28,6 +25,5 @@ def register_logging_middleware(app):
 
     @app.errorhandler(Exception)
     def handle_exception(e):
-        """Gestion globale des erreurs."""
         logger.error(f"Erreur sur {request.path}: {type(e).__name__} — {str(e)}")
         return jsonify({"error": "Internal Server Error"}), 500

@@ -3,7 +3,6 @@ from werkzeug.exceptions import HTTPException, BadRequest
 from pydantic import ValidationError
 
 def register_error_handlers(app):
-    """Enregistre les gestionnaires globaux d'erreurs Flask + Pydantic."""
     
     @app.errorhandler(HTTPException)
     def handle_http_exception(e: HTTPException):

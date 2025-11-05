@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
-import { Product } from '../../models/product.model';
+import { CATEGORIES as PRODUCT_CATEGORIES, Product, ProductCategory } from '../../models/product.model';
 
 @Component({
   selector: 'app-create-product-page',
@@ -11,7 +11,7 @@ import { Product } from '../../models/product.model';
   styleUrl: './create-product-page.component.scss'
 })
 export class CreateProductPageComponent {
-
+  readonly categories = PRODUCT_CATEGORIES;
   constructor(
     private readonly productService: ProductService,
     private readonly router: Router
@@ -19,7 +19,7 @@ export class CreateProductPageComponent {
 
   createProductForm = new FormGroup({
     name: new FormControl<string>('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    category: new FormControl<'Food'|'Beverage'|''>('', [Validators.required]), 
+    category: new FormControl<ProductCategory | null>(null, [Validators.required]),
     description: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]),
     price: new FormControl<number | null>(null, [Validators.required]),
     stock: new FormControl<number | null>(null, [Validators.required]),

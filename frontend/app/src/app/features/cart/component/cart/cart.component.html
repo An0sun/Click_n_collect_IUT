@@ -1,16 +1,15 @@
 <section class="w-full bg-white py-10 px-6 text-gray-900">
-  <h1 class="text-center text-3xl font-semibold">My Shopping Cart</h1>
+  <h1 class="text-center text-3xl font-semibold">Mon panier</h1>
 
   <div class="flex flex-col lg:flex-row items-start justify-center gap-8 mt-8 max-w-6xl mx-auto">
-
     <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 w-full lg:w-2/3 overflow-x-auto">
-      <table class="w-full min-w-[700px]">
+      <table class="w-full min-w-[820px]">
         <thead>
           <tr class="text-center border-b border-gray-300 text-gray-500 text-sm font-medium uppercase">
-            <th class="text-left px-3 py-3">Product</th>
-            <th class="px-3 py-3">Price</th>
-            <th class="px-3 py-3">Quantity</th>
-            <th class="px-3 py-3">Subtotal</th>
+            <th class="text-left px-3 py-3">Produit</th>
+            <th class="px-3 py-3">Prix</th>
+            <th class="px-3 py-3">Quantité</th>
+            <th class="px-3 py-3">Sous-total</th>
             <th class="px-3 py-3"></th>
           </tr>
         </thead>
@@ -18,53 +17,63 @@
         <tbody>
           @for (item of cart; track item.product.id) {
             <tr class="border-b border-gray-100 hover:bg-gray-50 transition group">
-              <td class="px-3 py-3 text-left align-top">
-                <div class="flex items-center gap-4">
-                  <div>
-                    <h3 class="text-sm font-semibold text-gray-900">{{ item.product.name }}</h3>
-                    <p class="text-xs text-gray-500 line-clamp-2">{{ item.product.description }}</p>
+              <td class="px-3 py-4 text-left align-top">
+                <div class="flex items-start gap-4">
+                  <div class="w-20 h-20 shrink-0 rounded-md border border-gray-200 overflow-hidden bg-white">
+                    <img
+                      [src]="item.product.imageUrl || placeholderUrl"
+                      alt="{{ item.product.name }}"
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h3 class="text-sm font-semibold text-gray-900">
+                      {{ item.product.name }}
+                    </h3>
+                    <p class="text-xs text-gray-500 line-clamp-2">
+                      {{ item.product.description }}
+                    </p>
                   </div>
                 </div>
               </td>
 
-              <td class="px-3 py-3 text-sm font-medium text-gray-800 text-center">
-                {{ item.product.price | number:'1.2-2' }} €
+              <td class="px-3 py-4 text-sm font-medium text-gray-800 text-center">
+                {{ item.product.price }} €
               </td>
 
-              <td class="px-3 py-3 text-center">
-                <div
-                  class="flex items-center justify-between border border-gray-300 rounded-full w-24 mx-auto px-2 py-1 bg-white"
-                >
+              <td class="px-3 py-4 text-center">
+                <div class="flex items-center justify-between border border-gray-300 rounded-full w-28 mx-auto px-2 py-1.5 bg-white">
                   <button
                     (click)="decrease(item.product.id)"
-                    class="text-gray-600 hover:text-blue-600 font-bold"
+                    class="text-gray-700 hover:text-blue-600 font-bold"
+                    aria-label="Diminuer la quantité"
                   >
                     −
                   </button>
-                  <span class="text-gray-800 text-sm font-medium">{{ item.quantity }}</span>
+                  <span class="text-gray-900 text-sm font-semibold">{{ item.quantity }}</span>
                   <button
                     (click)="increase(item.product.id)"
-                    class="text-gray-800 hover:text-blue-600 font-bold"
+                    class="text-gray-700 hover:text-blue-600 font-bold"
+                    aria-label="Augmenter la quantité"
                   >
                     +
                   </button>
                 </div>
               </td>
 
-              <td class="px-3 py-3 text-sm font-medium text-gray-800 text-center">
-                {{ (item.quantity * item.product.price) | number:'1.2-2' }} €
+              <td class="px-3 py-4 text-sm font-medium text-gray-800 text-center">
+                {{ item.quantity * item.product.price }} €
               </td>
 
-              <td class="px-3 py-3 text-center">
+              <td class="px-3 py-4 text-center">
                 <button
                   (click)="remove(item.product.id)"
-                  class="text-gray-400 hover:text-red-500 transition"
+                  class="text-gray-400 hover:text-red-500 transition flex items-center justify-center gap-1 mx-auto"
                   title="Remove product"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                       stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M6 18L18 6M6 6l12 12" />
+                  <span class="hidden sm:inline text-sm">Remove</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </td>
@@ -72,51 +81,42 @@
           } @empty {
             <tr>
               <td colspan="5" class="text-center text-gray-500 py-6">
-                Your cart is empty.
+                Votre panier est vide.
               </td>
             </tr>
           }
         </tbody>
-
-        <tfoot>
-          <tr>
-            <td colspan="5" class="px-3 py-4 text-center">
-              <button
-                (click)="goToProducts()"
-                class="px-8 py-2.5 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold hover:bg-gray-200 transition"
-              >
-                Return to Shop
-              </button>
-            </td>
-          </tr>
-        </tfoot>
       </table>
     </div>
 
-    <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 w-full lg:w-1/3">
-      <h2 class="text-lg font-semibold mb-4 text-gray-800">Cart Total</h2>
+    <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 w-full lg:w-1/3 h-max">
+      <h2 class="text-lg font-semibold mb-4 text-gray-800">Total du panier</h2>
 
       <div class="flex justify-between items-center py-2 border-b border-gray-100">
-        <span class="text-gray-600 text-sm">Subtotal</span>
-        <span class="text-gray-900 text-sm font-medium">{{ total | number:'1.2-2' }} €</span>
-      </div>
-
-      <div class="flex justify-between items-center py-2 border-b border-gray-100">
-        <span class="text-gray-600 text-sm">Shipping</span>
-        <span class="text-gray-800 text-sm font-medium">Free</span>
+        <span class="text-gray-600 text-sm">Sous total</span>
+        <span class="text-gray-900 text-sm font-medium">{{ total }} €</span>
       </div>
 
       <div class="flex justify-between items-center py-2">
         <span class="text-gray-700 font-semibold text-base">Total</span>
-        <span class="text-blue-600 font-bold text-base">{{ total | number:'1.2-2' }} €</span>
+        <span class="text-blue-600 font-bold text-base">{{ total }} €</span>
       </div>
 
-      <button
-        (click)="validateOrder()"
-        class="w-full mt-5 px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-sm hover:bg-blue-700 transition shadow-md"
-      >
-        Proceed to Checkout
-      </button>
+      <div class="mt-6 space-y-3">
+        <button
+          (click)="validateOrder()"
+          class="w-full px-6 py-3 bg-blue-600 text-white rounded-full font-semibold text-sm hover:bg-blue-700 transition shadow-md"
+        >
+          Valider la commande
+        </button>
+
+        <button
+          (click)="goToProducts()"
+          class="w-full px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-semibold text-sm hover:bg-gray-200 transition"
+        >
+          Continuer à acheter
+        </button>
+      </div>
     </div>
   </div>
 </section>

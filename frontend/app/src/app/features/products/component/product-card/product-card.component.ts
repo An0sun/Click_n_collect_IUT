@@ -5,14 +5,14 @@ import { CartItem} from '../../../cart/models/cart-item/cart-item.module';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-customer-card',
+  selector: 'app-product-card',
   standalone: true,
   imports: [],
-  templateUrl: './customer-card.component.html',
-  styleUrl: './customer-card.component.scss'
+  templateUrl: './product-card.component.html',
+  styleUrl: './product-card.component.scss'
 })
 
-export class CustomerCardComponent {
+export class ProductCardComponent {
   @Input() product!: Product;
   placeholderUrl = 'https://images.unsplash.com/photo-1574282341541-0b3ed53adcd2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688';
   constructor(private cartService: CartService, private router: Router){}

@@ -5,15 +5,15 @@ from models.product_model import Product
 
 class ProductRepository:
     def build_query(q: Optional[str], category: Optional[str], sort: Optional[str]):
-        stmt = select(Product)
+        req = select(Product)
         if q:
             q_like = f"%{q.lower()}%"
-            stmt = stmt.where(
+            req = req.where(
                 func.lower(Product.name).like(q_like) |
                 func.lower(Product.description).like(q_like)
             )
         if category:
-            stmt = stmt.where(Product.category == category)
+            req = req.where(Product.category == category)
 
         order = {
             "name_asc":  asc(Product.name),
@@ -22,7 +22,7 @@ class ProductRepository:
             "price_desc":desc(Product.price),
             "stock_desc":desc(Product.stock),
         }.get(sort or "", desc(Product.id))
-        return stmt.order_by(order)
+        return req.order_by(order)
 
     def paginate(stmt, page: int, per_page: int):
         return db.paginate(stmt, page=page, per_page=per_page, error_out=False)
