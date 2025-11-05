@@ -5,12 +5,31 @@
     <p class="text-sm text-gray-600">Aucune commande pour le moment.</p>
   } @else {
     <div class="space-y-6">
-      @for (order of orders; track $index) {
+      @for (order of orders; track order.id) {
         <article class="rounded border p-3">
-          <h2 class="font-semibold">Commande #{{ order.id }}</h2>
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="font-semibold">Commande #{{ order.id }} ({{order.created_at | date:'dd/MM/yy'}})</h2>
+
+            @if (!isAdmin) {
+              <app-orders-status [status]="order.status"></app-orders-status>
+            } @else {
+              <label class="text-sm">
+                Statut :
+                <select
+                  #sel
+                  (mouseenter)="ensureSse(order.id)"
+                  (change)="onChangeStatus(order.id, sel.value)">
+                  @for (s of STATUSES; track s) {
+                    <option [value]="s" [selected]="isSelected(order.status, s)">{{ s }}</option>
+                  }
+                </select>
+''
+              </label>
+            }
+          </div>
 
           <div class="grid gap-3">
-            @for (it of order.items; track $index) {
+            @for (it of order.items; track it.product_id) {
               <app-order-card [orderItem]="it"></app-order-card>
             }
           </div>

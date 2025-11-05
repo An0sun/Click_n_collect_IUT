@@ -19,7 +19,6 @@ export class OrderSummary {
 
   ngOnInit() {
     if (!this.order) {
-      console.warn('No order data found — redirecting to product list.');
       this.router.navigate(['/app/product-list']);
     }
   }

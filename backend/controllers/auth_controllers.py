@@ -43,29 +43,3 @@ def login() :
         "user" : PublicUserDTO.model_validate(user).model_dump()
     }), HTTPStatus.OK
 
-@auth_bp.get("/me")
-@jwt_required()
-@swag_from("../docs/auth/me.yaml")
-def me() :
-    current_id = get_jwt_identity()
-    user = UserService.get_user_by_id(current_id)
-    return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
-
-@auth_bp.post("/change-password")
-@jwt_required()
-@swag_from("../docs/auth/change_password.yaml")
-def change_password() :
-    data = request.get_json(silent=True) or {}
-
-    old_password = str(data.get("old_password") or "")
-    new_password = str(data.get("new_password") or "")
-    if not old_password or not new_password :
-        return (
-            jsonify({"message": "Both old_password and new_password are required"}),
-            HTTPStatus.UNPROCESSABLE_ENTITY,
-        )
-    
-    user_id = get_jwt_identity()
-    UserService.change_password(user_id, old_password, new_password)
-    
-    return "", HTTPStatus.NO_CONTENT

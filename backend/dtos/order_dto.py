@@ -1,7 +1,14 @@
+from enum import Enum
 from pydantic import BaseModel, Field, EmailStr
 from typing import List
 from datetime import datetime
 
+class OrderStatus(str, Enum) :
+    PENDING = 'PENDING'
+    PREPARING = 'PREPARING'
+    READY = 'READY'
+    DELIVERED = 'DELIVERED'
+    
 
 class OrderItemDTO(BaseModel):
     product_id: int
@@ -18,3 +25,4 @@ class OrderInDTO(BaseModel):
 class OrderOutDTO(OrderInDTO):
     id: int
     created_at: datetime
+    status : OrderStatus

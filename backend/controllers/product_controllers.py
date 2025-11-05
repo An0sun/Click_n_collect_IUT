@@ -36,8 +36,10 @@ def list_products():
 def create_product():
     logger.info("Création d’un nouveau produit demandée.")
     product_dto = ProductInDTO.model_validate_json(request.data)
-    created_product = ProductService.create(product_dto)
-    logger.info("✅ Produit créé : %s (ID=%d)", created_product.name, created_product.id)
+
+    created_product = ProductService.create(product_dto.model_dump())
+
+    logger.info("Produit créé : %s (ID=%d)", created_product.name, created_product.id)
     return jsonify(product_to_dto(created_product).model_dump()), HTTPStatus.CREATED
 
 @bp.patch("/<int:pid>")

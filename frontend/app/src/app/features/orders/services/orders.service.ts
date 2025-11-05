@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, switchMap, of, throwError } from 'rxjs';
+import { Observable, forkJoin, switchMap, of, throwError, share } from 'rxjs';
 import { CartItem } from '../../cart/models/cart-item/cart-item.module';
 import { TokenService } from '../../../../core/services/token.service';
 import { Order } from '../models/orders.model';
@@ -11,17 +11,43 @@ import { Order } from '../models/orders.model';
 export class OrdersService {
   private baseUrl = "http://localhost:5000";
   private apiUrl = `${this.baseUrl}/orders`;
-  private productsUrl = `${this.baseUrl}/products`;
-
   private tokenService = inject(TokenService);
+  private newOrders$?: Observable<Order>;
 
   constructor(private http: HttpClient) {}
 
+  onNewOrders(): Observable<Order> {
+    if (!this.newOrders$) {
+      const stream: Observable<Order> = new Observable<Order>((sub) => {
+        const es = new EventSource(`${this.apiUrl}/sse`);
+
+
+        const onCreated = (e: MessageEvent) => {
+          try {
+            const { order } = JSON.parse(e.data);
+            sub.next(order as Order);
+          } catch (err) {
+          }
+        };
+
+        es.addEventListener('order_created', onCreated);
+
+        return () => {
+
+          es.removeEventListener('order_created', onCreated as any);
+          es.close();
+        };
+      }).pipe(share());
+
+      this.newOrders$ = stream;
+    }
+    return this.newOrders$!;
+  }
+  
   createOrder(cart: CartItem[]): Observable<Order> {
     const tokenData = this.tokenService['dec']?.();
 
     if (!tokenData) {
-      console.error('Invalid token or user not logged in.');
       return throwError(() => new Error('User not logged in'));
     }
 
@@ -43,32 +69,16 @@ export class OrdersService {
     return this.http.post<Order>(this.apiUrl, orderData);
   }
 
-  private decrementStocks(cart: CartItem[]): Observable<any[]> {
-    const requests = cart.map(item =>
-    this.http.patch(`${this.productsUrl}/${item.product.id}`, {
-        stock: item.product.stock - item.quantity
-      })
-    );
-    return forkJoin(requests);
-  }
-
-  processOrder(cart: CartItem[]): Observable<any> {
-    if (!this.tokenService.isLoggedIn()) {
-      console.error('User not logged in.');
-      return throwError(() => new Error('User not logged in'));
-    }
-
-    return this.createOrder(cart).pipe(
-      switchMap(order =>
-        this.decrementStocks(cart).pipe(
-          switchMap(() => of(order))
-        )
-      )
-    );
-  }
 
   getOrders(): Observable<Order[]> {
     return this.http.get<Order[]>(this.apiUrl);
   }
-  
+
+  getOrder(id: number): Observable<Order> {
+    return this.http.get<Order>(`${this.apiUrl}/${id}`);
+  }
+  updateStatus(id: number, status: string) {
+    return this.http.patch<Order>(`${this.apiUrl}/${id}`, { status });
+  }
+
 }
