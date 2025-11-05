@@ -5,11 +5,12 @@ import { AdminProductsTableComponent } from '../../component/admin-products-tabl
 import { ProductUpdateComponent } from '../../component/product-update/product-update.component';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin-products-page',
   standalone: true,
-  imports: [CommonModule, AdminProductsTableComponent, ProductUpdateComponent],
+  imports: [CommonModule, RouterModule, AdminProductsTableComponent, ProductUpdateComponent],
   templateUrl: './admin-products-page.component.html',
 })
 export class AdminProductsPageComponent implements OnInit, OnDestroy {

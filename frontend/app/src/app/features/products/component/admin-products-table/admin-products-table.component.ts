@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin-products-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './admin-products-table.component.html',
 })
 export class AdminProductsTableComponent {
