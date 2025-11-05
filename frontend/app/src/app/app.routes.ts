@@ -11,6 +11,7 @@ import { LoginComponent } from './features/authentification/pages/login/login.co
 import { RegisterComponent } from './features/authentification/pages/register/register.component';
 import { LogoutComponent } from './features/authentification/components/logout/logout.component';
 import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-page.component';
+import { AdminProductsPageComponent } from './features/products/pages/admin-products-page/admin-products-page.component';
 export const routes: Routes = [
   {
     path: '',
@@ -79,7 +80,8 @@ export const routes: Routes = [
       {
         path:'create-product',
         component : CreateProductPageComponent
-      }
+      },
+      { path: 'products', component: AdminProductsPageComponent },
     ],
   },
 
