@@ -1,16 +1,20 @@
-<div class="p-4 md:p-6">
-  <div class="flex items-center justify-between mb-4">
-    <h1 class="text-2xl font-semibold">Gestion des produits</h1>
+<div class="p-6 lg:p-8 max-w-6xl mx-auto">
+  <div class="flex flex-col sm:flex-row items-center justify-between mb-8">
+    <h1 class="text-3xl font-semibold text-gray-900 text-center sm:text-left mb-4 sm:mb-0">
+      Product Management
+    </h1>
+
     <a
-      class="px-3 py-2 rounded-lg bg-amber-800 text-white hover:bg-amber-900"
       routerLink="/admin/create-product"
+      class="px-5 py-2.5 rounded-full bg-blue-600 text-white font-medium text-sm shadow-md
+             hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
     >
-      Créer un produit
+      Create Product
     </a>
   </div>
 
   @if (loading) {
-    <p class="text-gray-500">Chargement…</p>
+    <p class="text-gray-500 text-center">Loading...</p>
   } @else {
     <app-admin-products-table
       [products]="products"
@@ -25,8 +29,16 @@
     />
   }
 
+  <div class="mt-8 flex justify-center">
+    <app-pagination
+      [totalPages]="pages"
+      [page]="page"
+      (pageChange)="loadPage($event)">
+    </app-pagination>
+  </div>
+
   @if (!loading && products.length === 0) {
-    <p class="text-gray-500 mt-3">Aucun produit.</p>
+    <p class="text-gray-500 mt-6 text-center">No products found.</p>
   }
 </div>
 

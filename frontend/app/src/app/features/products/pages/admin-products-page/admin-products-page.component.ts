@@ -6,11 +6,18 @@ import { ProductUpdateComponent } from '../../component/product-update/product-u
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { RouterModule } from '@angular/router';
+import { PaginationComponent } from '../../../../shared/pagination/pagination.component';
 
 @Component({
   selector: 'app-admin-products-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, AdminProductsTableComponent, ProductUpdateComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    AdminProductsTableComponent,
+    ProductUpdateComponent,
+    PaginationComponent
+  ],
   templateUrl: './admin-products-page.component.html',
 })
 export class AdminProductsPageComponent implements OnInit, OnDestroy {
@@ -18,10 +25,12 @@ export class AdminProductsPageComponent implements OnInit, OnDestroy {
   loading = true;
   saving = false;
 
-  page?: number;
-  pages?: number;
   total?: number;
   perPage?: number;
+
+  page = 1;
+  pages = 1;
+  totalPages?: number;
 
   editingProduct: Product | null = null;
 
@@ -31,6 +40,7 @@ export class AdminProductsPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadPage(1);
+
     const stockSub = this.productService.onStockUpdates().subscribe(({ id, stock }) => {
       this.products = this.products.map(p => (p.id === id ? { ...p, stock } : p));
     });
@@ -58,7 +68,9 @@ export class AdminProductsPageComponent implements OnInit, OnDestroy {
     this.subs.add(sub);
   }
 
-  onPageChange(p: number) { this.loadPage(p); }
+  onPageChange(p: number) {
+    this.loadPage(p);
+  }
 
   onAskEdit(id: number) {
     this.editingProduct = this.products.find(x => x.id === id) || null;
@@ -68,6 +80,7 @@ export class AdminProductsPageComponent implements OnInit, OnDestroy {
     this.editingProduct = null;
     this.loadPage(this.page ?? 1);
   }
+
   onUpdateCancel() {
     this.editingProduct = null;
   }

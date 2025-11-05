@@ -1,68 +1,64 @@
-<div class="rounded-xl border overflow-x-auto">
-  <table class="min-w-full text-sm">
-    <thead class="bg-gray-50">
-      <tr class="text-left">
-        <th class="px-4 py-2">#</th>
-        <th class="px-4 py-2">Nom</th>
-        <th class="px-4 py-2">Catégorie</th>
-        <th class="px-4 py-2">Description</th>
-        <th class="px-4 py-2">Prix</th>
-        <th class="px-4 py-2">Stock</th>
-        <th class="px-4 py-2">Actions</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      @if (loading) {
-        <tr>
-          <td colspan="7" class="px-4 py-6 text-center text-gray-500">
-            Chargement…
-          </td>
+<div class="bg-white shadow-md rounded-xl overflow-hidden mt-6">
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200 text-sm">
+      <thead class="bg-gray-50">
+        <tr class="text-left text-xs font-semibold uppercase tracking-wide text-gray-600">
+          <th class="px-6 py-3">#</th>
+          <th class="px-6 py-3">Name</th>
+          <th class="px-6 py-3">Category</th>
+          <th class="px-6 py-3">Description</th>
+          <th class="px-6 py-3">Price</th>
+          <th class="px-6 py-3">Stock</th>
         </tr>
-      } @else {
-        @for (p of products; track trackById) {
-          <tr class="border-t">
-            <td class="px-4 py-2">{{ p.id }}</td>
-            <td class="px-4 py-2">{{ p.name }}</td>
-            <td class="px-4 py-2">{{ p.category }}</td>
-            <td class="px-4 py-2">{{ p.description }}</td>
-            <td class="px-4 py-2">{{ p.price | number:'1.2-2' }} €</td>
-            <td class="px-4 py-2">{{ p.stock }}</td>
-            <td class="px-4 py-2 space-x-2">
-              <button class="px-3 py-1 rounded-lg border"
-                      (click)="editRequest.emit(p.id)">
-                Modifier
-              </button>
-              <button class="px-3 py-1 rounded-lg border"
-                      (click)="deleteProduct.emit(p.id)">
-                Supprimer
-              </button>
+      </thead>
+
+      <tbody class="bg-white divide-y divide-gray-100">
+        @if (loading) {
+          <tr>
+            <td colspan="6" class="px-6 py-6 text-center text-gray-500">
+              Loading…
             </td>
           </tr>
+        } @else {
+          @for (p of products; track trackById) {
+            <tr class="hover:bg-gray-50 transition">
+              <td class="px-6 py-4 font-medium text-gray-700">
+                {{ p.id }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-900 font-semibold">
+                {{ p.name }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-700">
+                {{ p.category }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-500 max-w-xs truncate">
+                {{ p.description }}
+              </td>
+
+              <td class="px-6 py-4 text-gray-800 font-medium">
+                {{ p.price | number: '1.2-2' }} €
+              </td>
+
+              <td class="px-6 py-4">
+                <span
+                  class="px-2 py-1 text-xs font-semibold rounded-full"
+                  [ngClass]="{
+                    'bg-green-100 text-green-800': p.stock > 10,
+                    'bg-yellow-100 text-yellow-800': p.stock > 0 && p.stock <= 10,
+                    'bg-red-100 text-red-800': p.stock === 0
+                  }"
+                >
+                  {{ p.stock }}
+                </span>
+              </td>
+            </tr>
+          }
         }
-      }
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div class="flex items-center gap-2 mt-3 flex-wrap">
-  <button class="px-3 py-1 rounded-lg border disabled:opacity-50"
-          [disabled]="page <= 1" (click)="first()" aria-label="Première page">⟪</button>
-
-  <button class="px-3 py-1 rounded-lg border disabled:opacity-50"
-          [disabled]="page <= 1" (click)="prev()" aria-label="Page précédente">«</button>
-
-  <span class="px-2">Page {{ page }} / {{ pages }}</span>
-
-  <button class="px-3 py-1 rounded-lg border disabled:opacity-50"
-          [disabled]="page >= pages" (click)="next()" aria-label="Page suivante">»</button>
-
-  <button class="px-3 py-1 rounded-lg border disabled:opacity-50"
-          [disabled]="page >= pages" (click)="last()" aria-label="Dernière page">⟫</button>
-
-  <span class="ml-auto text-sm text-gray-600">
-    Total: {{ total }}
-    @if (perPage != null) { — {{ perPage }} par page }
-  </span>
-
-</div>

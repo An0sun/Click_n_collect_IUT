@@ -1,84 +1,123 @@
-<header class="bg-white shadow fixed top-0 left-0 right-0 z-50">
-  <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    @if (isAdmin) {
-      <a routerLink="/admin/products" class="block text-amber-800 font-bold text-lg">Café IUT</a>
-    }
-    @else {
-      <a routerLink="/app/product-list" class="block text-amber-800 font-bold text-lg">Café IUT</a>
-    }
-    
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
 
-    <nav class="hidden md:flex items-center gap-6">
-      @if (tokens.isLoggedIn()) {
-        @if (isAdmin) {
-          <a routerLink="/admin/products" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Products</a>
-          <a routerLink="/admin/create-product" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Create Product</a>
-          <a routerLink="/admin/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Orders</a>
-        } @else {
-          <a routerLink="/app/product-list" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Shop</a>
-          <a routerLink="/app/cart" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Cart</a>
-          <a routerLink="/app/orders" routerLinkActive="text-amber-800" class="text-gray-700 hover:text-amber-800 font-medium">Orders</a>
-        }
-
-        <app-logout></app-logout>
-      } @else {
-        <a routerLink="/auth/login"
-           class="block rounded-md bg-amber-800 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-amber-900">
-          Login
+  <nav class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      @if (isAdmin) {
+        <a routerLink="/admin/products" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+            <span class="text-white font-bold text-lg">C</span>
+          </div>
+          <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Café IUT
+          </span>
         </a>
-        <a routerLink="/auth/register"
-           class="rounded-md border border-amber-800 px-5 py-2.5 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">
-          Register
+      } @else {
+        <a routerLink="/app/product-list" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+            <span class="text-white font-bold text-lg">C</span>
+          </div>
+          <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Café IUT
+          </span>
         </a>
       }
-    </nav>
 
-    <button
-      type="button"
-      (click)="isMenuOpen = !isMenuOpen"
-      class="block rounded-sm bg-gray-100 p-2.5 text-gray-700 transition hover:text-amber-800 md:hidden">
-      <span class="sr-only">Toggle menu</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-
-  @if (isMenuOpen) {
-    <div class="md:hidden bg-white border-t border-gray-200 shadow-lg absolute top-16 left-0 right-0 z-40">
-      <nav class="px-4 py-3 space-y-2">
+      <div class="hidden md:flex items-center space-x-8">
         @if (tokens.isLoggedIn()) {
           @if (isAdmin) {
-            <a routerLink="/admin/products" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800">Products</a>
-            <a routerLink="/admin/create-product" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800">Create Product</a>
-            <a routerLink="/admin/orders" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800">Orders</a>
-          } 
-          @else {
-            <a routerLink="/app/product-list" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800"></a>
-            <a routerLink="/app/cart" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800">Cart</a>
-            <a routerLink="/app/orders" routerLinkActive="text-amber-800" (click)="isMenuOpen=false"
-               class="block text-gray-700 font-medium hover:text-amber-800">Orders</a>
+            <a routerLink="/admin/products" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Products
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a routerLink="/admin/create-product" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Create Product
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a routerLink="/admin/orders" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Orders
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          } @else {
+            <a routerLink="/app/product-list" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Shop
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a routerLink="/app/cart" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Cart
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a routerLink="/app/orders" routerLinkActive="text-blue-600"
+               class="relative text-gray-700 hover:text-blue-600 font-medium transition group">
+              Orders
+              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
           }
 
           <app-logout></app-logout>
         } @else {
-          <a routerLink="/auth/login" (click)="isMenuOpen=false"
-             class="block rounded-md bg-amber-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-amber-900">
+          <a routerLink="/auth/login"
+             class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-5 py-2.5 rounded-full font-medium text-sm shadow-md hover:from-blue-700 hover:to-purple-700 transition-all duration-300">
             Login
           </a>
-          <a routerLink="/auth/register" (click)="isMenuOpen=false"
-             class="block rounded-md border border-amber-800 px-4 py-2 text-sm font-medium text-amber-800 transition hover:bg-amber-800 hover:text-white">
+          <a routerLink="/auth/register"
+             class="border border-blue-600 text-blue-600 px-5 py-2.5 rounded-full font-medium text-sm hover:bg-blue-600 hover:text-white transition-all duration-300">
             Register
           </a>
         }
-      </nav>
+      </div>
+
+      <button
+        type="button"
+        (click)="isMenuOpen = !isMenuOpen"
+        class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-  }
+
+    @if (isMenuOpen) {
+      <div class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur border-t border-gray-200 shadow-lg animate-slide-down">
+        <div class="px-4 py-6 space-y-3">
+          @if (tokens.isLoggedIn()) {
+            @if (isAdmin) {
+              <a routerLink="/admin/products" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Products</a>
+              <a routerLink="/admin/create-product" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Create Product</a>
+              <a routerLink="/admin/orders" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Orders</a>
+            } @else {
+              <a routerLink="/app/product-list" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Shop</a>
+              <a routerLink="/app/cart" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Cart</a>
+              <a routerLink="/app/orders" (click)="isMenuOpen=false"
+                 class="block text-gray-700 font-medium hover:text-blue-600 transition">Orders</a>
+            }
+
+            <app-logout></app-logout>
+          } @else {
+            <a routerLink="/auth/login" (click)="isMenuOpen=false"
+               class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center px-5 py-2.5 rounded-full font-medium hover:from-blue-700 hover:to-purple-700 transition">
+              Login
+            </a>
+            <a routerLink="/auth/register" (click)="isMenuOpen=false"
+               class="block w-full border border-blue-600 text-blue-600 text-center px-5 py-2.5 rounded-full font-medium hover:bg-blue-600 hover:text-white transition">
+              Register
+            </a>
+          }
+        </div>
+      </div>
+    }
+  </nav>
 </header>
 
 <main class="pt-24"></main>
