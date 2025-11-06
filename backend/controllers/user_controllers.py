@@ -13,16 +13,16 @@ user_bp = Blueprint("users", __name__, url_prefix="/users")
 
 
 @user_bp.get("")
-@swag_from("../docs/users/find_many.yaml")
 @requires_roles("ADMIN")
+@swag_from("../docs/users/find_many.yaml")
 def find_many() :
     users = UserService.list_users()
     user_dtos = [PublicUserDTO.model_validate(u).model_dump() for u in users]
     return jsonify(user_dtos), HTTPStatus.OK
 
 @user_bp.get("/<int:user_id>")
-@swag_from("../docs/users/find_one.yaml")
 @requires_roles("ADMIN")
+@swag_from("../docs/users/find_one.yaml")
 def find_one(user_id : int) :
     user = UserService.get_user_by_id(user_id)
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
@@ -35,9 +35,9 @@ def create() :
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.CREATED
 
 @user_bp.put("/<int:user_id>")
-@swag_from("../docs/users/update.yaml")
 @jwt_required()
 @requires_roles("ADMIN")
+@swag_from("../docs/users/update.yaml")
 def update(user_id : int) :
     payload = request.get_json(silent=True) or {}
 
@@ -53,18 +53,18 @@ def update(user_id : int) :
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
 
 @user_bp.patch("/<int:user_id>")
-@swag_from("../docs/users/patch.yaml")
 @jwt_required()
 @requires_roles("ADMIN")
+@swag_from("../docs/users/patch.yaml")
 def patch(user_id : int) :
     update_dto = UpdateProfileDTO.model_validate_json(request.data)
     user = UserService.update_profile(user_id, update_dto)
     return jsonify(PublicUserDTO.model_validate(user).model_dump()), HTTPStatus.OK
 
 @user_bp.delete("/<int:user_id>")
-@swag_from("../docs/users/delete.yaml")
 @jwt_required()
 @requires_roles("ADMIN")
+@swag_from("../docs/users/delete.yaml")
 def remove(user_id : int) :
     UserService.delete_user(user_id)
     return "", HTTPStatus.NO_CONTENT

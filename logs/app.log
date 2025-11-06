@@ -4473,3 +4473,61 @@
 [2025-11-06 12:13:20] [INFO] [lcde:26] — 8 produits récupérés
 [2025-11-06 12:13:20] [INFO] [lcde:20] — GET /products/ — 200 — 5.55ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
 [2025-11-06 12:13:20] [INFO] [lcde:20] — GET /products/ — 200 — 5.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /apidocs/ — 200 — 31.2ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 200 — 34.79ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 15.31ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 22.02ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 29.95ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 13:52:53] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 22.35ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:19] [INFO] [lcde:20] — GET /apidocs/ — 200 — 6.94ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:19] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 200 — 6.49ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:19] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 6.72ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:19] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 6.03ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:19] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 5.28ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:20] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 60.28ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:05:20] [INFO] [lcde:20] — GET /flasgger_static/favicon-32x32.png — 200 — 0.82ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:58] [INFO] [lcde:20] — GET /apidocs/ — 200 — 1.55ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:59] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 1.44ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:59] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 2.58ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:59] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 3.11ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:59] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 200 — 1.07ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:06:59] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 87.14ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:02] [INFO] [lcde:20] — GET /apidocs/ — 200 — 0.63ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:02] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 4.42ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:02] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 4.95ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:02] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 304 — 0.64ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:02] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 6.63ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:03] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 67.83ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /apidocs — 308 — 3.61ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /apidocs/ — 200 — 0.97ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 1.76ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 304 — 5.94ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 3.19ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:06] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 4.22ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:07] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 67.53ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:26] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:07:27] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /apidocs/ — 200 — 27.31ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 27.2ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 31.15ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 40.92ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 304 — 16.68ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:07:30] [INFO] [lcde:20] — GET /apispec_1.json — 500 — 81.41ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:13:33] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:37] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:42] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:46] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:51] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:53] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:13:55] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:01] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:03] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:05] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:08] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:12] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 14:14:16] [INFO] [lcde:20] — GET /apidocs/ — 200 — 38.62ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:14:16] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui.css — 200 — 12.14ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:14:16] [INFO] [lcde:20] — GET /flasgger_static/lib/jquery.min.js — 304 — 23.0ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:14:16] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-bundle.js — 304 — 29.21ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:14:16] [INFO] [lcde:20] — GET /flasgger_static/swagger-ui-standalone-preset.js — 304 — 28.14ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 14:14:17] [INFO] [lcde:20] — GET /apispec_1.json — 200 — 78.56ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
