@@ -3,7 +3,9 @@
     Commandes
   </h1>
 
-  @if (orders.length === 0) {
+  @if (loading) {
+    <p class="text-gray-500 text-center">Chargement...</p>
+  } @else if (orders.length === 0) {
     <p class="text-sm text-gray-600 bg-white border border-gray-200 p-4 rounded-md shadow-sm text-center">
       Aucune commande pour le moment.
     </p>
@@ -67,26 +69,12 @@
       }
     </div>
 
-    <div class="mt-6 flex items-center justify-between text-sm text-gray-600">
-      <div>
-        Page {{ currentPage }} / {{ totalPages }} — {{ perPage }} par page — total: {{ total }}
-      </div>
-      <div class="flex gap-2">
-        <button
-          class="rounded border border-gray-300 bg-white px-3 py-1 hover:bg-gray-50 disabled:opacity-50"
-          [disabled]="currentPage <= 1"
-          (click)="goPrev()"
-        >
-          Précédent
-        </button>
-        <button
-          class="rounded border border-gray-300 bg-white px-3 py-1 hover:bg-gray-50 disabled:opacity-50"
-          [disabled]="currentPage >= totalPages"
-          (click)="goNext()"
-        >
-          Suivant
-        </button>
-      </div>
+    <div class="mt-8 flex justify-center">
+      <app-pagination
+        [totalPages]="pages"
+        [page]="page"
+        (pageChange)="loadPage($event)">
+      </app-pagination>
     </div>
   }
 </section>

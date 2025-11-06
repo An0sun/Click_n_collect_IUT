@@ -38,7 +38,7 @@
               </td>
 
               <td class="px-3 py-4 text-sm font-medium text-gray-800 text-center">
-                {{ item.product.price }} €
+                {{ item.product.price | number:'1.2-2' }} €
               </td>
 
               <td class="px-3 py-4 text-center">
@@ -62,16 +62,16 @@
               </td>
 
               <td class="px-3 py-4 text-sm font-medium text-gray-800 text-center">
-                {{ item.quantity * item.product.price }} €
+                {{ item.quantity * item.product.price | number:'1.2-2' }} €
               </td>
 
               <td class="px-3 py-4 text-center">
                 <button
                   (click)="remove(item.product.id)"
                   class="text-gray-400 hover:text-red-500 transition flex items-center justify-center gap-1 mx-auto"
-                  title="Remove product"
+                  title="Supprimer le produit"
                 >
-                  <span class="hidden sm:inline text-sm">Remove</span>
+                  <span class="hidden sm:inline text-sm">Supprimer</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -93,13 +93,13 @@
       <h2 class="text-lg font-semibold mb-4 text-gray-800">Total du panier</h2>
 
       <div class="flex justify-between items-center py-2 border-b border-gray-100">
-        <span class="text-gray-600 text-sm">Sous total</span>
-        <span class="text-gray-900 text-sm font-medium">{{ total }} €</span>
+        <span class="text-gray-600 text-sm">Sous-total</span>
+        <span class="text-gray-900 text-sm font-medium">{{ total | number:'1.2-2' }} €</span>
       </div>
 
       <div class="flex justify-between items-center py-2">
         <span class="text-gray-700 font-semibold text-base">Total</span>
-        <span class="text-blue-600 font-bold text-base">{{ total }} €</span>
+        <span class="text-blue-600 font-bold text-base">{{ total | number:'1.2-2' }} €</span>
       </div>
 
       <div class="mt-6 space-y-3">

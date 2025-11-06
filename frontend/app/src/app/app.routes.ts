@@ -9,6 +9,7 @@ import { LogoutComponent } from './features/authentification/components/logout/l
 import { OrdersPageComponent } from './features/orders/pages/orders-page/orders-page.component';
 import { AdminProductsPageComponent } from './features/products/pages/admin-products-page/admin-products-page.component';
 import { guestGuard, landingGuard } from '../core/guards/guest.guard';
+import { OrderSummary } from './features/orders/components/orders-summary/order-summary.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent, canMatch: [landingGuard] },
@@ -26,6 +27,7 @@ export const routes: Routes = [
       { path: 'cart', component: CartPageComponent },
       { path: 'orders', component: OrdersPageComponent },
       { path: '', pathMatch: 'full', redirectTo: 'product-list' },
+      { path: 'order-summary', component: OrderSummary },
     ],
   },
 

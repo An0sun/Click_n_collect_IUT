@@ -1,7 +1,7 @@
 <div class="p-6 lg:p-8 max-w-6xl mx-auto">
   <div class="flex flex-col sm:flex-row items-center justify-between mb-8">
     <h1 class="text-3xl font-semibold text-gray-900 text-center sm:text-left mb-4 sm:mb-0">
-      Product Management
+      Gestion Produits
     </h1>
 
     <a
@@ -9,7 +9,7 @@
       class="px-5 py-2.5 rounded-full bg-blue-600 text-white font-medium text-sm shadow-md
              hover:bg-blue-700 hover:shadow-lg transition-all duration-200"
     >
-      Create Product
+      Créer un produit
     </a>
   </div>
 
@@ -19,10 +19,6 @@
     <app-admin-products-table
       [products]="products"
       [loading]="loading"
-      [page]="page || 1"
-      [pages]="pages || 1"
-      [total]="total || 0"
-      [perPage]="perPage"
       (pageChange)="onPageChange($event)"
       (editRequest)="onAskEdit($event)"
       (deleteProduct)="onDelete($event)"

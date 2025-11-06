@@ -3790,3 +3790,686 @@
 [2025-11-05 23:55:36] [INFO] [lcde:26] — 8 produits récupérés
 [2025-11-05 23:55:36] [INFO] [lcde:20] — GET /products/ — 200 — 2.71ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 — 127.0.0.1
 [2025-11-05 23:55:36] [INFO] [lcde:20] — GET /products/ — 200 — 3.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:15:27] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 11:15:28] [INFO] [lcde:33] — Logging fichier initialisé sans modifier les logs Flask.
+[2025-11-06 11:18:15] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 7.57ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:15] [INFO] [lcde:20] — POST /auth/login — 422 — 72.55ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:17] [INFO] [lcde:20] — POST /auth/login — 422 — 1.23ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:17] [INFO] [lcde:20] — POST /auth/login — 422 — 0.57ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:17] [INFO] [lcde:20] — POST /auth/login — 422 — 1.18ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:17] [INFO] [lcde:20] — POST /auth/login — 422 — 1.15ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:18] [INFO] [lcde:20] — POST /auth/login — 422 — 1.1ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:18] [INFO] [lcde:20] — POST /auth/login — 422 — 1.79ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:18] [INFO] [lcde:20] — POST /auth/login — 422 — 1.12ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:18] [INFO] [lcde:20] — POST /auth/login — 422 — 1.1ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:18] [INFO] [lcde:20] — POST /auth/login — 422 — 1.09ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:19] [INFO] [lcde:20] — POST /auth/login — 422 — 1.09ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.25ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — POST /auth/login — 422 — 1.4ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — POST /auth/login — 422 — 1.11ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — POST /auth/login — 422 — 1.11ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — POST /auth/login — 422 — 1.1ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:18:22] [INFO] [lcde:20] — POST /auth/login — 422 — 1.45ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:47] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.2ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:47] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:19:47] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:19:47] [INFO] [lcde:20] — POST /auth/login — 200 — 422.17ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:47] [INFO] [lcde:20] — GET /products/sse — 200 — 2.07ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:47] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.6ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:47] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:19:47] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:19:47] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:19:47] [INFO] [lcde:20] — GET /products/ — 200 — 25.22ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:50] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.23ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:50] [INFO] [lcde:20] — GET /orders — 200 — 12.66ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:50] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:52] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:19:52] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:19:52] [INFO] [lcde:20] — GET /products/sse — 200 — 0.27ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:52] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:19:52] [INFO] [lcde:20] — GET /products/ — 200 — 7.77ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:53] [INFO] [lcde:20] — GET /orders — 200 — 2.6ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:19:53] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.1ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:29:11] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.53ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:29:11] [INFO] [lcde:20] — GET /orders — 200 — 4.16ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:29:11] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.14ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:30:25] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.12ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:30:25] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:30:25] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:30:25] [INFO] [lcde:20] — POST /auth/login — 200 — 297.73ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:30:25] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:30:25] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.25ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:30:25] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:30:25] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:30:25] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:30:25] [INFO] [lcde:20] — GET /products/ — 200 — 3.52ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:06] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.11ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:06] [INFO] [lcde:20] — GET /orders — 200 — 2.18ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:06] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:56] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:56] [INFO] [lcde:20] — GET /orders — 200 — 7.6ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:31:56] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.1ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:17] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:17] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.15ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:17] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:33:17] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:33:17] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:33:17] [INFO] [lcde:20] — GET /products/ — 200 — 2.84ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:21] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.14ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:21] [INFO] [lcde:20] — GET /orders — 200 — 1.85ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:33:21] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:144.0) Gecko/20100101 Firefox/144.0 — 127.0.0.1
+[2025-11-06 11:39:44] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:44] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:39:44] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:39:44] [INFO] [lcde:20] — POST /auth/login — 200 — 260.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:44] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:44] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:39:44] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:39:44] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:39:44] [INFO] [lcde:20] — GET /products/ — 200 — 4.55ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:44] [INFO] [lcde:20] — GET /products/sse — 200 — 0.71ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:47] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:39:47] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:39:47] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:39:47] [INFO] [lcde:20] — GET /products/ — 200 — 4.85ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:50] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:50] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:39:50] [INFO] [lcde:20] — GET /products/sse — 200 — 0.14ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:50] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:39:50] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:39:50] [INFO] [lcde:20] — GET /products/ — 200 — 5.59ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:59] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:59] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:39:59] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:39:59] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:39:59] [INFO] [lcde:20] — GET /products/ — 200 — 3.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:39:59] [INFO] [lcde:20] — GET /products/sse — 200 — 0.14ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:27] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:27] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:40:27] [INFO] [lcde:20] — POST /auth/login — 401 — 266.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:40:33] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:40:33] [INFO] [lcde:20] — POST /auth/login — 200 — 248.35ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.74ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:20] — GET /products/sse — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:33] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:33] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:33] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:33] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:33] [INFO] [lcde:20] — GET /products/ — 200 — 12.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:33] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:33] [INFO] [lcde:20] — GET /products/ — 200 — 10.07ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:35] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:35] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:35] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:35] [INFO] [lcde:20] — GET /products/ — 200 — 6.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:35] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:35] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:35] [INFO] [lcde:20] — GET /products/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:35] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:35] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:35] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:35] [INFO] [lcde:20] — GET /products/ — 200 — 8.48ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:35] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:35] [INFO] [lcde:20] — GET /products/ — 200 — 11.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:42] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:42] [INFO] [lcde:20] — POST /orders — 308 — 2.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:42] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:42] [INFO] [lcde:67] — Commande #1 créée avec succès.
+[2025-11-06 11:40:42] [INFO] [lcde:20] — POST /orders/ — 201 — 42.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:43] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:40:43] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:40:43] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:40:43] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:40:43] [INFO] [lcde:20] — GET /products/ — 200 — 4.84ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:41:06] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:41:06] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:41:06] [INFO] [lcde:20] — POST /auth/login — 200 — 308.43ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:41:06] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:41:06] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:41:06] [INFO] [lcde:20] — GET /products/ — 200 — 7.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:20] — GET /products/sse — 200 — 0.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:41:06] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:41:06] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:41:06] [INFO] [lcde:20] — GET /products/ — 200 — 7.5ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:06] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:41:06] [INFO] [lcde:20] — POST /auth/login — 200 — 321.57ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:10] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:10] [INFO] [lcde:20] — POST /orders — 308 — 0.48ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:10] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:10] [INFO] [lcde:67] — Commande #2 créée avec succès.
+[2025-11-06 11:41:10] [INFO] [lcde:20] — POST /orders/ — 201 — 17.76ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:12] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:41:12] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:41:12] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:41:12] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:41:12] [INFO] [lcde:20] — GET /products/ — 200 — 7.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:42:51] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.34ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:42:51] [INFO] [lcde:20] — GET /orders — 200 — 15.68ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:42:51] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 8.54ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:42:51] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:42:51] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 8.58ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:21] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.45ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:21] [INFO] [lcde:20] — GET /orders — 200 — 9.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:21] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 1.87ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:21] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.07ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:21] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 6.01ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:33] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.18ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:33] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:33] [INFO] [lcde:20] — GET /products/sse — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:33] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:43:33] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:43:33] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:43:33] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:43:33] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:43:33] [INFO] [lcde:20] — GET /products/ — 200 — 15.38ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:33] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:43:33] [INFO] [lcde:20] — GET /products/ — 200 — 9.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:43] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:43] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:43] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:43:43] [INFO] [lcde:20] — GET /products/sse — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:43] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:43:43] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:43:43] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:43:43] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:43:43] [INFO] [lcde:20] — GET /products/ — 200 — 8.46ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:43:43] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:43:43] [INFO] [lcde:20] — GET /products/ — 200 — 12.82ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:17] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:17] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:44:17] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:44:17] [INFO] [lcde:20] — POST /auth/login — 200 — 251.95ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:17] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:17] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:44:17] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:44:17] [INFO] [lcde:20] — GET /products/sse — 200 — 0.12ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:17] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:44:17] [INFO] [lcde:20] — GET /products/ — 200 — 9.3ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:22] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.33ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:22] [INFO] [lcde:20] — GET /orders — 200 — 7.79ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:23] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:23] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 292.73ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:23] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 291.53ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:35] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:35] [INFO] [lcde:20] — GET /orders — 200 — 9.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:35] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.12ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:35] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 5.65ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:35] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 4.43ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:58] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:58] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:44:58] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:44:58] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:44:58] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:44:58] [INFO] [lcde:20] — GET /products/ — 200 — 8.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:05] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:05] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:45:05] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=2, per_page=8
+[2025-11-06 11:45:05] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:45:05] [INFO] [lcde:20] — GET /products/ — 200 — 5.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:06] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:06] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:45:06] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=3, per_page=8
+[2025-11-06 11:45:06] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:45:06] [INFO] [lcde:20] — GET /products/ — 200 — 5.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:08] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:08] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:45:08] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=5, per_page=8
+[2025-11-06 11:45:08] [INFO] [lcde:26] — 2 produits récupérés
+[2025-11-06 11:45:08] [INFO] [lcde:20] — GET /products/ — 200 — 4.98ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:11] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:11] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:45:11] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:45:11] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:45:11] [INFO] [lcde:20] — GET /products/ — 200 — 4.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:58] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:58] [INFO] [lcde:20] — GET /products/sse — 200 — 0.12ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:45:58] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:45:58] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:45:58] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:45:58] [INFO] [lcde:20] — GET /products/ — 200 — 4.94ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:00] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.26ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:00] [INFO] [lcde:20] — GET /orders — 200 — 8.91ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:01] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:01] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 7.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:01] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 6.98ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:15] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:15] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:46:15] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:15] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:46:15] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:46:15] [INFO] [lcde:20] — GET /products/ — 200 — 6.82ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:31] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:31] [INFO] [lcde:20] — GET /orders — 200 — 8.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:31] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:31] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 4.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:31] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 7.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:53] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.26ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:53] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:46:53] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:46:53] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:46:53] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:46:53] [INFO] [lcde:20] — GET /products/ — 200 — 6.96ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:55] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:55] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:47:55] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=2, per_page=8
+[2025-11-06 11:47:55] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:47:55] [INFO] [lcde:20] — GET /products/ — 200 — 5.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:57] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:57] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:47:57] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=3, per_page=8
+[2025-11-06 11:47:57] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:47:57] [INFO] [lcde:20] — GET /products/ — 200 — 5.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:59] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:47:59] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:47:59] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=4, per_page=8
+[2025-11-06 11:47:59] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:47:59] [INFO] [lcde:20] — GET /products/ — 200 — 5.41ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:00] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:00] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:48:00] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=5, per_page=8
+[2025-11-06 11:48:00] [INFO] [lcde:26] — 2 produits récupérés
+[2025-11-06 11:48:00] [INFO] [lcde:20] — GET /products/ — 200 — 4.64ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:07] [INFO] [lcde:20] — OPTIONS /products/1 — 200 — 0.28ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:07] [INFO] [lcde:20] — DELETE /products/1 — 204 — 12.08ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:07] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:48:07] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:48:07] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=5, per_page=8
+[2025-11-06 11:48:07] [INFO] [lcde:26] — 1 produits récupérés
+[2025-11-06 11:48:07] [INFO] [lcde:20] — GET /products/ — 200 — 3.68ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:16] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:16] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:51:16] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:51:16] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:51:16] [INFO] [lcde:20] — GET /products/ — 200 — 4.7ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:16] [INFO] [lcde:20] — GET /products/sse — 200 — 0.52ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:34] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:34] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:51:34] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:51:34] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:51:34] [INFO] [lcde:20] — GET /products/ — 200 — 6.49ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:51:34] [INFO] [lcde:20] — GET /products/sse — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:16] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:16] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:53:16] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:53:16] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:53:16] [INFO] [lcde:20] — GET /products/ — 200 — 5.87ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:16] [INFO] [lcde:20] — GET /products/sse — 200 — 0.46ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:18] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:18] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:53:18] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=4, per_page=8
+[2025-11-06 11:53:18] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:53:18] [INFO] [lcde:20] — GET /products/ — 200 — 5.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:19] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:19] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:53:19] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=3, per_page=8
+[2025-11-06 11:53:19] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:53:19] [INFO] [lcde:20] — GET /products/ — 200 — 3.35ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:21] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.35ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:21] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:53:21] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=5, per_page=8
+[2025-11-06 11:53:21] [INFO] [lcde:26] — 1 produits récupérés
+[2025-11-06 11:53:21] [INFO] [lcde:20] — GET /products/ — 200 — 5.6ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:23] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:23] [INFO] [lcde:20] — GET /orders — 200 — 9.54ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:23] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:23] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 3.67ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:23] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 8.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:24] [INFO] [lcde:20] — GET /orders — 200 — 6.82ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:24] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.08ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:24] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 5.58ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:24] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 7.33ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:39] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:39] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:53:39] [INFO] [lcde:20] — GET /products/sse — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:53:39] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:53:39] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:53:39] [INFO] [lcde:20] — GET /products/ — 200 — 6.94ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:38] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:38] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:54:38] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:54:38] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:54:38] [INFO] [lcde:20] — GET /products/ — 200 — 5.85ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:38] [INFO] [lcde:20] — GET /products/sse — 200 — 0.12ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:52] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:52] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:54:52] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:54:52] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:54:52] [INFO] [lcde:20] — GET /products/ — 200 — 12.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:52] [INFO] [lcde:20] — GET /products/sse — 200 — 0.45ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:53] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:54:53] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:54:53] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:54:53] [INFO] [lcde:20] — GET /products/ — 200 — 5.59ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:54:53] [INFO] [lcde:20] — GET /products/sse — 200 — 0.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:01] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:01] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:01] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:01] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:01] [INFO] [lcde:20] — GET /products/ — 200 — 7.84ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:01] [INFO] [lcde:20] — GET /products/sse — 200 — 0.39ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:04] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:04] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:04] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:04] [INFO] [lcde:20] — GET /products/ — 200 — 9.69ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:04] [INFO] [lcde:20] — GET /products/sse — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:07] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:07] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:07] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:07] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:07] [INFO] [lcde:20] — GET /products/ — 200 — 4.05ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:07] [INFO] [lcde:20] — GET /products/sse — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:13] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:13] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:13] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:13] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:13] [INFO] [lcde:20] — GET /products/ — 200 — 9.27ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:13] [INFO] [lcde:20] — GET /products/sse — 200 — 0.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 11:55:36] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 11:55:36] [INFO] [lcde:20] — POST /auth/login — 200 — 249.69ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.34ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:36] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 11:55:36] [INFO] [lcde:20] — GET /products/sse — 200 — 0.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:36] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 11:55:36] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:36] [INFO] [lcde:20] — GET /products/ — 200 — 10.89ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 11:55:36] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 11:55:36] [INFO] [lcde:20] — GET /products/ — 200 — 10.79ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:01:57] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.33ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:01:57] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.33ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:01:57] [INFO] [lcde:20] — GET /products/sse — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:01:57] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:01:57] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:01:57] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:01:57] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:01:57] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:01:57] [INFO] [lcde:20] — GET /products/ — 200 — 5.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:01:57] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:01:57] [INFO] [lcde:20] — GET /products/ — 200 — 6.03ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:04] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:04] [INFO] [lcde:20] — POST /orders — 308 — 4.74ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:04] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:04] [INFO] [lcde:67] — Commande #3 créée avec succès.
+[2025-11-06 12:02:04] [INFO] [lcde:20] — POST /orders/ — 201 — 20.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.44ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — GET /orders — 200 — 9.66ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 9.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 8.63ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:05] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 9.91ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — GET /orders — 200 — 7.01ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 4.38ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 7.85ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:44] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 6.54ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:51] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:51] [INFO] [lcde:20] — GET /orders — 200 — 16.27ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:52] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.08ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:52] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 5.98ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:52] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 2.91ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:52] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 7.49ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:54] [INFO] [lcde:20] — GET /orders — 200 — 15.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:54] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 32.94ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:54] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 39.56ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:54] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 27.91ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:54] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:56] [INFO] [lcde:20] — GET /orders — 200 — 10.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:56] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 5.39ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:56] [INFO] [lcde:20] — GET /orders/sse/1 — 200 — 4.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:56] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:02:56] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 6.98ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:31] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.3ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:31] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:31] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:03:31] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:03:31] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:03:31] [INFO] [lcde:20] — GET /products/sse — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:31] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:03:31] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:03:31] [INFO] [lcde:20] — GET /products/ — 200 — 13.72ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:31] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:03:31] [INFO] [lcde:20] — GET /products/ — 200 — 9.03ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:35] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:35] [INFO] [lcde:20] — POST /orders — 308 — 0.51ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:35] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:35] [INFO] [lcde:67] — Commande #4 créée avec succès.
+[2025-11-06 12:03:35] [INFO] [lcde:20] — POST /orders/ — 201 — 32.02ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:46] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:46] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:46] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:03:46] [INFO] [lcde:20] — GET /products/sse — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:46] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:03:46] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:03:46] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:03:46] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:03:46] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:03:46] [INFO] [lcde:20] — GET /products/ — 200 — 9.48ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:03:46] [INFO] [lcde:20] — GET /products/ — 200 — 7.26ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:04:57] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:04:57] [INFO] [lcde:20] — POST /orders — 308 — 0.49ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:04:57] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:04:57] [INFO] [lcde:67] — Commande #5 créée avec succès.
+[2025-11-06 12:04:57] [INFO] [lcde:20] — POST /orders/ — 201 — 32.78ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:15] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:15] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 12:08:16] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 12:08:16] [INFO] [lcde:20] — POST /auth/login — 200 — 256.07ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:16] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:16] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:08:16] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:08:16] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:08:16] [INFO] [lcde:20] — GET /products/ — 200 — 4.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:16] [INFO] [lcde:20] — GET /products/sse — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 12:08:29] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 12:08:29] [INFO] [lcde:20] — POST /auth/login — 200 — 246.89ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.33ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:20] — GET /products/sse — 200 — 0.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:08:29] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:08:29] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:08:29] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:08:29] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:08:29] [INFO] [lcde:20] — GET /products/ — 200 — 9.9ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:29] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:08:29] [INFO] [lcde:20] — GET /products/ — 200 — 11.68ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders — 200 — 12.99ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.1ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 8.59ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders/sse/5 — 200 — 13.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders/sse/4 — 200 — 12.61ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:40] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 13.9ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:42] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:42] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.36ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:42] [INFO] [lcde:20] — GET /products/sse — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:42] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:08:42] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:08:42] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:08:42] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:08:42] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:08:42] [INFO] [lcde:20] — GET /products/ — 200 — 8.73ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:42] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:08:42] [INFO] [lcde:20] — GET /products/ — 200 — 9.03ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders — 200 — 11.64ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.39ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders/sse/4 — 200 — 3.97ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 9.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders/sse/2 — 200 — 13.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:48] [INFO] [lcde:20] — GET /orders/sse/5 — 200 — 18.11ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:58] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:58] [INFO] [lcde:20] — POST /orders — 308 — 0.49ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:58] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:58] [INFO] [lcde:67] — Commande #6 créée avec succès.
+[2025-11-06 12:08:58] [INFO] [lcde:20] — POST /orders/ — 201 — 26.35ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:08:58] [INFO] [lcde:20] — GET /orders/sse/6 — 200 — 3.25ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:02] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:02] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:02] [INFO] [lcde:20] — GET /products/sse — 200 — 0.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:02] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:02] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:02] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:02] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:02] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:02] [INFO] [lcde:20] — GET /products/ — 200 — 7.95ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:02] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:02] [INFO] [lcde:20] — GET /products/ — 200 — 10.55ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders — 200 — 12.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 9.71ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders/sse/6 — 200 — 13.01ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders/sse/4 — 200 — 11.9ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:03] [INFO] [lcde:20] — GET /orders/sse/5 — 200 — 16.56ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:05] [INFO] [lcde:20] — OPTIONS /orders/6 — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:05] [INFO] [lcde:20] — PATCH /orders/6 — 200 — 12.55ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:06] [INFO] [lcde:20] — PATCH /orders/6 — 200 — 21.03ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:07] [INFO] [lcde:20] — PATCH /orders/6 — 200 — 20.44ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 12:09:24] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 12:09:24] [INFO] [lcde:20] — POST /auth/login — 200 — 247.81ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:24] [INFO] [lcde:20] — GET /products/sse — 200 — 0.28ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:24] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:24] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:24] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:24] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:24] [INFO] [lcde:20] — GET /products/ — 200 — 17.61ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:24] [INFO] [lcde:20] — GET /products/ — 200 — 8.31ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:30] [INFO] [lcde:20] — OPTIONS /auth/login — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:30] [INFO] [lcde:27] — Tentative de connexion
+[2025-11-06 12:09:31] [INFO] [lcde:29] — Connexion réussie 
+[2025-11-06 12:09:31] [INFO] [lcde:20] — POST /auth/login — 200 — 249.76ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:31] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:31] [INFO] [lcde:20] — GET /products/sse — 200 — 0.2ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:31] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:31] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:31] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:31] [INFO] [lcde:20] — GET /products/ — 200 — 4.92ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders — 200 — 9.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders/sse — 200 — 0.09ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders/sse/4 — 200 — 8.99ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders/sse/3 — 200 — 8.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders/sse/6 — 200 — 13.12ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:32] [INFO] [lcde:20] — GET /orders/sse/5 — 200 — 10.9ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:34] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.37ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:34] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.44ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:34] [INFO] [lcde:20] — GET /products/sse — 200 — 0.26ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:34] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:34] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:34] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:09:34] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:09:34] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:34] [INFO] [lcde:20] — GET /products/ — 200 — 4.56ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:09:34] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:09:34] [INFO] [lcde:20] — GET /products/ — 200 — 9.62ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:00] [INFO] [lcde:20] — OPTIONS /orders — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:00] [INFO] [lcde:20] — POST /orders — 308 — 0.54ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:00] [INFO] [lcde:20] — OPTIONS /orders/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:00] [INFO] [lcde:67] — Commande #7 créée avec succès.
+[2025-11-06 12:10:00] [INFO] [lcde:20] — POST /orders/ — 201 — 21.64ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:19] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:19] [INFO] [lcde:41] — Création d’un nouveau produit demandée.
+[2025-11-06 12:10:19] [INFO] [lcde:46] — Produit créé : teee (ID=35)
+[2025-11-06 12:10:19] [INFO] [lcde:20] — POST /products/ — 201 — 21.15ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:19] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.21ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:19] [INFO] [lcde:20] — GET /products/sse — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:19] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:10:19] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:10:19] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:10:19] [INFO] [lcde:20] — GET /products/ — 200 — 6.72ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:20] [INFO] [lcde:20] — OPTIONS /products/35 — 200 — 0.24ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:20] [INFO] [lcde:20] — DELETE /products/35 — 204 — 11.3ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:20] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:10:20] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:10:20] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:10:20] [INFO] [lcde:20] — GET /products/ — 200 — 4.14ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:32] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.42ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:32] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:10:32] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.6ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:32] [INFO] [lcde:20] — GET /products/sse — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:32] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:10:32] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:10:32] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:10:32] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:10:32] [INFO] [lcde:20] — GET /products/ — 200 — 13.85ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:10:32] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:10:32] [INFO] [lcde:20] — GET /products/ — 200 — 6.86ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:11:59] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.41ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:11:59] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.37ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:11:59] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:11:59] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:11:59] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:11:59] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:11:59] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:11:59] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:11:59] [INFO] [lcde:20] — GET /products/ — 200 — 9.41ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:11:59] [INFO] [lcde:20] — GET /products/ — 200 — 16.62ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:11:59] [INFO] [lcde:20] — GET /products/sse — 200 — 0.34ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:05] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:05] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.61ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:05] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:12:05] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:12:05] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:12:05] [INFO] [lcde:20] — GET /products/ — 200 — 13.7ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:05] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:12:05] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:12:05] [INFO] [lcde:20] — GET /products/sse — 200 — 1.4ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:05] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:12:05] [INFO] [lcde:20] — GET /products/ — 200 — 27.65ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:58] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.39ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:58] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.27ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:58] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:12:58] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:12:58] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:12:58] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:12:58] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:12:58] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:12:58] [INFO] [lcde:20] — GET /products/ — 200 — 12.96ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:58] [INFO] [lcde:20] — GET /products/ — 200 — 11.16ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:12:58] [INFO] [lcde:20] — GET /products/sse — 200 — 0.22ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:11] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.17ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:11] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:13:11] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:13:11] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.51ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:11] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:13:11] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:13:11] [INFO] [lcde:20] — GET /products/ — 200 — 16.72ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:11] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:13:11] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:13:11] [INFO] [lcde:20] — GET /products/ — 200 — 9.88ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:11] [INFO] [lcde:20] — GET /products/sse — 200 — 0.23ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:20] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.32ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:20] [INFO] [lcde:20] — OPTIONS /products/ — 200 — 0.19ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:20] [INFO] [lcde:20] — GET /products/sse — 200 — 0.13ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:20] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:13:20] [INFO] [lcde:18] — Récupération de la liste des produits.
+[2025-11-06 12:13:20] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:13:20] [DEBUG] [lcde:20] — Params : q=None, category=None, sort=None, page=1, per_page=8
+[2025-11-06 12:13:20] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:13:20] [INFO] [lcde:26] — 8 produits récupérés
+[2025-11-06 12:13:20] [INFO] [lcde:20] — GET /products/ — 200 — 5.55ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
+[2025-11-06 12:13:20] [INFO] [lcde:20] — GET /products/ — 200 — 5.29ms — Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 — 127.0.0.1
